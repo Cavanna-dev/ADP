@@ -62,10 +62,14 @@ if (isset($_GET['error'])) {
         if($("#inputEmail").val().length < 1){
             $('#inputEmail').parent('div').addClass('has-error');
             event.preventDefault();
+        }else{
+            $('#inputEmail').parent('div').removeClass('has-error');
         }
         if($("#inputPassword").val().length < 1){
             $('#inputEmail').parent('div').addClass('has-error');
             event.preventDefault();
+        }else{
+            $('#inputEmail').parent('div').removeClass('has-error');
         }
     });
 </script>
