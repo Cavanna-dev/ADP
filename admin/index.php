@@ -15,7 +15,15 @@ if (isset($_GET['error'])) {
             <?php
             break;
         case 'mdp':
-            $flagMdp = 1;
+            ?>        
+            <div class="container">
+                <div class="jumbotron">
+                    <h1>Mot de passe incorrecte</h1>
+                    <p>Merci de vore visite !</p>
+                    <p><a href="index.php" class="btn btn-primary btn-lg">Revenir à la page d'accueil</a></p>
+                </div>
+            </div>
+            <?php
             break;
         default:break;
     }
@@ -29,9 +37,6 @@ if (isset($_GET['error'])) {
                     <label for="inputEmail" class="col-lg-2 control-label">Email :</label>
                     <div class="col-lg-8">
                         <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
-                    </div>
-                    <div class="col-lg-2" style="color:red;<?php if($flagMdp == 1) echo "display:none;"; ?>">
-                        <p>Mot de passe invalide</p>
                     </div>
                 </div>
                 <div class="form-group">
