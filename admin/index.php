@@ -15,16 +15,12 @@ if (isset($_GET['error'])) {
             <?php
             break;
         case 'mdp':
-            ?>
-            <div class="container">
-                <div class="jumbotron">
-                    <h1>Mauvais mot de passe</h1>
-                </div>
-            </div>
-        <?php default:break; ?>
-    <?php }
+            $flagMdp = 1;
+            break;
+        default:break;
+    }
+} else {
     ?>
-<?php } else { ?>
     <div class="container">
         <form class="form-horizontal" id="loginForm" action="login.php" method="POST">
             <fieldset>
@@ -33,6 +29,9 @@ if (isset($_GET['error'])) {
                     <label for="inputEmail" class="col-lg-2 control-label">Email :</label>
                     <div class="col-lg-8">
                         <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
+                    </div>
+                    <div class="col-lg-2" style="color:red;<?php if($flagMdp == 1) echo "display:none;"; ?>">
+                        <p>Mot de passe invalide</p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -59,17 +58,17 @@ if (isset($_GET['error'])) {
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
     $("#loginForm").submit(function (event) {
-        if($("#inputEmail").val().length < 1){
+        if ($("#inputEmail").val().length < 1) {
             $('#inputEmail').parent('div').addClass('has-error');
             event.preventDefault();
-        }else{
+        } else {
             $('#inputEmail').parent('div').removeClass('has-error');
         }
-        if($("#inputPassword").val().length < 1){
-            $('#inputEmail').parent('div').addClass('has-error');
+        if ($("#inputPassword").val().length < 1) {
+            $('#inputPassword').parent('div').addClass('has-error');
             event.preventDefault();
-        }else{
-            $('#inputEmail').parent('div').removeClass('has-error');
+        } else {
+            $('#inputPassword').parent('div').removeClass('has-error');
         }
     });
 </script>
