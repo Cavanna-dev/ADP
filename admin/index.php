@@ -26,18 +26,18 @@ if (isset($_GET['error'])) {
     ?>
 <?php } else { ?>
     <div class="container">
-        <form class="form-horizontal" action="login.php" method="POST">
+        <form class="form-horizontal" id="loginForm" action="login.php" method="POST">
             <fieldset>
                 <legend>Connection</legend>
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email :</label>
-                    <div class="col-lg-10">
+                    <div class="col-lg-8">
                         <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword" class="col-lg-2 control-label">Mot de passe :</label>
-                    <div class="col-lg-10">
+                    <div class="col-lg-8">
                         <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Mot de passe">
                         <div class="checkbox">
                             <label>
@@ -56,4 +56,17 @@ if (isset($_GET['error'])) {
         </form>
     </div>
 <?php } ?>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $("#loginForm").submit(function (event) {
+        if($("#inputEmail").val().length < 1){
+            $('#inputEmail').parent('div').addClass('has-error');
+            event.preventDefault();
+        }
+        if($("#inputPassword").val().length < 1){
+            $('#inputEmail').parent('div').addClass('has-error');
+            event.preventDefault();
+        }
+    });
+</script>
 <?php include 'footer.php'; ?>
