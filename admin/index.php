@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'template/header.php';
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {
         case 'logout':
@@ -43,9 +43,14 @@ if (isset($_GET['error'])) {
                     <label for="inputPassword" class="col-lg-2 control-label">Mot de passe :</label>
                     <div class="col-lg-8">
                         <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Mot de passe">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="checkbox" class="col-lg-2 control-label"></label>
+                    <div class="col-lg-8">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> Checkbox
+                                <input type="checkbox"> Rester connecter
                             </label>
                         </div>
                     </div>
@@ -77,4 +82,4 @@ if (isset($_GET['error'])) {
         }
     });
 </script>
-<?php include 'footer.php'; ?>
+<?php include 'template/footer.php'; ?>
