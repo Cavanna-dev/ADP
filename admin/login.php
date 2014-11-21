@@ -1,6 +1,6 @@
 <?php
 
-$email = htmlspecialchars($_POST['inputEmail']);
+$email    = htmlspecialchars($_POST['inputEmail']);
 $password = htmlspecialchars($_POST['inputPassword']);
 
 include_once '../functions/connection_db.php';
