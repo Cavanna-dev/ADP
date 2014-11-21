@@ -21,7 +21,7 @@
             <div class="item">
                 <img src="..." alt="...">
                 <div class="carousel-caption">
-                    ...
+                    ... Coucou Cavana
                 </div>
             </div>
             ...
