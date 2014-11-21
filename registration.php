@@ -15,6 +15,6 @@ try {
     header('Location:index.php');
     
 } catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
+    header('Location:error.php?error='.$e->getCode());
 }
 

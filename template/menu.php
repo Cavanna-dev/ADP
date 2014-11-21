@@ -6,14 +6,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Ttls Project</a>
+            <a class="navbar-brand" href="./index.php">Ttls Project</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Accueil</a></li>
+                <li class="active"><a href="./index.php">Accueil</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="form_login.php">Se Connecter</a></li>
+                <?php if (!isset($_SESSION['customer'])) { ?>
+                    <li><a href="form_login.php">Se Connecter</a></li>
+                <?php } else { ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['customer']['email']; ?> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Mes Informations</a></li>
+                            <li><a href="logout.php">Deconnexion</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="basket.php">Mon Panier</a></li>
+                <?php } ?>
             </ul>
         </div>
     </div>

@@ -1,3 +1,7 @@
+<?php
+if(session_status() == PHP_SESSION_NONE){session_start();}
+include_once 'functions/config.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
