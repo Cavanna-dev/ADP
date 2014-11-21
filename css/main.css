@@ -1,0 +1,13 @@
+#menuPrincipal {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+#menuCategorie {
+    border-radius: 0;
+}
+
+.rmvButton {
+    width:15px;
+    height:15px;
+}

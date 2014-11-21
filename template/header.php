@@ -9,5 +9,6 @@ include_once 'functions/config.php';
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://bootswatch.com/spacelab/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/main.css">
     </head>
     <body>

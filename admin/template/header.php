@@ -8,5 +8,6 @@ if(!isset($_SESSION['user_logged']) && $_SERVER['PHP_SELF'] != '/ttls/admin/inde
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" href="http://bootswatch.com/spacelab/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/main.css">
     </head>
     <body>

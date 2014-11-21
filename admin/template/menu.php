@@ -14,7 +14,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Web <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="module_HomePage.php">Gérer la page d'accueil</a></li>
+                        <li><a href="homePageCarousel.php">Gérer le diaporama de la page d'accueil</a></li>
                         <li><a href="module_Menu.php">Gérer le menu du site</a></li>
                         <li><a href="../index.php">Voir le site</a></li>
                     </ul>
