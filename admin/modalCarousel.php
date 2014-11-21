@@ -2,7 +2,7 @@
 
 <div class="modal">
     <div class="modal-dialog">
-        <form class="form-horizontal" action="addCarousel.php" method="POST">
+        <form class="form-horizontal" action="addCarousel.php" method="POST" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
