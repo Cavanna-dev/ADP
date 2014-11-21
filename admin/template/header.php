@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+if(session_status() == PHP_SESSION_NONE){session_start();}
+if(!isset($_SESSION['user_logged']) && $_SERVER['PHP_SELF'] != '/ADP/admin/index.php'){ header('location:index.php'); }
+?>
 <!DOCTYPE html>
 <html>
     <head>
