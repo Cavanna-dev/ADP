@@ -1,7 +1,7 @@
 <?php
 
 $host   = 'localhost';
-$dbName = 'adp';
+$dbName = 'ttls';
 $user   = 'root';
 $pass   = '';
 

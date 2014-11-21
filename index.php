@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <link rel="stylesheet" href="http://bootswatch.com/spacelab/bootstrap.min.css">
-    </head>
-    <body>
+<?php include 'template/header.php'; ?>
+<?php include 'template/menu.php'; ?>
         <div class="container">
             <div class="jumbotron">
                 <h1>Bienvenue sur l'ADP</h1>
@@ -13,6 +7,4 @@
                 <p><a class="btn btn-primary btn-lg">Learn more</a></p>
             </div>
         </div>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    </body>
-</html>
+<?php include 'template/footer.php'; ?>

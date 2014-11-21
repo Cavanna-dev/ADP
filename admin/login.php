@@ -3,7 +3,7 @@
 $email = htmlspecialchars($_POST['inputEmail']);
 $password = htmlspecialchars($_POST['inputPassword']);
 
-include_once '../connection_db.php';
+include_once '../functions/connection_db.php';
 
 try {
     $resultats = $db->query("SELECT email, password, role " .
