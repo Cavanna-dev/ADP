@@ -13,7 +13,7 @@
                 <li class="active"><a href="#">Accueil</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Se Connecter</a></li>
+                <li><a href="form_login.php">Se Connecter</a></li>
             </ul>
         </div>
     </div>
