@@ -5,7 +5,7 @@
         Bienvenue sur la Gestion du Carousel
     </div>
 
-    <?php if (isset($_GET['erreur'])) { ?>
+    <?php if (isset($_GET['erreur'])) { //TODO:Pour gérer les erreurs. ?>
         <div class="alert alert-dismissable alert-warning">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <h4>Warning!</h4>
@@ -13,9 +13,9 @@
         </div>
     <?php } ?>
 
-    <?php include './modalCarousel.php'; ?>
+    <?php include './modalCarousel.php'; //Renvoi de la pop-up pour enregistrer une image ?>
 
-    <?php include './allCarousel.php'; ?>
+    <?php include './allCarousel.php'; //Traitement MySQL pour toute les images ?>
     <table class="table table-striped table-hover ">
         <thead>
             <tr>
@@ -31,9 +31,10 @@
                 ?>
                 <tr class="active">
                     <td><?php echo $compteur; ?></td>
-                    <td><?php echo $resultat->source; ?></td>
+                    <td><img class="carouselImg" src="../img/uploads_carousel/<?php echo $resultat->source; ?>"/></td>
                     <td><?php echo $resultat->content; ?></td>
-                    <td><a href='rmvCarousel.php?id=<?php echo $resultat->id; ?>'><img class="rmvButton" src="../img/rmv.png" onclick="return confirm('Etes-vous sur de vouloir supprimer la photo : <?php echo $resultat->source?>?')"></a></td>
+                    <td><a href="#"><img class="rmvButton" src="../img/edit.png"/></a>
+                        <a href='rmvCarousel.php?id=<?php echo $resultat->id; ?>'><img class="rmvButton" src="../img/rmv.png" onclick="return confirm('Etes-vous sur de vouloir supprimer la photo : <?php echo $resultat->source?>?')"></a></td>
                 </tr>
                 <?php $compteur++; ?>
             <?php } ?>

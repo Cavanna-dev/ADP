@@ -6,7 +6,7 @@ $content = htmlspecialchars($_POST['inputContent']);
 $img = htmlspecialchars($_FILES['inputImg']['name']);
 
 try {
-    $resultats = $db->exec("INSERT INTO `carousel`"
+    $db->exec("INSERT INTO `carousel`"
             . "(`id`, `source`, `content`) "
             . "VALUES (null,'" . $img . "','" . $content . "')");
 
