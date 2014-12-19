@@ -1,12 +1,12 @@
 <?php
 
-include_once '../functions/connection_db.php';
+include_once './functions/connection_db.php';
 
-$compteur = 1; //Compter le nombre de résultat pour le tableau de la vue
 
 try{
     $sql = "SELECT id, source, content, isHp "
-         . "FROM carousel";    
+         . "FROM carousel "
+         . "WHERE isHp=1";    
     $resultats = $db->prepare($sql);
     $resultats->execute();
 

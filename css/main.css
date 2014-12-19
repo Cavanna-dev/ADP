@@ -13,6 +13,10 @@
 }
 
 .carouselImg {
+    width:1140px;
+    height:350px;
+}
+.adminCarouselImg {
     width:50px;
-    height:30px;
+    height:40px;
 }

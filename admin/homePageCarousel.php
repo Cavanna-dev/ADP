@@ -22,6 +22,7 @@
                 <th>#</th>
                 <th>Source photo</th>
                 <th>Contenu</th>
+                <th>Page Accueil</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -31,8 +32,10 @@
                 ?>
                 <tr class="active">
                     <td><?php echo $compteur; ?></td>
-                    <td><img class="carouselImg" src="../img/uploads_carousel/<?php echo $resultat->source; ?>"/></td>
+                    <td><img class="adminCarouselImg" src="../img/uploads_carousel/<?php echo $resultat->source; ?>"/></td>
                     <td><?php echo $resultat->content; ?></td>
+                    <td><?php if ($resultat->isHp == 1) echo 'Oui';
+            else echo 'Non'; ?></td>
                     <td><a href="#" data-toggle="modal" data-target="#modalEdit<?php echo $resultat->id; ?>"><img class="rmvButton" src="../img/edit.png"/></a>
 
 
@@ -60,7 +63,17 @@
                                                             <input type="file" class="form-control" id="inputImg" name="inputImg">
                                                         </div>
                                                     </div>
-                                                    <span class="label label-primary">Photo ciblée</span> <?php echo $resultat->source;?>
+                                                    <div class="form-group">
+                                                        <label for="inputIsHp" class="col-lg-2 control-label">Page d'Accueil</label>
+                                                        <div class="col-lg-10">
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input name="inputIsHp" type="checkbox" value="1" <?php if($resultat->isHp == 1) echo "checked"; ?>/>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span class="label label-primary">Photo ciblée</span> <?php echo $resultat->source; ?>
                                                     <br />
                                                     <div class="alert alert-dismissable alert-info">
                                                         Choississez un fichier <strong>uniquement</strong> si vous voulez modifier l'image.
@@ -78,7 +91,7 @@
                         <a href='rmvCarousel.php?id=<?php echo $resultat->id; ?>'><img class="rmvButton" src="../img/rmv.png" onclick="return confirm('Etes-vous sur de vouloir supprimer la photo : <?php echo $resultat->source ?>?')"></a></td>
                 </tr>
                 <?php $compteur++; ?>
-            <?php } ?>
+<?php } ?>
         </tbody>
     </table> 
     <div class="alert alert-dismissable alert-warning">

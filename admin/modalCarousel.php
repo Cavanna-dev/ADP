@@ -9,21 +9,30 @@
                     <h4 class="modal-title">Ajouter une photo</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" action="addCarousel.php" method="POST">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="inputContent" class="col-lg-2 control-label">Contenu</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputContent" name="inputContent" placeholder="Contenu Photo">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="inputContent" class="col-lg-2 control-label">Contenu</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="inputContent" name="inputContent" placeholder="Contenu Photo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputImg" class="col-lg-2 control-label">Upload photo</label>
+                            <div class="col-lg-10">
+                                <input type="file" class="form-control" id="inputImg" name="inputImg">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputIsHp" class="col-lg-2 control-label">Page d'Accueil</label>
+                            <div class="col-lg-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="inputIsHp" type="checkbox" value="1">
+                                    </label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputImg" class="col-lg-2 control-label">Upload photo</label>
-                                <div class="col-lg-10">
-                                    <input type="file" class="form-control" id="inputImg" name="inputImg">
-                                </div>
-                            </div>
-                        </fieldset>
+                        </div>
+                    </fieldset>
                 </div>
                 <div class="modal-footer"><button type="submit" class="btn btn-primary">Sauvegarder</button>
                 </div>
