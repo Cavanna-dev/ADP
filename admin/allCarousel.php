@@ -6,18 +6,11 @@ $compteur = 1; //Compter le nombre de résultat pour le tableau de la vue
 
 try{
     $sql = "SELECT id, source, content "
-         . "FROM carousel";
+         . "FROM carousel";    
+    $resultats = $db->prepare($sql);
+    $resultats->execute();
+
     
-    $resultat = $db->prepare($sql);
-    $resultat->query();
-    
-    
-    
-    
-    
-    
-    $resultats = $db->query("SELECT * "
-            . "FROM carousel ", PDO::FETCH_OBJ);
 } catch (PDOException $e) {
     header('Location:homePageCarousel.php');
 }

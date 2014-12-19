@@ -27,7 +27,7 @@
         </thead>
         <tbody>
             <?php
-            while ($resultat = $resultats->fetch()) {
+            while ($resultat = $resultats->fetch(PDO::FETCH_OBJ)) {
                 ?>
                 <tr class="active">
                     <td><?php echo $compteur; ?></td>
