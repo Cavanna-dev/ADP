@@ -1,6 +1,6 @@
-<a href="#" class="btn btn-primary" data-toggle="modal" data-target=".modal">Ajouter une photo</a>
+<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">Ajouter une photo</a>
 
-<div class="modal">
+<div class="modal" id="modalAdd">
     <div class="modal-dialog">
         <form class="form-horizontal" action="addCarousel.php" method="POST" enctype="multipart/form-data">
             <div class="modal-content">
@@ -25,9 +25,7 @@
                             </div>
                         </fieldset>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                <div class="modal-footer"><button type="submit" class="btn btn-primary">Sauvegarder</button>
                 </div>
             </div>
         </form>

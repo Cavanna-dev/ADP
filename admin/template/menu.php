@@ -10,7 +10,7 @@
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Accueil</a></li>
+                <li class="active"><a href="./home.php">Accueil</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Web <b class="caret"></b></a>
                     <ul class="dropdown-menu">
