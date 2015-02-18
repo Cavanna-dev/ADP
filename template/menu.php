@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./index.php">Ttls Project</a>
+            <a class="navbar-brand" href="../index.php">Ttls Project</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <form class="navbar-form navbar-left">
@@ -23,6 +23,7 @@
                             <li><a href="logout.php">Deconnexion</a></li>
                         </ul>
                     </li>
+                    <li><a href="article.php">Vendre</a></li>
                     <li><a href="basket.php">Mon Panier</a></li>
                 <?php } ?>
             </ul>

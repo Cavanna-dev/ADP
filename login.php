@@ -7,18 +7,20 @@ $email = htmlspecialchars($_POST['inputEmail']);
 $password = hashagePass($_POST['inputPassword']); //Fonction functions/hashagePass.php
 
 try {
-    $resultats = $db->query("SELECT email, password " .
+    $resultats = $db->query("SELECT id, email, password " .
             "FROM customers " .
             "WHERE email = '" . $email . "'"
             , PDO::FETCH_OBJ);
     while ($resultat = $resultats->fetch()) {
+        $custId = $resultat->id;
         $custEmail = $resultat->email;
         $custPassword = $resultat->password;
     }
 
-    if ($custPassword == $password) {
+    if (!empty($custPassword) && $custPassword == $password) {
         session_start();
         $_SESSION['customer']['email'] = $custEmail;
+        $_SESSION['customer']['idUser'] = $custId;
 
         header('Location:index.php');
     } else
