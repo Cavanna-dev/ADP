@@ -8,6 +8,11 @@
 ?>
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
+<?php include 'functions/connection_db.php'; ?>
+<?php include 'admin/listCategory.php'; ?>
+
+
+
 <div class="container">
     <div class="jumbotron">
         Ajouter un produit
@@ -55,7 +60,17 @@
                     <input type="text" name="name" id="name" value="<?php if (isset($_GET['name'])){echo $_GET['name'];}?>"/>
                 </td>
                 <td style="vertical-align:middle;">
-                    <input type="text" name="idCategory" id="idCategory" value="<?php if (isset($_GET['category'])){echo $_GET['category'];}?>"/>
+                    <select class="selectpicker" name="idCategory" id="idCategory">
+                        <option value=""></option>
+                        <?php
+                        foreach($tableCategories as $value){
+                            echo '<option value="'.$value['id'].'" ';
+                            if(!empty($_GET['category']) && $value['id'] == $_GET['category']){ echo 'SELECTED'; }
+                            echo '>'.$value['name'].'</option>';
+                        }
+                        ?>
+                    </select>
+
                 </td>
                 <td>
                     <input type="file" class="form-control" id="inputImg" name="inputImg"/>
