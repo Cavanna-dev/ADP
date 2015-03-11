@@ -79,13 +79,7 @@ function ListageArray($tb)
         }
 }
 
-echo '<pre>';
-    var_dump(ListageArray($list));
-echo '</pre>';
-
-
-
-
+ListageArray($list);
 die;
 
 
