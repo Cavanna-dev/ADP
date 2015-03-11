@@ -81,7 +81,7 @@
     </table>
     </form>
     <div class="alert alert-dismissable alert-warning">
-        <p data-dismiss="alert" >Notification : Votre produit va être soumis à la validation d'un administrateur. // A mettre en base</p>
+        <p data-dismiss="alert" >Notification : Votre produit va être soumis à la validation d'un administrateur.</p>
     </div>
 </div>
 <?php include 'template/footer.php'; ?>

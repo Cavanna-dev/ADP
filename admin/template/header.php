@@ -1,6 +1,6 @@
 <?php
 if(session_status() == PHP_SESSION_NONE){session_start();}
-if(!isset($_SESSION['user_logged']) && $_SERVER['PHP_SELF'] != '/ttls/admin/index.php'){ header('location:index.php'); }
+if(!isset($_SESSION['user_logged']) && strpos($_SERVER['PHP_SELF'], 'index.php')===FALSE){ header('location:index.php'); }
 ?>
 <!DOCTYPE html>
 <html>
