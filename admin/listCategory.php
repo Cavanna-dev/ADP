@@ -15,7 +15,7 @@ function category($value){
     if(array_key_exists($value, $listChild)){
 
        foreach($listChild[$value] as $vCat){
-           return cate
+           return cate;
        }
     }
 
