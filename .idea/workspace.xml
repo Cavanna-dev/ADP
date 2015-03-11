@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c1e013d-79ea-4f23-9938-0db8ffb68d96" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/listCategory.php" afterPath="$PROJECT_DIR$/admin/listCategory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ADP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +47,7 @@
       <file leaf-file-name="article.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="33" selection-start="239" selection-end="251" vertical-scroll-proportion="3.2692308" vertical-offset="187" max-vertical-offset="1496">
+            <state line="11" column="33" selection-start="239" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1581">
               <folding>
                 <marker date="1426066296364" expanded="true" signature="286:380" placeholder="..." />
                 <marker date="1426066296364" expanded="true" signature="314:352" placeholder="..." />
@@ -61,7 +62,7 @@
       <file leaf-file-name="listCategory.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/listCategory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="23" selection-start="262" selection-end="262" vertical-scroll-proportion="0.120781526" vertical-offset="136" max-vertical-offset="2006">
+            <state line="24" column="0" selection-start="445" selection-end="445" vertical-scroll-proportion="0.5737122" vertical-offset="0" max-vertical-offset="1836">
               <folding />
             </state>
           </provider>
@@ -70,7 +71,7 @@
       <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="67" selection-start="362" selection-end="370" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="323">
+            <state line="10" column="67" selection-start="362" selection-end="370" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -395,7 +396,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1163522" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1163522" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -697,14 +698,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="67" selection-start="362" selection-end="370" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="323">
+        <state line="10" column="67" selection-start="362" selection-end="370" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="239" selection-end="251" vertical-scroll-proportion="3.2692308" vertical-offset="187" max-vertical-offset="1496">
+        <state line="11" column="33" selection-start="239" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1581">
           <folding>
             <marker date="1426066296364" expanded="true" signature="286:380" placeholder="..." />
             <marker date="1426066296364" expanded="true" signature="314:352" placeholder="..." />
@@ -717,7 +718,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/listCategory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="23" selection-start="262" selection-end="262" vertical-scroll-proportion="0.120781526" vertical-offset="136" max-vertical-offset="2006">
+        <state line="24" column="0" selection-start="445" selection-end="445" vertical-scroll-proportion="0.5737122" vertical-offset="0" max-vertical-offset="1836">
           <folding />
         </state>
       </provider>

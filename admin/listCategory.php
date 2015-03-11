@@ -7,67 +7,57 @@
  */
 
 
-function category($value){
+function makeTree($parent, $array)
+{
+    if (!is_array($array) OR empty($array)) return FALSE;
+
+    $output = '<ul>';
+
+    foreach($array as $value):
+        if ($value['idParent'] == $parent):
 
 
-    echo $value .'<br/>';
+            $output .= '<li>';
+            $output .= $value['name'];
+            $output .= '</li>';
 
-    if(array_key_exists($value, $listChild)){
+            $output .= makeTree($value['id'], $array);
 
-       foreach($listChild[$value] as $vCat){
-           return cate;
-       }
-    }
 
+
+        endif;
+
+    endforeach;
+
+    $output .= '</ul>';
+
+    return $output;
 }
 
-
-
-
-$sql = "SELECT C1.name as nameChild, "
-  // . "C1.level as levelChild, "
-    . "(SELECT C2.name FROM categories as C2 WHERE C2.isActive=1 AND C1.idParent = C2.id) AS nameParent "
-  //  . "(SELECT C2.level FROM categories as C2 WHERE C2.isActive=1 AND C1.idParent = C2.id) AS levelParent "
+$sql = "SELECT C1.id, C1.name, C1.idParent "
+   // . "(SELECT C2.name FROM categories as C2 WHERE C2.id = C1.idParent) AS nameParent "
     . "FROM categories as C1 "
-    . "WHERE C1.isActive=1 AND C1.idParent<>0 "
+    . "WHERE C1.isActive=1 "
     . "ORDER BY C1.name ASC ";
 $resultat = $db->query($sql);
 $resultat->execute();
-$table = $resultat->fetchAll(PDO::FETCH_ASSOC);
-$nbLine = count($table);
-
-foreach($table as $v):
-
-    category($v['name']);
+$req = $resultat->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+foreach($req as $value){
+    if($value['idParent']==0){
 
-
-
-endforeach;
-
-var_dump($listChild);
-
-die;
-
-/*
-var_dump($table);
-
-die;
-
-/*
-
-foreach($table as $value){
-
-    echo $value['name'].'</br>';
-
-
+       // echo '<pre>';
+        echo makeTree($value['id'], $req);
+       // echo '</pre>';
+    }
 
 
 }
 
 
+die;
 
 
 
@@ -89,7 +79,8 @@ foreach($table as $value){
 
 
 
-/*
+
+
 
 $tableCategories=array();
 for($a=0;$a<$nbLine;$a++){
@@ -112,7 +103,6 @@ for($a=0;$a<$nbLine;$a++){
 
 
 var_dump($tableCategories);
-*/
 
 die;
 ?>
