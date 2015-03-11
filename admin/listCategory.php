@@ -6,36 +6,30 @@
  * Time: 20:44
  */
 
-
-function makeTree($parent, $array)
+function makeTree($parent, $array, $listParent)
 {
     if (!is_array($array) OR empty($array)) return FALSE;
 
-    $output = '<ul>';
+    $listParent = $listParent;
+
+    $list=array();
 
     foreach($array as $value):
         if ($value['idParent'] == $parent):
 
-
-            $output .= '<li>';
-            $output .= $value['name'];
-            $output .= '</li>';
-
-            $output .= makeTree($value['id'], $array);
-
-
+            if(!in_array($value['id'], $listParent)){
+                $list[] = $value['name'];
+            }else{
+                $list[$value['name']] = makeTree($value['id'], $array, $listParent);
+            }
 
         endif;
-
     endforeach;
-
-    $output .= '</ul>';
-
-    return $output;
+    return $list;
 }
 
-$sql = "SELECT C1.id, C1.name, C1.idParent "
-   // . "(SELECT C2.name FROM categories as C2 WHERE C2.id = C1.idParent) AS nameParent "
+$sql = "SELECT C1.id, C1.name, C1.idParent, "
+    . "(SELECT C2.name FROM categories as C2 WHERE C2.id = C1.idParent) AS nameParent "
     . "FROM categories as C1 "
     . "WHERE C1.isActive=1 "
     . "ORDER BY C1.name ASC ";
@@ -43,18 +37,53 @@ $resultat = $db->query($sql);
 $resultat->execute();
 $req = $resultat->fetchAll(PDO::FETCH_ASSOC);
 
-
+foreach($req as $value){
+    $listParent[] = $value['idParent'];
+}
 
 foreach($req as $value){
     if($value['idParent']==0){
 
-       // echo '<pre>';
-        echo makeTree($value['id'], $req);
-       // echo '</pre>';
+       $list[$value['name']] = makeTree($value['id'], $req, $listParent);
+
     }
 
 
 }
+
+
+echo '<pre>';
+    print_r($list);
+echo '</pre>';
+
+
+
+echo '-----------------------------------------------------<br/><br/>';
+
+function ListageArray($tb)
+{
+    //Pour chaque élément du tableau...
+        foreach($tb as $key => $value)
+        {
+            //Si l'élément est un tableau, on appelle la fonction pour qu'elle le parcoure
+            if(is_array($value))
+            {
+                echo $key.' :<ul>';
+                ListageArray($value);
+                echo '</ul><br />';
+            }
+            else //Sinon, c'est un élément à afficher, alors on le liste !
+            {
+                echo '<li>'.$value.'</li>';
+            }
+        }
+}
+
+echo '<pre>';
+    var_dump(ListageArray($list));
+echo '</pre>';
+
+
 
 
 die;
