@@ -10,7 +10,7 @@
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="./home.php">Accueil</a></li>
+                <li <?php if(strpos($_SERVER['PHP_SELF'], 'home.php')) echo 'class="active"'; ?>><a href="./home.php">Accueil</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Web <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -19,14 +19,14 @@
                         <li><a href="../index.php">Voir le site</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown <?php if(strpos($_SERVER['PHP_SELF'], 'addCategory.php')) echo 'active'; ?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer le e-Commerce<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Gérer les articles</a></li>
                         <li><a href="addCategory.php">Gérer les catégories</a></li>
                     </ul>
                 </li>
-                <li class="active"><a href="#">Gérer les Utilisateurs du site</a></li>
+                <li><a href="#">Gérer les Utilisateurs du site</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
