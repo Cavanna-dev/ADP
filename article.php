@@ -63,11 +63,7 @@
                     <select class="selectpicker" name="idCategory" id="idCategory">
                         <option value=""></option>
                         <?php
-                        foreach($tableCategories as $value){
-                            echo '<option value="'.$value['id'].'" ';
-                            if(!empty($_GET['category']) && $value['id'] == $_GET['category']){ echo 'SELECTED'; }
-                            echo '>'.$value['name'].'</option>';
-                        }
+                        selectArray($list, $listId, '');
                         ?>
                     </select>
 
