@@ -6,16 +6,13 @@
  * Time: 20:44
  */
 
-include_once '../functions/connection_db.php';
 
 /* ---------------- FUNCTION POUR METTRE EN ARRAY LES CATEGORIES ---------------- */
 function makeArray($parent, $array, $listParent)
 {
     if (!is_array($array) OR empty($array)) return FALSE;
 
-    $listParent = $listParent;
-
-    $list=array();
+      $list=array();
 
     foreach($array as $value):
         if ($value['idParent'] == $parent):

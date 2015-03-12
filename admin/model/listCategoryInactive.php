@@ -5,7 +5,6 @@
  * Date: 12/03/15
  * Time: 20:45
  */
-include_once '../functions/connection_db.php';
 
 /* ---------------- REQUETE POUR SELECTIONNER LES CATEGORIES ---------------- */
 $sql = "SELECT C1.id, C1.name, "

@@ -10,7 +10,7 @@
 include_once '../../functions/connection_db.php';
 
 if(empty($_POST['idCategory'])){
-    header('Location:../addCategory.php');die;
+    header('Location:../category.php');die;
 }
 
 
@@ -21,7 +21,7 @@ try {
     $stmt->bindParam(":isActive", $_POST['valueIsActive'], PDO::PARAM_INT, 1);
     $stmt->bindParam(":id", $_POST['idCategory'], PDO::PARAM_INT, 1);
     $stmt->execute();
-    header('Location:../addCategory.php?categoryUpdate');
+    header('Location:../category.php?categoryUpdate');
 } catch (PDOException $e) {
-    header('Location:../addCategory.php?erreur');
+    header('Location:../category.php?erreur');
 }

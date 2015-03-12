@@ -9,7 +9,7 @@
 include_once '../../functions/connection_db.php';
 
 if(empty($_POST['name'])){
-    header('Location:../addCategory.php?erreur');die;
+    header('Location:../category.php?erreur');die;
 }
 
 $name = htmlspecialchars($_POST['name']);
@@ -28,8 +28,8 @@ try {
     $stmt->bindParam(":name", $name, PDO::PARAM_STR, 50);
     $stmt->execute();
 
-    header('Location:../addCategory.php?category');
+    header('Location:../category.php?category');
 } catch (PDOException $e) {
-    header('Location:../addCategory.php?erreur');
+    header('Location:../category.php?erreur');
 }
 ?>

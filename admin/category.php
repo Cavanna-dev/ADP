@@ -5,16 +5,19 @@
  * Date: 12/03/15
  * Time: 14:57
  */
+include_once '../functions/connection_db.php';
+include 'model/listCategory.php';
+include 'model/listCategoryInactive.php';
 
 include 'template/header.php';
 include 'template/menu.php';
-include 'listCategory.php';
-include 'listCategoryInactive.php';
+
+
 ?>
 
 <div class="container">
 
-    <?php if (isset($_GET['erreur'])) { // TODO:Pour gérer les erreurs. ?>
+    <?php if (isset($_GET['erreur'])) { ?>
         <div class="alert alert-dismissable alert-warning">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <h4>Une erreur s'est produite !</h4>
@@ -25,6 +28,12 @@ include 'listCategoryInactive.php';
         <div class="alert alert-dismissable alert-success">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <h4>Catégorie créée aves succès !</h4>
+        </div>
+    <?php } ?>
+    <?php if (isset($_GET['categoryUpdate'])) { ?>
+        <div class="alert alert-dismissable alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h4>Catégorie modifiée aves succès !</h4>
         </div>
     <?php } ?>
 
@@ -94,13 +103,13 @@ include 'listCategoryInactive.php';
                     <label for="idCategory" class="col-lg-2 control-label">Catégorie</label>
                     <div class="col-lg-10">
                         <select class="form-control" name="idCategory" id="idCategory">
-                        <option><i>[Nom parent] Nom catégorie (nombre d'enfant)</i></option>
-                        <?php foreach($reqInactive as $value): ?>
-                            <option value="<?= $value['id']?>">
-                               <?php if($value['nameParent']!='')
-                                echo '[' . $value['nameParent'] . ']&nbsp&nbsp' ;
-                                echo $value['name'].'&nbsp&nbsp('.$value['nbChild'].')' ?></option>
-                        <?php endforeach; ?>
+                            <option><i>[Nom parent] Nom catégorie (nombre d'enfant)</i></option>
+                            <?php foreach($reqInactive as $value): ?>
+                                <option value="<?= $value['id']?>">
+                                    <?php if($value['nameParent']!='')
+                                        echo '[' . $value['nameParent'] . ']&nbsp&nbsp' ;
+                                    echo $value['name'].'&nbsp&nbsp('.$value['nbChild'].')' ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
