@@ -19,7 +19,13 @@
                         <li><a href="../index.php">Voir le site</a></li>
                     </ul>
                 </li>
-                <li class="active"><a href="#">Gérer les articles</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer le e-Commerce<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Gérer les articles</a></li>
+                        <li><a href="addCategory.php">Gérer les catégories</a></li>
+                    </ul>
+                </li>
                 <li class="active"><a href="#">Gérer les Utilisateurs du site</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

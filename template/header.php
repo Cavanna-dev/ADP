@@ -7,8 +7,9 @@ include_once 'functions/config.php';
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://bootswatch.com/spacelab/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/bootswatch.min.css">
         <link rel="stylesheet" href="./css/main.css">
+        <script src="./js/jquery-1.11.0.min.js"></script>
     </head>
     <body>

@@ -6,6 +6,7 @@
  * Time: 20:44
  */
 
+include_once '../functions/connection_db.php';
 
 /* ---------------- FUNCTION POUR METTRE EN ARRAY LES CATEGORIES ---------------- */
 function makeArray($parent, $array, $listParent)
@@ -35,7 +36,7 @@ function makeArray($parent, $array, $listParent)
 
 /* ---------------- REQUETE POUR SELECTIONNER LES CATEGORIES ---------------- */
 $sql = "SELECT C1.id, C1.name, C1.idParent, "
-    . "(SELECT C2.name FROM categories as C2 WHERE C2.id = C1.idParent) AS nameParent "
+    . "(SELECT C2.name FROM categories as C2 WHERE C2.id = C1.idParent AND C2.isActive=1) AS nameParent "
     . "FROM categories as C1 "
     . "WHERE C1.isActive=1 "
     . "ORDER BY nameParent ASC,C1.name ASC ";
