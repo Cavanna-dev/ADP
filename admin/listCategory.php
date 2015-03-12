@@ -31,8 +31,41 @@ function makeArray($parent, $array, $listParent)
     return $list;
 }
 
+/* ---------------- FUNCTION POUR METTRE EN LIST UN TABLEAU ---------------- */
+function listageArray($tb, $id)
+{
+    foreach($tb as $key => $value)
+    {
+        if(is_array($value))
+        {
+            echo $id[$key].' - '.$key.' :<ul>';
+            listageArray($value, $id);
+            echo '</ul><br />';
+        }
+        else
+        {
+            echo '<li>'.$id[$value].' - '.$value.'</li>';
+        }
+    }
+}
 
-
+/* ---------------- FUNCTION POUR METTRE EN SELECT UN TABLEAU ---------------- */
+function selectArray($tb, $id, $tiret)
+{
+    $tiret = $tiret.'--';
+    foreach($tb as $key => $value)
+    {
+        if(is_array($value))
+        {
+            echo '<option value='.$id[$key].'>'.$tiret.$key.'</option>';
+            selectArray($value, $id, $tiret);
+        }
+        else
+        {
+            echo '<option value='.$id[$value].'>'.$tiret.$value.'</option>';
+        }
+    }
+}
 
 /* ---------------- REQUETE POUR SELECTIONNER LES CATEGORIES ---------------- */
 $sql = "SELECT C1.id, C1.name, C1.idParent, "
@@ -43,7 +76,7 @@ $sql = "SELECT C1.id, C1.name, C1.idParent, "
 $resultat = $db->query($sql);
 $resultat->execute();
 $req = $resultat->fetchAll(PDO::FETCH_ASSOC);
-$nbLine=count($req);
+$resultat->closeCursor();
 
 
 /* ------LIST POUR CE QUI ONT DES ENFANTS ------- */
@@ -64,90 +97,5 @@ foreach($req as $value){
        $list[$value['name']] = makeArray($value['id'], $req, $listParent);
     }
 }
-
-
-/* ---------------- FUNCTION POUR METTRE EN LIST UN TABLEAU ---------------- */
-function listageArray($tb, $id)
-{
-    foreach($tb as $key => $value)
-    {
-        if(is_array($value))
-        {
-            echo $id[$key].' - '.$key.' :<ul>';
-            listageArray($value, $id);
-            echo '</ul><br />';
-        }
-        else
-        {
-            echo '<li>'.$id[$value].' - '.$value.'</li>';
-        }
-    }
-}
-
-
-/* ---------------- FUNCTION POUR METTRE EN SELECT UN TABLEAU ---------------- */
-function selectArray($tb, $id, $tiret)
-{
-    $tiret = $tiret.'--';
-    foreach($tb as $key => $value)
-    {
-        if(is_array($value))
-        {
-            echo '<option value='.$id[$key].'>'.$tiret.$key.'</option>';
-            selectArray($value, $id, $tiret);
-        }
-        else
-        {
-            echo '<option value='.$id[$value].'>'.$tiret.$value.'</option>';
-        }
-    }
-}
-
-
-// listageArray($list, $listId);
-// selectArray($list, $listId);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-$tableCategories=array();
-for($a=0;$a<$nbLine;$a++){
-    if($req[$a]['idParent'] == 0){
-        $tableCategories[] = array('id'=>$req[$a]['id'], 'name'=>$req[$a]['name']);
-
-        for($b=0;$b<$nbLine;$b++){
-            if($req[$b]['idParent'] == $req[$a]['id']){
-                $tableCategories[] = array('id'=>$req[$b]['id'], 'name'=>'-- '.$req[$b]['name']);
-
-                for($c=0;$c<$nbLine;$c++){
-                    if($req[$c]['idParent'] == $req[$b]['id']){
-                        $tableCategories[] = array('id'=>$req[$c]['id'], 'name'=>'---- '.$req[$c]['name']);
-                    }
-                }
-            }
-        }
-    }
-}
-*/
-
 
 ?>

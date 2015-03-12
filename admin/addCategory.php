@@ -9,6 +9,7 @@
 include 'template/header.php';
 include 'template/menu.php';
 include 'listCategory.php';
+include 'listCategoryInactive.php';
 ?>
 
 <div class="container">
@@ -27,7 +28,7 @@ include 'listCategory.php';
         </div>
     <?php } ?>
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <form class="form-horizontal" action="model/addCategory.php" method="POST">
             <fieldset>
                 <legend>Ajouter une catégorie</legend>
@@ -58,16 +59,17 @@ include 'listCategory.php';
                 </div>
             </fieldset>
         </form>
+        <br/><br/><br/><br/>
     </div>
 
     <div class="col-lg-6">
-        <form class="form-horizontal" action="model/addCategory.php" method="POST">
+        <form class="form-horizontal" name="active" action="model/updateCategory.php" method="POST">
             <fieldset>
-                <legend>Gérer les catégories</legend>
+                <legend>Gérer les catégories actives</legend>
                 <div class="form-group">
-                    <label for="idParent" class="col-lg-2 control-label">Catégorie parent</label>
+                    <label for="idCategory" class="col-lg-2 control-label">Catégorie</label>
                     <div class="col-lg-10">
-                        <select class="form-control" name="idParent" id="idParent">
+                        <select class="form-control" name="idCategory" id="idCategory">
                             <option value="0"></option>
                             <?php
                             selectArray($list, $listId, '');
@@ -75,14 +77,41 @@ include 'listCategory.php';
                         </select>
                     </div>
                 </div>
+                <input type="hidden" name="valueIsActive" value="0"/>
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                        <button type="submit" class="btn btn-primary">Désactiver</button>
                     </div>
                 </div>
             </fieldset>
         </form>
     </div>
-
+    <div class="col-lg-6">
+        <form class="form-horizontal" name="noActive" action="model/updateCategory.php" method="POST">
+            <fieldset>
+                <legend>Gérer les catégories inactives</legend>
+                <div class="form-group">
+                    <label for="idCategory" class="col-lg-2 control-label">Catégorie</label>
+                    <div class="col-lg-10">
+                        <select class="form-control" name="idCategory" id="idCategory">
+                        <option><i>[Nom parent] Nom catégorie (nombre d'enfant)</i></option>
+                        <?php foreach($reqInactive as $value): ?>
+                            <option value="<?= $value['id']?>">
+                               <?php if($value['nameParent']!='')
+                                echo '[' . $value['nameParent'] . ']&nbsp&nbsp' ;
+                                echo $value['name'].'&nbsp&nbsp('.$value['nbChild'].')' ?></option>
+                        <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <input type="hidden" name="valueIsActive" value="1"/>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Activer</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </div>
 <?php include 'template/footer.php'; ?>
