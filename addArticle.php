@@ -21,9 +21,9 @@ if(empty($idCategory) || empty($idUser) || empty($reference) || empty($reference
 
 try{
     $sql = "INSERT INTO articles "
-        . "(id, idCategory, idUser, idDescription, reference, name, brand, picture, isActive, dateCreate, dateChange) "
+        . "(idCategory, idUser, idDescription, reference, name, brand, picture) "
         . "VALUES "
-        . "(null,:idCategory,:idUser,null,:reference,:name,:brand,:picture,null,now(),now()) ";
+        . "(:idCategory,:idUser,null,:reference,:name,:brand,:picture) ";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(":idCategory", $idCategory, PDO::PARAM_INT, 11);
     $stmt->bindParam(":idUser", $idUser, PDO::PARAM_INT, 11);

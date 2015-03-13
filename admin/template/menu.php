@@ -22,7 +22,7 @@
                 <li class="dropdown <?php if(strpos($_SERVER['PHP_SELF'], 'addCategory.php')) echo 'active'; ?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer le e-Commerce<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Gérer les articles</a></li>
+                        <li><a href="listArticle.php">Gérer les articles</a></li>
                         <li><a href="category.php">Gérer les catégories</a></li>
                     </ul>
                 </li>

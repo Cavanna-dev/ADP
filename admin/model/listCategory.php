@@ -64,6 +64,27 @@ function selectArray($tb, $id, $tiret)
     }
 }
 
+/* ---------------- FUNCTION POUR METTRE EN SELECT UN FORMULAIRE ---------------- */
+function selectArrayForm($tb, $id, $tiret, $valueSelected)
+{
+    $tiret = $tiret.'-';
+    foreach($tb as $key => $value)
+    {
+        if(is_array($value))
+        {
+            echo '<option ';
+            if($valueSelected == $id[$key]){ echo ' SELECTED '; }
+            echo 'value='.$id[$key].'>'.$tiret.$key.'</option>';
+            selectArrayForm($value, $id, $tiret, $valueSelected);
+        }
+        else
+        {
+            echo '<option value='.$id[$value].'>'.$tiret.$value.'</option>';
+        }
+    }
+}
+
+
 /* ---------------- REQUETE POUR SELECTIONNER LES CATEGORIES ---------------- */
 $sql = "SELECT C1.id, C1.name, C1.idParent, "
     . "(SELECT C2.name FROM categories as C2 WHERE C2.id = C1.idParent AND C2.isActive=1) AS nameParent "

@@ -64,9 +64,7 @@
                 <td style="vertical-align:middle;">
                     <select class="selectpicker" name="idCategory" id="idCategory">
                         <option value=""></option>
-                        <?php
-                        selectArray($list, $listId, '');
-                        ?>
+                        <?php selectArray($list, $listId, ''); ?>
                     </select>
 
                 </td>

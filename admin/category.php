@@ -38,9 +38,9 @@ include 'template/menu.php';
     <?php } ?>
 
     <div class="col-lg-12">
-        <form class="form-horizontal" action="model/addCategory.php" method="POST">
-            <fieldset>
-                <legend>Ajouter une catégorie</legend>
+        <h2>Ajouter une catégorie</h2>
+        <div class="jumbotron">
+            <form class="form-horizontal" action="model/addCategory.php" method="POST">
                 <div class="form-group">
                     <label for="name" class="col-lg-2 control-label">Nom</label>
                     <div class="col-lg-6">
@@ -66,15 +66,15 @@ include 'template/menu.php';
                         <button type="submit" class="btn btn-primary">Sauvegarder</button>
                     </div>
                 </div>
-            </fieldset>
-        </form>
-        <br/><br/><br/><br/>
+            </form>
+        </div>
+        <br/><br/><br/>
     </div>
 
     <div class="col-lg-6">
-        <form class="form-horizontal" name="active" action="model/updateCategory.php" method="POST">
-            <fieldset>
-                <legend>Gérer les catégories actives</legend>
+        <h2>Gérer les catégories actives</h2>
+        <div class="jumbotron">
+            <form class="form-horizontal" name="active" action="model/updateCategory.php" method="POST">
                 <div class="form-group">
                     <label for="idCategory" class="col-lg-2 control-label">Catégorie</label>
                     <div class="col-lg-10">
@@ -92,13 +92,13 @@ include 'template/menu.php';
                         <button type="submit" class="btn btn-primary">Désactiver</button>
                     </div>
                 </div>
-            </fieldset>
-        </form>
+            </form>
+        </div>
     </div>
     <div class="col-lg-6">
-        <form class="form-horizontal" name="noActive" action="model/updateCategory.php" method="POST">
-            <fieldset>
-                <legend>Gérer les catégories inactives</legend>
+        <h2>Gérer les catégories inactives</h2>
+        <div class="jumbotron">
+            <form class="form-horizontal" name="noActive" action="model/updateCategory.php" method="POST">
                 <div class="form-group">
                     <label for="idCategory" class="col-lg-2 control-label">Catégorie</label>
                     <div class="col-lg-10">
@@ -119,8 +119,8 @@ include 'template/menu.php';
                         <button type="submit" class="btn btn-primary">Activer</button>
                     </div>
                 </div>
-            </fieldset>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 <?php include 'template/footer.php'; ?>
