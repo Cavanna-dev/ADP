@@ -12,7 +12,7 @@ include 'model/listCategory.php';
     <h1>Liste des articles</h1>
 
     <div class="jumbotron">
-        <form class="form-horizontal" method="GET" action="article.php">
+        <form class="form-horizontal" method="GET" action="listArticle.php">
             <fieldset>
                 <legend>Filtres</legend>
                 <div class="form-group">
@@ -86,7 +86,7 @@ include 'model/listCategory.php';
               <td><?=$value['reference']?></td>
               <td><?=$value['brand']?></td>
               <td><?=$value['category']?></td>
-              <td><?=$value['isActive']?></td>
+              <td><?= $valueIsActive[$value['isActive']] ?></td>
               <td><?php if(!empty($value['idDescription'])){ ?>
                     <!-- <a href="index.php?key="><img width="20px" src="../img/loop.gif"/></a>-->
                       Renseignée

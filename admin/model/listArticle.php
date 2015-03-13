@@ -6,7 +6,9 @@
  * Time: 10:09
  */
 
-
+$valueIsActive[0] = 'En attente';
+$valueIsActive[1] = 'Oui';
+$valueIsActive[2] = 'Non';
 
 @$name = htmlspecialchars($_GET['inputName'], ENT_QUOTES);
 @$ref = htmlspecialchars($_GET['inputRef'], ENT_QUOTES);
@@ -14,7 +16,6 @@
 @$idCategory = $_GET['selectIdCategory'];
 @$isActive = $_GET['selectIsActive'];
 @$idDescription = $_GET['selectIdDescription'];
-
 
 
 $where=''; $limit = '';
