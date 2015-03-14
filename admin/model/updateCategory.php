@@ -6,14 +6,10 @@
  * Time: 21:13
  */
 
-
 include_once '../../functions/connection_db.php';
-
 if(empty($_POST['idCategory'])){
     header('Location:../category.php');die;
 }
-
-
 try {
     $sql = "UPDATE categories SET isActive=:isActive, dateChange=now() "
         . "WHERE id=:id ";

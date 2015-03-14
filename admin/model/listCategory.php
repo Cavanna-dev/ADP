@@ -79,7 +79,9 @@ function selectArrayForm($tb, $id, $tiret, $valueSelected)
         }
         else
         {
-            echo '<option value='.$id[$value].'>'.$tiret.$value.'</option>';
+            echo '<option ';
+            if($valueSelected == $id[$value]){ echo ' SELECTED '; }
+            echo ' value='.$id[$value].'>'.$tiret.$value.'</option>';
         }
     }
 }

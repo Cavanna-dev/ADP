@@ -81,7 +81,7 @@ include 'model/listCategory.php';
           <?php foreach($reqListArticle as $value): ?>
             <tr onclick="document.location='article.php?key=<?=$value['id']?>'" style="cursor: pointer;">
               <td><img src="../img/articles/<?=$value['id'].'/'.$value['picture']?>"
-                       style="max-width:50px; max-heigth:50px;" /></td>
+                       style="max-width:50px; max-height:50px;" /></td>
               <td><?=$value['name']?></td>
               <td><?=$value['reference']?></td>
               <td><?=$value['brand']?></td>
