@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c1e013d-79ea-4f23-9938-0db8ffb68d96" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/model/updateArticle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/model/updateArticlePicture.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/article.php" afterPath="$PROJECT_DIR$/admin/article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/article.php" afterPath="$PROJECT_DIR$/admin/model/article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/listArticle.php" afterPath="$PROJECT_DIR$/admin/listArticle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/listCategory.php" afterPath="$PROJECT_DIR$/admin/model/listCategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/model/updateCategory.php" afterPath="$PROJECT_DIR$/admin/model/updateCategory.php" />
+      <change type="DELETED" beforePath="C:\wamp\www\ADP\img\articles\4\IMG_20150108_002704.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ADP.iws" />
@@ -32,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="article.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="article.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="83" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.37444934" vertical-offset="612" max-vertical-offset="2346">
+            <state line="56" column="43" selection-start="2679" selection-end="2679" vertical-scroll-proportion="-9.807693" vertical-offset="612" max-vertical-offset="2346">
               <folding>
                 <element signature="e#4085#4127#0" expanded="true" />
               </folding>
@@ -74,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateArticlePicture.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="updateArticlePicture.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/model/updateArticlePicture.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="4" selection-start="1038" selection-end="1092" vertical-scroll-proportion="-16.346153" vertical-offset="306" max-vertical-offset="867">
+            <state line="32" column="38" selection-start="716" selection-end="716" vertical-scroll-proportion="0.44074073" vertical-offset="306" max-vertical-offset="867">
               <folding>
                 <element signature="e#6#88#0" expanded="true" />
               </folding>
@@ -301,28 +295,6 @@
               <option name="myItemId" value="articles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ADP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="articles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -515,7 +487,11 @@
       <created>1426199950145</created>
       <updated>1426199950145</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Article phase update">
+      <created>1426370038111</created>
+      <updated>1426370038111</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -539,9 +515,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4097561" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -552,13 +529,12 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4097561" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14029364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14029364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.07177814" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -606,7 +582,8 @@
     <MESSAGE value="Ajout Produit phase3" />
     <MESSAGE value="Category phase 1" />
     <MESSAGE value="Category phase final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Category phase final" />
+    <MESSAGE value="Article phase update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Article phase update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -851,15 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/updateArticlePicture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="4" selection-start="1038" selection-end="1092" vertical-scroll-proportion="-16.346153" vertical-offset="306" max-vertical-offset="867">
-          <folding>
-            <element signature="e#6#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/listArticle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="147" selection-end="180" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="1870">
@@ -921,15 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="6" selection-start="276" selection-end="276" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="561">
-          <folding>
-            <element signature="e#6#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/model/listCategory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="24" selection-start="2830" selection-end="2830" vertical-scroll-proportion="-11.615385" vertical-offset="1364" max-vertical-offset="2057">
@@ -939,9 +898,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="83" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.37444934" vertical-offset="612" max-vertical-offset="2346">
+        <state line="56" column="43" selection-start="2679" selection-end="2679" vertical-scroll-proportion="-9.807693" vertical-offset="612" max-vertical-offset="2346">
           <folding>
             <element signature="e#4085#4127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="6" selection-start="276" selection-end="276" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="561">
+          <folding>
+            <element signature="e#6#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/updateArticlePicture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="38" selection-start="716" selection-end="716" vertical-scroll-proportion="0.44074073" vertical-offset="306" max-vertical-offset="867">
+          <folding>
+            <element signature="e#6#88#0" expanded="true" />
           </folding>
         </state>
       </provider>
