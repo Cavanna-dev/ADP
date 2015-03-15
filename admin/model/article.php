@@ -22,6 +22,6 @@ $sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.idCa
 
 $resultat = $db->query($sql);
 $resultat->execute();
-$reqArticle = $resultat->fetchAll(PDO::FETCH_ASSOC);
+$reqArticle = $resultat->fetch(PDO::FETCH_ASSOC);
 $resultat->closeCursor();
 
