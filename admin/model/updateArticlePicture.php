@@ -3,6 +3,7 @@
 include_once '../../functions/connection_db.php';
 
 $key        =   htmlspecialchars($_POST['key']);
+$keyDel     =   htmlspecialchars($_POST['keyDel']);
 $picture    =   htmlspecialchars($_FILES['inputImg']['name']);
 
 
@@ -24,14 +25,14 @@ try {
     $stmt->execute();
 
 
-    rmdir('../../img/articles/'.$key.'/');
-    mkdir('../../img/articles/'.$key.'/');
+    unlink('../../img/articles/'.$key.'/'.$keyDel);    
+    
+    @mkdir('../../img/articles/'.$key.'/');
     $uploaddir = '../../img/articles/'.$key.'/';
     $uploadfile = $uploaddir . basename($_FILES['inputImg']['name']);
 
     move_uploaded_file($_FILES['inputImg']['tmp_name'], $uploadfile);
-
-
+    
     header('Location:../article.php?key='.$key);
 } catch (PDOException $e) {
 

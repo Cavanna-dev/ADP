@@ -41,17 +41,17 @@ include 'model/listCategory.php';
                     <div class="col-lg-2">
                         <select class="form-control" id="selectIsActive" name="selectIsActive">
                             <option value=""></option>
-                            <option <?php if($isActive=='1') echo 'SELECTED'; ?> value="1">Oui</option>
-                            <option <?php if($isActive=='2') echo 'SELECTED'; ?> value="2">Non</option>
-                            <option <?php if($isActive=='0') echo 'SELECTED'; ?> value="0">En attente</option>
+                            <option <?php if($isActive=='Oui') echo 'SELECTED'; ?> value="Oui">Oui</option>
+                            <option <?php if($isActive=='Non') echo 'SELECTED'; ?> value="Non">Non</option>
+                            <option <?php if($isActive=='En attente') echo 'SELECTED'; ?> value="En attente">En attente</option>
                         </select>
                     </div>
                     <label for="selectIdDescription" class="col-lg-2 control-label">Fiche produit</label>
                     <div class="col-lg-2">
                         <select class="form-control" id="selectIdDescription" name="selectIdDescription">
                             <option></option>
-                            <option  <?php if($idDescription==1) echo 'SELECTED'; ?> value="1">Renseignée</option>
-                            <option  <?php if($idDescription==2) echo 'SELECTED'; ?> value="2">Non renseignée</option>
+                            <option  <?php if($idDescription=='r') echo 'SELECTED'; ?> value="r">Renseignée</option>
+                            <option  <?php if($idDescription=='nr') echo 'SELECTED'; ?> value="nr">Non renseignée</option>
                         </select>
                     </div>
                 </div>
@@ -90,7 +90,7 @@ include 'model/listCategory.php';
               <td><?php if(!empty($value['idDescription'])){ ?>
                     <!-- <a href="index.php?key="><img width="20px" src="../img/loop.gif"/></a>-->
                       Renseignée
-                  <?php }else{ ?>
+                  <?php }else{ ?>                      
                       Non Renseignée
                   <?php } ?>
                 </td>

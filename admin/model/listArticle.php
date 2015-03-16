@@ -1,8 +1,12 @@
 <?php
 
-$valueIsActive[0] = 'En attente';
-$valueIsActive[1] = 'Oui';
-$valueIsActive[2] = 'Non';
+$valueIsActive['0'] = 'En attente';
+$valueIsActive['1'] = 'Oui';
+$valueIsActive['2'] = 'Non';
+
+$valueIsActive['En attente'] = '0';
+$valueIsActive['Oui'] = '1';
+$valueIsActive['Non'] = '2';
 
 @$name = htmlspecialchars($_GET['inputName'], ENT_QUOTES);
 @$ref = htmlspecialchars($_GET['inputRef'], ENT_QUOTES);
@@ -17,9 +21,9 @@ if(!empty($name)){ $where .= "AND A1.name LIKE '%".$name."%' "; }
 if(!empty($ref)){ $where .= "AND A1.reference LIKE '%".$ref."%' "; }
 if(!empty($brand)){ $where .= "AND A1.brand LIKE '%".$brand."%' "; }
 if(!empty($idCategory)){ $where .= "AND A1.idCategory = '".$idCategory."' "; }
-if(!empty($isActive)){ $where .= "AND A1.isActive = '".$isActive."' "; }
-if(!empty($idDescription) && $idDescription==0){ $where .= "AND A1.idDescription IS NULL "; }
-if(!empty($idDescription) && $idDescription==1){ $where .= "AND A1.idDescription IS NOT NULL "; }
+if(!empty($isActive)){ $where .= "AND A1.isActive = '".$valueIsActive[$isActive]."' "; }
+if(!empty($idDescription) && $idDescription=='nr'){ $where .= "AND A1.idDescription IS NULL "; }
+if(!empty($idDescription) && $idDescription=='r'){ $where .= "AND A1.idDescription IS NOT NULL "; }
 
 
 // 0 - En attente // 1 - Validé // 2 - Refusé

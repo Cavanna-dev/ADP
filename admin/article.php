@@ -85,6 +85,7 @@ include 'model/listCategory.php';
         </div>
         <form class="form-horizontal" method="POST" action="model/updateArticlePicture.php" enctype="multipart/form-data">
             <input type="hidden" name="key" value="<?= $reqArticle['id']?>"/>
+            <input type="hidden" name="keyDel" value="<?= $reqArticle['picture']?>"/>
             <div class="form-group">
                 <label for="inputImg" class="col-lg-1 control-label">Image</label>
                 <div class="col-lg-5">

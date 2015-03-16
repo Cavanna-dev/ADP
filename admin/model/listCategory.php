@@ -94,17 +94,20 @@ $resultat->closeCursor();
 
 /* ------LIST POUR CE QUI ONT DES ENFANTS ------- */
 // UTILISER POUR LA FONCTION makeArray
+
 foreach($req as $value){
     $listParent[] = $value['idParent'];
 }
 
 /* ------LIST LIAISON ENTRE ID ET VALUES ------- */
 // UTILISER POUR LA FONCTION listageArray
+$listId=array();
 foreach($req as $value){
     $listId[$value['name']] = $value['id'];
 }
 
 /* ------ LANCEMENT DE LA FNCTION POUR LES PARENTS ------- */
+$list=array();
 foreach($req as $value){
     if($value['idParent']==0){
        $list[$value['name']] = makeArray($value['id'], $req, $listParent);
