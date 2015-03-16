@@ -1,11 +1,10 @@
 <?php
 
-include_once '../../functions/connection_db.php';
-
-
 if(empty($_POST['key'])){
     header('Location:../listArticle.php'); die;
 }
+
+include_once '../../functions/connection_db.php';
 
 $key        =   htmlspecialchars($_POST['key']);
 $name       =   htmlspecialchars($_POST['name']);
@@ -13,10 +12,6 @@ $reference  =   htmlspecialchars($_POST['reference']);
 $brand      =   htmlspecialchars($_POST['brand']);
 $idCategory =   htmlspecialchars($_POST['idCategory']);
 $isActive   =   htmlspecialchars($_POST['isActive']);
-
-if(empty($name) || empty($reference) || empty($brand) || $idCategory==''){
-    header('Location:../article.php?key='.$key);die;
-}
 
 
 try {
@@ -34,7 +29,5 @@ try {
     $stmt->execute();
     header('Location:../article.php?key='.$key);
 } catch (PDOException $e) {
-
-    die;
     header('Location:../article.php?key='.$key.'&erreur');
 }

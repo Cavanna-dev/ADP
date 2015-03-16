@@ -1,15 +1,15 @@
 <?php
 
+if(empty($_POST['idArticle'])){
+    header('Location:../index.php');
+}
+
 include_once '../functions/connection_db.php';
 
 $idArticle      =   htmlspecialchars($_POST['idArticle']);
 $idUser         =   htmlspecialchars($_POST['idUser']);
 $description    =   htmlspecialchars($_POST['description']);
 
-
-if(empty($idArticle) || empty($idUser) || empty($description)){
-    header('Location:../index.php');
-}
 
 try{
     if(strlen($description) > 255):

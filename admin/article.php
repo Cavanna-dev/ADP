@@ -42,19 +42,28 @@ include 'model/listCategory.php';
                 </div>
                 <label for="isActive" class="col-lg-3 control-label">Active</label>
                 <div class="col-lg-2">
-                    <select class="form-control" id="isActive" name="isActive">
-                        <option <?php if($reqArticle['isActive']=='1') echo 'SELECTED'; ?> value="1">Oui</option>
-                        <option <?php if($reqArticle['isActive']=='2') echo 'SELECTED'; ?> value="2">Non</option>
+                    <select class="form-control
+                            <?php if($reqArticle['isActive']=='1'):
+                                    echo "btn-success";
+                                elseif($reqArticle['isActive']=='0'):
+                                    echo "btn-warning";
+                                endif;
+                            ?>
+                            " id="isActive" name="isActive">
+                        <option <?php if($reqArticle['isActive']=='1') echo 'SELECTED'; ?> 
+                            class="btn-success" value="1">Oui</option>
+                        <option <?php if($reqArticle['isActive']=='2') echo 'SELECTED'; ?> 
+                            class="btn-default"  value="2">Non</option>
                         <?php if($reqArticle['isActive']==0): ?>
-                            <option SELECTED value="0">En attente</option>
+                            <option SELECTED  class="btn-warning" value="0">En attente</option>
                         <?php endif; ?>
                     </select>
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-lg-12 col-lg-offset-3">
-                    <button type="submit" class="col-lg-6 btn btn-primary">Mise à jour</button>
+                <div class="col-lg-9 col-lg-offset-3">
+                    <button type="submit" class="col-lg-8 btn btn-primary">Mise à jour</button>
                 </div>
             </div>
         </form>
@@ -62,15 +71,32 @@ include 'model/listCategory.php';
 
     <h1>Fiche description</h1>
     <div class="jumbotron">
-        <form class="form-horizontal" method="POST" action="model/updateArticlePicture.php" enctype="multipart/form-data">
-            <input type="hidden" name="key" value="<?= $reqArticle['id']?>"/>
+        <?php  if(isset($_GET['descriptionSucces'])):  ?>                        
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Tâche effectuée avec succès.</strong> 
+            </div>                        
+        <?php  endif;    ?>
+        
+        
+        <form class="form-horizontal" method="POST" action="model/updateDescription.php" >
+            <input type="hidden" name="idDescription" value="<?=$reqArticle['idDescription']?>"/>
             <div class="form-group">
-                <label for="inputImg" class="col-lg-1 control-label">Image</label>
-                <div class="col-lg-5">
-                    <input type="file" class="form-control" id="inputImg" name="inputImg"/>
-                    </br>
-                    <button type="submit" class="col-lg-12 btn btn-primary">Modifier image</button>
-                </div>
+              <label for="description" class="col-lg-0 control-label"></label>
+              <div class="col-lg-12">
+                <textarea class="form-control" rows="3" id="description" 
+                          name="description"><?=$reqArticle['description']?></textarea>
+                <span class="help-block">Votre description ne peut exceder plus de 510 caractères. Au-delà, elle sera tronquée.</span>
+              </div>
+            </div>                             
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-0">
+                <button type="submit" class="btn btn-primary">Modifier</button>
+                <a href="model/deleteLiaison.php?key=<?=$reqArticle['id']?>"
+                   onclick="return confirm('Confirmer la suppression :');"
+                   class="btn btn-danger">Supprimer la liaison</a>
+              </div>
             </div>
         </form>
     </div>

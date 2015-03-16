@@ -56,8 +56,8 @@ include 'model/listCategory.php';
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-lg-12 col-lg-offset-3">
-                        <button type="submit" class="col-lg-6 btn btn-primary">Afficher</button>
+                    <div class="col-lg-9 col-lg-offset-3">
+                        <button type="submit" class="col-lg-8 btn btn-primary">Afficher</button>
                     </div>
                 </div>
             </fieldset>
