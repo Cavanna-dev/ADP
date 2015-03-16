@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Aurelien
- * Date: 12/03/15
- * Time: 20:45
- */
 
 /* ---------------- REQUETE POUR SELECTIONNER LES CATEGORIES ---------------- */
 $sql = "SELECT C1.id, C1.name, "

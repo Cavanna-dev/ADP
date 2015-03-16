@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Aurelien
- * Date: 12/03/15
- * Time: 21:13
- */
 
 include_once '../../functions/connection_db.php';
 if(empty($_POST['idCategory'])){

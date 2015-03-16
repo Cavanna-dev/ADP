@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Aurelien
- * Date: 18/02/15
- * Time: 19:21
- */
-?>
 <?php include 'functions/connection_db.php'; ?>
 <?php include 'admin/model/listCategory.php'; ?>
 

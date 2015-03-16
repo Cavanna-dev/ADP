@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Aurelien
- * Date: 23/02/15
- * Time: 20:44
- */
-
 
 /* ---------------- FUNCTION POUR METTRE EN ARRAY LES CATEGORIES ---------------- */
 function makeArray($parent, $array, $listParent)

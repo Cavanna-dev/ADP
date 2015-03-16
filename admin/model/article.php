@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Aurelien
- * Date: 13/03/15
- * Time: 14:34
- */
-
 $valueIsActive[0] = 'En attente';
 $valueIsActive[1] = 'Oui';
 $valueIsActive[2] = 'Non';

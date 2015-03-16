@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Aurelien
- * Date: 13/03/15
- * Time: 12:46
- */
 
 include_once '../functions/connection_db.php';
 

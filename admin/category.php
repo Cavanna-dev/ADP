@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Aurelien
- * Date: 12/03/15
- * Time: 14:57
- */
+
 include_once '../functions/connection_db.php';
 include 'model/listCategory.php';
 include 'model/listCategoryInactive.php';
