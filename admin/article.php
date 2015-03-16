@@ -76,9 +76,9 @@ include 'model/listCategory.php';
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <strong>Tâche effectuée avec succès.</strong> 
             </div>                        
-        <?php  endif;    ?>
+        <?php  endif;   ?>
         
-        
+        <?php  if(!empty($reqArticle['description'])):  ?>    
         <form class="form-horizontal" method="POST" action="model/updateDescription.php" >
             <input type="hidden" name="idDescription" value="<?=$reqArticle['idDescription']?>"/>
             <div class="form-group">
@@ -99,6 +99,11 @@ include 'model/listCategory.php';
               </div>
             </div>
         </form>
+        <?php  elseif($reqArticle['nbDescription']>0):  ?>
+            <i>Description disponible : <?=$reqArticle['nbDescription']?></i>
+        <?php  else:  ?>
+            <i>Aucune description disponible</i>
+        <?php  endif;   ?>
     </div>
 
     <h1>Image article</h1>
