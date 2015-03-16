@@ -6,7 +6,7 @@ if(empty($_GET['key'])){
 
 include_once '../../functions/connection_db.php';
 
-$key      =   htmlspecialchars($_GET['key']);
+$key      =   htmlspecialchars($_GET['key'], ENT_QUOTES);
 
 try {
     $sql = "UPDATE articles SET "

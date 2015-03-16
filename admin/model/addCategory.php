@@ -6,9 +6,9 @@ if(empty($_POST['name'])){
     header('Location:../category.php?erreur');die;
 }
 
-$name = htmlspecialchars($_POST['name']);
-$idParent = htmlspecialchars($_POST['idParent']);
-$idAdminUser = htmlspecialchars($_POST['idAdminUser']);
+$name = htmlspecialchars($_POST['name'], ENT_QUOTES);
+$idParent = htmlspecialchars($_POST['idParent'], ENT_QUOTES);
+$idAdminUser = htmlspecialchars($_POST['idAdminUser'], ENT_QUOTES);
 
 
 try {

@@ -6,12 +6,12 @@ if(empty($_POST['key'])){
 
 include_once '../../functions/connection_db.php';
 
-$key        =   htmlspecialchars($_POST['key']);
-$name       =   htmlspecialchars($_POST['name']);
-$reference  =   htmlspecialchars($_POST['reference']);
-$brand      =   htmlspecialchars($_POST['brand']);
-$idCategory =   htmlspecialchars($_POST['idCategory']);
-$isActive   =   htmlspecialchars($_POST['isActive']);
+$key        =   $_POST['key'];
+$name       =   htmlspecialchars($_POST['name'], ENT_QUOTES);
+$reference  =   htmlspecialchars($_POST['reference'], ENT_QUOTES);
+$brand      =   htmlspecialchars($_POST['brand'], ENT_QUOTES);
+$idCategory =   $_POST['idCategory'];
+$isActive   =   $_POST['isActive'];
 
 
 try {

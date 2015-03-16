@@ -2,8 +2,8 @@
 
 include_once '../../functions/connection_db.php';
 
-$key        =   htmlspecialchars($_POST['key']);
-$keyDel     =   htmlspecialchars($_POST['keyDel']);
+$key        =   $_POST['key'];
+$keyDel     =   $_POST['keyDel'];
 $picture    =   htmlspecialchars($_FILES['inputImg']['name']);
 
 

@@ -6,8 +6,8 @@ if(empty($_POST['idDescription']) || $_POST['idDescription']==NULL){
 
 include_once '../../functions/connection_db.php';
 
-$key      =   htmlspecialchars($_POST['idDescription']);
-$description    =   htmlspecialchars($_POST['description']);
+$key      =   $_POST['idDescription'];
+$description    =   htmlspecialchars($_POST['description'], ENT_QUOTES);
 
 try {
      if(strlen($description) > 255):

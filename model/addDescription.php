@@ -6,9 +6,9 @@ if(empty($_POST['idArticle'])){
 
 include_once '../functions/connection_db.php';
 
-$idArticle      =   htmlspecialchars($_POST['idArticle']);
-$idUser         =   htmlspecialchars($_POST['idUser']);
-$description    =   htmlspecialchars($_POST['description']);
+$idArticle      =   $_POST['idArticle'];
+$idUser         =   $_POST['idUser'];
+$description    =   htmlspecialchars($_POST['description'], ENT_QUOTES);
 
 
 try{

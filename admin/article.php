@@ -101,6 +101,10 @@ include 'model/listCategory.php';
         </form>
         <?php  elseif($reqArticle['nbDescription']>0):  ?>
             <i>Description disponible : <?=$reqArticle['nbDescription']?></i>
+           <br/>
+            <a href="addLiaison.php?key=<?=$reqArticle['id']?>"
+               class="col-lg-2 col-lg-offset-0 btn btn-success">Lier description</a>
+           
         <?php  else:  ?>
             <i>Aucune description disponible</i>
         <?php  endif;   ?>

@@ -2,12 +2,12 @@
 
 include_once '../functions/connection_db.php';
 
-$idCategory =   htmlspecialchars($_POST['idCategory']);
-$idUser     =   htmlspecialchars($_POST['idUser']);
-$reference  =   htmlspecialchars($_POST['reference']);
-$name       =   htmlspecialchars($_POST['name']);
-$brand      =   htmlspecialchars($_POST['brand']);
-$picture    =   htmlspecialchars($_FILES['inputImg']['name']);
+$idCategory =   $_POST['idCategory'];
+$idUser     =   $_POST['idUser'];
+$reference  =   htmlspecialchars($_POST['reference'], ENT_QUOTES);
+$name       =   htmlspecialchars($_POST['name'], ENT_QUOTES);
+$brand      =   htmlspecialchars($_POST['brand'], ENT_QUOTES);
+$picture    =   htmlspecialchars($_FILES['inputImg']['name'], ENT_QUOTES);
 
 if(empty($idCategory) || empty($idUser) || empty($reference) || empty($reference) || empty($brand) ||  empty($picture)){
     header('Location:../addArticle.php?erreur&category='.$idCategory.'&reference='.$reference.'&name='.$name.'&brand='.$brand);
