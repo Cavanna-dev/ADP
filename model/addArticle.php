@@ -8,7 +8,7 @@
 
 include_once '../functions/connection_db.php';
 
-$idCategory   =   htmlspecialchars($_POST['idCategory']);
+$idCategory =   htmlspecialchars($_POST['idCategory']);
 $idUser     =   htmlspecialchars($_POST['idUser']);
 $reference  =   htmlspecialchars($_POST['reference']);
 $name       =   htmlspecialchars($_POST['name']);
@@ -34,7 +34,7 @@ try{
     $stmt->execute();
     $idArticle = $db->lastInsertId();
 
-    mkdir('../img/articles/'.$idArticle.'/');
+    mkdir('../img/articles/'.$idArticle);
     $uploaddir = '../img/articles/'.$idArticle.'/';
     $uploadfile = $uploaddir . basename($_FILES['inputImg']['name']);
 

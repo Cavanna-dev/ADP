@@ -50,14 +50,52 @@ include 'model/article.php';
         <div class="col-lg-6">
             <blockquote>
                 <p>Description</p>
-                <h4><?=$reqArticle['name']?></h4>
+                <h4>
+                    <?php 
+                    if(empty($reqArticle['description'])==FALSE):
+                        echo $reqArticle['description'];                        
+                    elseif(!isset($_GET['addDescription']) && !isset($_GET['descriptionSucces'])):
+                        ?><i>Aucune description</i><br/><br/>
+                        <a href="article.php?key=<?=$reqArticle['id']?>&addDescription">
+                            Soumettre une description
+                        </a><?php
+                    elseif(isset($_GET['addDescription'])): ?>
+                        <form class="form-horizontal" method="POST" action="model/addDescription.php" >
+                            <input type="hidden" name="idUser" value="<?=$_SESSION['customer']['idUser']?>"/>
+                            <input type="hidden" name="idArticle" value="<?=$reqArticle['id']?>"/>
+                            <div class="form-group">
+                              <label for="description" class="col-lg-0 control-label"></label>
+                              <div class="col-lg-12">
+                                <textarea class="form-control" rows="3" id="description" name="description"></textarea>
+                                <span class="help-block">Votre description ne peut exceder plus de 510 caractères. Au-delà, elle sera tronquée.</span>
+                              </div>
+                            </div>                             
+
+                            <div class="form-group">
+                              <div class="col-lg-10 col-lg-offset-0">
+                                <button type="submit" class="btn btn-primary">Soumettre</button>
+                              </div>
+                            </div>
+                        </form>
+                    <?php
+                    elseif(isset($_GET['descriptionSucces'])):
+                    ?>                        
+                        <div class="alert alert-dismissible alert-success">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Description soumise.</strong> 
+                            <br/>Merci pour votre contribution.
+                        </div>                        
+                    <?php
+                    endif;                       
+                    ?>
+                </h4>
             </blockquote>
         </div>
          
          <div class="col-lg-6">
             <blockquote>
                 <p>Tags associés</p>
-                <h4><?=$reqArticle['name']?></h4>
+                <h4><i>liste des tags [a faire]</h4>
             </blockquote>
         </div>
     </div>    

@@ -45,7 +45,7 @@
             </thead>
             <tbody>
                 <tr class="active" >
-                    <input type="hidden" name="idUser" value="<?php echo $_SESSION['customer']['idUser'];?>"/>
+                    <input type="hidden" name="idUser" value="<?=$_SESSION['customer']['idUser']?>"/>
                     <td style="vertical-align:middle;">
                         <input type="text" name="brand" id="brand" value="<?php if (isset($_GET['brand'])){echo $_GET['brand'];}?>"/>
                     </td>
