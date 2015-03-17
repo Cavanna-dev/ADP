@@ -1,7 +1,4 @@
 <?php
-$valueIsActive[1] = 'Oui';
-$valueIsActive[0] = 'Non';
-
 if(empty($_GET['key'])){
     header('Location:index.php');die;
 }
