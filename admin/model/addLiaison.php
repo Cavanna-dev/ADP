@@ -14,10 +14,10 @@ try {
         . "idDescription=:idDescription, dateChange=now() "
         . "WHERE id=:id ";
     $stmt = $db->prepare($sql);
-    $stmt->bindParam(":idDescription", $isActive, PDO::PARAM_INT, 1);
+    $stmt->bindParam(":idDescription", $idDescription, PDO::PARAM_INT, 1);
     $stmt->bindParam(":id", $key, PDO::PARAM_INT, 1);
     $stmt->execute();
-    header('Location:../article.php?key='.$key);
+    header('Location:../article.php?key='.$key.'&descriptionSucces');
 } catch (PDOException $e) {
     header('Location:../article.php?key='.$key.'&erreur');
 }

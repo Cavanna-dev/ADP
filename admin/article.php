@@ -81,6 +81,7 @@ include 'model/listCategory.php';
         <?php  if(!empty($reqArticle['description'])):  ?>    
         <form class="form-horizontal" method="POST" action="model/updateDescription.php" >
             <input type="hidden" name="idDescription" value="<?=$reqArticle['idDescription']?>"/>
+            <input type="hidden" name="page" value="article"/>
             <div class="form-group">
               <label for="description" class="col-lg-0 control-label"></label>
               <div class="col-lg-12">
@@ -111,7 +112,15 @@ include 'model/listCategory.php';
             </div>
            
         <?php  else:  ?>
-            <i>Aucune description disponible</i>
+            <div class="form-group">
+                <a href="#"
+                   class="col-lg-6 col-lg-offset-3 btn btn-warning disabled">
+                    <i>Description disponible : </i>
+                    <span class="badge">
+                        <?=$reqArticle['nbDescription']?>
+                    </span>
+                </a>
+            </div>
         <?php  endif;   ?>
     </div>
 

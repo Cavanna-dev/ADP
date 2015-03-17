@@ -7,6 +7,7 @@ if(empty($_POST['idDescription']) || $_POST['idDescription']==NULL){
 include_once '../../functions/connection_db.php';
 
 $key      =   $_POST['idDescription'];
+$page     =   $_POST['page'];
 $description    =   htmlspecialchars($_POST['description'], ENT_QUOTES);
 
 try {
@@ -26,7 +27,7 @@ try {
     $stmt->bindParam(":valueB", $valueB, PDO::PARAM_STR, 255);
     $stmt->bindParam(":id", $key, PDO::PARAM_INT, 11);
     $stmt->execute();
-    header('Location:../article.php?key='.$key.'&descriptionSucces');
+    header('Location:../'.$page.'.php?key='.$key.'&descriptionSucces');
 } catch (PDOException $e) {
-    header('Location:../article.php?key='.$key.'&erreur');
+    header('Location:../'.$page.'article.php?key='.$key.'&erreur');
 }
