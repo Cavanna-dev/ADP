@@ -100,10 +100,15 @@ include 'model/listCategory.php';
             </div>
         </form>
         <?php  elseif($reqArticle['nbDescription']>0):  ?>
-            <i>Description disponible : <?=$reqArticle['nbDescription']?></i>
-           <br/>
-            <a href="addLiaison.php?key=<?=$reqArticle['id']?>"
-               class="col-lg-2 col-lg-offset-0 btn btn-success">Lier description</a>
+            <div class="form-group">
+                <a href="listDescription.php?key=<?=$reqArticle['id']?>&selectIsActive=Oui"
+                   class="col-lg-6 col-lg-offset-3 btn btn-success">
+                    <i>Description disponible : </i>
+                    <span class="badge">
+                        <?=$reqArticle['nbDescription']?>
+                    </span>
+                </a>
+            </div>
            
         <?php  else:  ?>
             <i>Aucune description disponible</i>

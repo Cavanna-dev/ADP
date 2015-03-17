@@ -3,6 +3,11 @@ $valueIsActive[0] = 'En attente';
 $valueIsActive[1] = 'Oui';
 $valueIsActive[2] = 'Non';
 
+if(empty($_GET['key'])){
+    header('Location:listArticle.php');die;
+}
+
+$key=$_GET['key'];
 
 $sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.idCategory, "
     . "A1.picture, A1.isActive, C1.name AS category, "
@@ -12,7 +17,7 @@ $sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.idCa
     . "(SELECT COUNT(id) FROM availability AS AV1 WHERE A1.id = idArticle AND AV1.isActive=1 AND Status = 1) AS nbSalesOut, "
     . "(SELECT COUNT(id) FROM availability AS AV1 WHERE A1.id = idArticle AND AV1.isActive=1 AND Status = 2) AS nbCancel "
     . "FROM articles AS A1 LEFT JOIN categories AS C1 ON C1.id = A1.idCategory "
-    . "WHERE A1.id = ".$_GET['key'];
+    . "WHERE A1.id = ".$key;
 
 $resultat = $db->query($sql);
 $resultat->execute();
