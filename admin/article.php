@@ -52,10 +52,10 @@ include 'model/listCategory.php';
                             " id="isActive" name="isActive">
                         <option <?php if($reqArticle['isActive']=='1') echo 'SELECTED'; ?> 
                             class="btn-success" value="1">Oui</option>
-                        <option <?php if($reqArticle['isActive']=='2') echo 'SELECTED'; ?> 
-                            class="btn-default"  value="2">Non</option>
-                        <?php if($reqArticle['isActive']==0): ?>
-                            <option SELECTED  class="btn-warning" value="0">En attente</option>
+                        <option <?php if($reqArticle['isActive']=='0') echo 'SELECTED'; ?> 
+                            class="btn-default"  value="0">Non</option>
+                        <?php if($reqArticle['isActive']==2): ?>
+                            <option SELECTED  class="btn-warning" value="2">En attente</option>
                         <?php endif; ?>
                     </select>
                 </div>

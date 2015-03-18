@@ -1,12 +1,12 @@
 <?php
 
-$valueIsActive['0'] = 'En attente';
+$valueIsActive['2'] = 'En attente';
 $valueIsActive['1'] = 'Oui';
-$valueIsActive['2'] = 'Non';
+$valueIsActive['0'] = 'Non';
 
-$valueIsActive['En attente'] = '0';
+$valueIsActive['En attente'] = '2';
 $valueIsActive['Oui'] = '1';
-$valueIsActive['Non'] = '2';
+$valueIsActive['Non'] = '0';
 
 @$name = htmlspecialchars($_GET['inputName'], ENT_QUOTES);
 @$ref = htmlspecialchars($_GET['inputRef'], ENT_QUOTES);
@@ -26,7 +26,7 @@ if(!empty($idDescription) && $idDescription=='nr'){ $where .= "AND A1.idDescript
 if(!empty($idDescription) && $idDescription=='r'){ $where .= "AND A1.idDescription IS NOT NULL "; }
 
 
-// 0 - En attente // 1 - Validé // 2 - Refusé
+
 if($where=='')
     $limit = ' LIMIT 0, 30 ';
 

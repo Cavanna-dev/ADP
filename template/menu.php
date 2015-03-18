@@ -17,7 +17,7 @@
                     <li><a href="form_login.php">Se Connecter</a></li>
                 <?php } else { ?>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['customer']['email']; ?> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['customer']['firstName'].' '.$_SESSION['customer']['name']; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Mes Informations</a></li>
                             <li><a href="logout.php">Deconnexion</a></li>

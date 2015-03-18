@@ -1,7 +1,7 @@
 <?php
-$valueIsActive[0] = 'En attente';
-$valueIsActive[1] = 'Oui';
-$valueIsActive[2] = 'Non';
+$valueIsActive['0'] = 'En attente';
+$valueIsActive['1'] = 'Oui';
+$valueIsActive['2'] = 'Non';
 
 if(empty($_GET['key'])){
     header('Location:listArticle.php');die;
