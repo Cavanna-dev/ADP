@@ -30,8 +30,8 @@ include 'model/listDescription.php';
                 <div class="col-lg-2">
                     <select class="form-control" id="selectIsActive" name="selectIsActive">
                         <option value=""></option>
-                        <option <?php if($isActive=='Oui') echo 'SELECTED'; ?> value="Oui">Oui</option>
-                        <option <?php if($isActive=='Non') echo 'SELECTED'; ?> value="Non">Non</option>
+                        <option <?php if($isActive=='1') echo 'SELECTED'; ?> value='1'>Oui</option>
+                        <option <?php if($isActive=='0') echo 'SELECTED'; ?> value='0'>Non</option>
                     </select>
                 </div>
                 <div class="col-lg-4 col-lg-offset-0">

@@ -1,10 +1,7 @@
 <?php
-$valueIsActive['1'] = 'Oui';
-$valueIsActive['0'] = 'Non';
+$valueIsActive[1] = 'Oui';
+$valueIsActive[0] = 'Non';
 
-
-$valueIsActive['Oui'] = '1';
-$valueIsActive['Non'] = '0';
 
 
 @$name      = htmlspecialchars($_GET['inputName'], ENT_QUOTES);

@@ -41,9 +41,9 @@ include 'model/listCategory.php';
                     <div class="col-lg-2">
                         <select class="form-control" id="selectIsActive" name="selectIsActive">
                             <option value=""></option>
-                            <option <?php if($isActive=='Oui') echo 'SELECTED'; ?> value="Oui">Oui</option>
-                            <option <?php if($isActive=='Non') echo 'SELECTED'; ?> value="Non">Non</option>
-                            <option <?php if($isActive=='En attente') echo 'SELECTED'; ?> value="En attente">En attente</option>
+                            <option <?php if($isActive=='1') echo 'SELECTED'; ?> value="1">Oui</option>
+                            <option <?php if($isActive=='0') echo 'SELECTED'; ?> value="0">Non</option>
+                            <option <?php if($isActive=='2') echo 'SELECTED'; ?> value="2">En attente</option>
                         </select>
                     </div>
                     <label for="selectIdDescription" class="col-lg-2 control-label">Fiche produit</label>
@@ -91,7 +91,7 @@ include 'model/listCategory.php';
                     <!-- <a href="index.php?key="><img width="20px" src="../img/loop.gif"/></a>-->
                       Renseignée
                   <?php }else{ ?>                      
-                      Non Renseignée
+                      Non Renseignée (<?=$value['nbDescription']?>)
                   <?php } ?>
                 </td>
             </tr>

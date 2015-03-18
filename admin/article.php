@@ -54,7 +54,7 @@ include 'model/listCategory.php';
                             class="btn-success" value="1">Oui</option>
                         <option <?php if($reqArticle['isActive']=='0') echo 'SELECTED'; ?> 
                             class="btn-default"  value="0">Non</option>
-                        <?php if($reqArticle['isActive']==2): ?>
+                        <?php if($reqArticle['isActive']=='2'): ?>
                             <option SELECTED  class="btn-warning" value="2">En attente</option>
                         <?php endif; ?>
                     </select>
@@ -102,7 +102,7 @@ include 'model/listCategory.php';
         </form>
         <?php  elseif($reqArticle['nbDescription']>0):  ?>
             <div class="form-group">
-                <a href="listDescription.php?key=<?=$reqArticle['id']?>&selectIsActive=Oui"
+                <a href="listDescription.php?key=<?=$reqArticle['id']?>&selectIsActive=1"
                    class="col-lg-6 col-lg-offset-3 btn btn-success">
                     <i>Description disponible : </i>
                     <span class="badge">
@@ -111,10 +111,15 @@ include 'model/listCategory.php';
                 </a>
             </div>
            
-        <?php  else:  ?>
+        <?php  else:              
+            $page = '';
+            if( $reqArticle['nbDescriptionInactive'] == 0 ):
+                $page = 'disabled';
+            endif;
+            ?>
             <div class="form-group">
-                <a href="#"
-                   class="col-lg-6 col-lg-offset-3 btn btn-warning disabled">
+                <a href="listDescription.php?key=<?=$reqArticle['id']?>&selectIsActive=0"
+                   class="col-lg-6 col-lg-offset-3 btn btn-warning <?=$page?>">
                     <i>Description disponible : </i>
                     <span class="badge">
                         <?=$reqArticle['nbDescription']?>

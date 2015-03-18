@@ -1,10 +1,6 @@
 <?php
-
 $valueIsActive[1] = 'Oui';
 $valueIsActive[0] = 'Non';
-
-$valueIsActive['Oui'] = 1;
-$valueIsActive['Non'] = 0;
 
 if(empty($_GET['key'])){
     header('Location:listArticle.php');die;
@@ -30,7 +26,7 @@ if($reqArticle['idDescription'] != NULL){
 
 
 $where='';
-if(!empty($isActive)){ $where .= "AND D1.isActive = '".$valueIsActive[$isActive]."' "; }
+if(!empty($isActive) || $isActive=='0'){ $where .= "AND D1.isActive = ".$isActive." "; }
 
 $sql = "SELECT D1.id, CONCAT (valueA, ' ', valueB) AS description, CONCAT (firstName, ', ', name) AS user, "
     . "D1.isActive, D1.dateCreate "
