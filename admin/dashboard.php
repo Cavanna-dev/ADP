@@ -64,19 +64,19 @@
     <fieldset>
         <legend>Descriptions *</legend>
         <div class="form-group">
-            <div class="col-lg-4">
-                <small>Pourcentage d'article</br>avec description</small>
+            <div class="col-lg-3 col-lg-offset-0">
+                <small>Pourcentage d'article avec description</small>
                 <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=r'" style="cursor: pointer;">
                     <?= number_format(($reqDashboard['articleDescription']/$reqDashboard['articleActif']*100), 0, '.', '') ?> %
                 </p>
             </div>
-            <div class="col-lg-4">
-                <small>Article sans description,</br>description disponible</small>
+            <div class="col-lg-3 col-lg-offset-1">
+                <small>Article sans description, description disponible</small>
                 <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nrX'" style="cursor: pointer;">
                     <?= $reqDashboard['articleDescriptionDispo'] ?>
                 </p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3 col-lg-offset-1">
                 <small>Article sans description disponible<br/></small>
                 <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nr0'" style="cursor: pointer;">
                     <?= $reqDashboard['articleDescriptionNoDispo'] ?>
