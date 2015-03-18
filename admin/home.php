@@ -3,7 +3,7 @@
 
 
 
-<div class="container">
+<div class="container col-lg-10 col-lg-offset-1">
     <?php include 'dashboard.php'; ?>
 </div>
 

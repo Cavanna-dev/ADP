@@ -2,7 +2,7 @@
 <?php include 'model/dashboard.php'; ?>
 
 <h1>Dashboard</h1>
-<div class="jumbotron">        
+<div class="jumbotron col-lg-7">        
     <fieldset>
         <legend>Articles</legend>
         <div class="form-group">
@@ -33,7 +33,34 @@
         </div>
     </fieldset>
 </div>
-<div class="jumbotron"> 
+
+<div class="jumbotron col-lg-4 col-lg-offset-1"> 
+    <fieldset>
+        <legend>Utilisateurs</legend>
+        <div class="form-group">
+            <div class="col-lg-4">
+                <small>Total</small>
+                <p onclick="document.location='listUser.php'" style="cursor: pointer;">
+                    <?= $reqDashboard['customerTotal'] ?>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <small>Actif</small>
+                <p onclick="document.location='listUser.php?selectIsActive=1'" style="cursor: pointer;">
+                    <?= $reqDashboard['customerActif'] ?>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <small>Inactif</small>
+                <p onclick="document.location='listUser.php?selectIsActive=0'" style="cursor: pointer;">
+                    <?= $reqDashboard['customerInactif'] ?>
+                </p>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<div class="jumbotron col-lg-7"> 
     <fieldset>
         <legend>Descriptions *</legend>
         <div class="form-group">
@@ -50,7 +77,7 @@
                 </p>
             </div>
             <div class="col-lg-4">
-                <small><br/>Article sans description disponible<br/></small>
+                <small>Article sans description disponible<br/></small>
                 <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nr0'" style="cursor: pointer;">
                     <?= $reqDashboard['articleDescriptionNoDispo'] ?>
                 </p>
@@ -60,9 +87,9 @@
     <i>* Sur les articles actifs et en attentes</i>
 </div>
 
-<div class="jumbotron"> 
+<div class="jumbotron col-lg-4 col-lg-offset-1"> 
     <fieldset>
-        <legend>Utilisateurs</legend>
+        <legend>Tags</legend>
         <div class="form-group">
             <div class="col-lg-4">
                 <small>Total</small>
