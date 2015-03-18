@@ -51,7 +51,8 @@ include 'model/listCategory.php';
                         <select class="form-control" id="selectIdDescription" name="selectIdDescription">
                             <option></option>
                             <option  <?php if($idDescription=='r') echo 'SELECTED'; ?> value="r">Renseignée</option>
-                            <option  <?php if($idDescription=='nr') echo 'SELECTED'; ?> value="nr">Non renseignée</option>
+                            <option  <?php if($idDescription=='nrX') echo 'SELECTED'; ?> value="nrX">Non renseignée (x)</option>
+                            <option  <?php if($idDescription=='nr0') echo 'SELECTED'; ?> value="nr0">Non renseignée (0)</option>
                         </select>
                     </div>
                 </div>
@@ -74,7 +75,7 @@ include 'model/listCategory.php';
               <th>Marque</th>
               <th>Catégorie</th>
               <th>Actif</th>
-              <th>Fiche produit</th>
+              <th>Fiche description (*)</th>
             </tr>
           </thead>
           <tbody>
@@ -98,6 +99,7 @@ include 'model/listCategory.php';
           <?php endforeach; ?>
           </tbody>
         </table>
+        <i> * nombre de fiche active, proposée pour ce produit </i>
     </div>
 </div>
 

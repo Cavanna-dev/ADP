@@ -15,7 +15,7 @@ if(!empty($name)){ $where .= "AND ("
         . "name LIKE '%".$name."%' "
         . "OR firstName LIKE '%".$name."%'"
         . ")"; }
-if(!empty($isActive)){ $where .= "AND C1.isActive = '".$valueIsActive[$isActive]."' "; }
+if(isset($isActive) && ($isActive=='0' || $isActive=='1')){ $where .= "AND isActive = '".$isActive."' "; }
 
 
 $sql = "SELECT id, name, firstName, email, town, dateCreate, dateBirth, isActive, "

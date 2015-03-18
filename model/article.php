@@ -18,5 +18,5 @@ $reqArticle = $resultat->fetch(PDO::FETCH_ASSOC);
 $resultat->closeCursor();
 
 
-if($reqArticle['isActive']==2 || !isset($reqArticle['id']))
+if($reqArticle['isActive']==0 || !isset($reqArticle['id']))
     header('Location:index.php');

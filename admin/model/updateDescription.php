@@ -8,6 +8,17 @@ include_once '../../functions/connection_db.php';
 
 $key      =   $_POST['idDescription'];
 $page     =   $_POST['page'];
+
+
+switch ($page){
+    case 'article':
+        $keyPage = $_POST['idArticle'];
+        break;
+    case 'description':
+        $keyPage = $key;
+        Break;        
+}
+
 $isActive       =   htmlspecialchars($_POST['isActive'], ENT_QUOTES);
 $description    =   htmlspecialchars($_POST['description'], ENT_QUOTES);
 
@@ -29,7 +40,7 @@ try {
     $stmt->bindParam(":isActive", $isActive, PDO::PARAM_INT, 11);
     $stmt->bindParam(":id", $key, PDO::PARAM_INT, 11);
     $stmt->execute();
-    header('Location:../'.$page.'.php?key='.$key.'&descriptionSucces');
+    header('Location:../'.$page.'.php?key='.$keyPage.'&descriptionSucces');
 } catch (PDOException $e) {
-    header('Location:../'.$page.'article.php?key='.$key.'&erreur');
+    header('Location:../'.$page.'.php?key='.$keyPage.'&erreur');
 }

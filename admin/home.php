@@ -1,9 +1,13 @@
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
+
+
+
 <div class="container">
-    <div class="jumbotron">
-        <?php echo $_SESSION['user_logged']; ?>
-    </div>
+    <?php include 'dashboard.php'; ?>
 </div>
+
+
+
 <?php include 'template/footer.php'; ?>
 
