@@ -18,6 +18,7 @@ if(!empty($ref)){ $where .= "AND A1.reference LIKE '%".$ref."%' "; }
 if(!empty($brand)){ $where .= "AND A1.brand LIKE '%".$brand."%' "; }
 if(!empty($idCategory)){ $where .= "AND A1.idCategory = '".$idCategory."' "; }
 if(isset($isActive) && ($isActive=='0' || $isActive=='1' || $isActive=='2')){ $where .= "AND A1.isActive = '".$isActive."' "; }
+if(isset($isActive) && $isActive=='3'){ $where .= "AND A1.isActive <> 0 "; }
 if(!empty($idDescription) && $idDescription=='nr0'){ 
     $where .= "AND A1.idDescription IS NULL "; 
     $where .= "AND (SELECT COUNT(id) FROM description AS D1 WHERE D1.idArticle = A1.Id AND D1.isActive=1) = 0 "; 

@@ -24,7 +24,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="listArticle.php">Gérer les articles</a></li>
                         <li><a href="category.php">Gérer les catégories</a></li>
-                        <li><a href="listDescription.php">Gérer les descriptions</a></li>
+                        <li><a href="listTags.php">Gérer les tags</a></li>
                     </ul>
                 </li>
                 <li><a href="listUser.php">Gérer les Utilisateurs du site</a></li>

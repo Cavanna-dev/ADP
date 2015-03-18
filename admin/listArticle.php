@@ -44,6 +44,7 @@ include 'model/listCategory.php';
                             <option <?php if($isActive=='1') echo 'SELECTED'; ?> value="1">Oui</option>
                             <option <?php if($isActive=='0') echo 'SELECTED'; ?> value="0">Non</option>
                             <option <?php if($isActive=='2') echo 'SELECTED'; ?> value="2">En attente</option>
+                            <?php if($isActive=='3'){ ?><option SELECTED value="">Exclusion Non</option> <?php } ?>
                         </select>
                     </div>
                     <label for="selectIdDescription" class="col-lg-2 control-label">Fiche produit</label>

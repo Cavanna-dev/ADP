@@ -35,28 +35,29 @@
 </div>
 <div class="jumbotron"> 
     <fieldset>
-        <legend>Descriptions</legend>
+        <legend>Descriptions *</legend>
         <div class="form-group">
             <div class="col-lg-4">
                 <small>Pourcentage d'article</br>avec description</small>
-                <p onclick="document.location='listArticle.php?selectIsActive=1&selectIdDescription=r'" style="cursor: pointer;">
+                <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=r'" style="cursor: pointer;">
                     <?= number_format(($reqDashboard['articleDescription']/$reqDashboard['articleActif']*100), 0, '.', '') ?> %
                 </p>
             </div>
             <div class="col-lg-4">
                 <small>Article sans description,</br>description disponible</small>
-                <p onclick="document.location='listArticle.php?selectIsActive=1&selectIdDescription=nrX'" style="cursor: pointer;">
+                <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nrX'" style="cursor: pointer;">
                     <?= $reqDashboard['articleDescriptionDispo'] ?>
                 </p>
             </div>
             <div class="col-lg-4">
                 <small><br/>Article sans description disponible<br/></small>
-                <p onclick="document.location='listArticle.php?selectIsActive=1&selectIdDescription=nr0'" style="cursor: pointer;">
+                <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nr0'" style="cursor: pointer;">
                     <?= $reqDashboard['articleDescriptionNoDispo'] ?>
                 </p>
-            </div>
+            </div>            
         </div>
     </fieldset>
+    <i>* Sur les articles actifs et en attentes</i>
 </div>
 
 <div class="jumbotron"> 
