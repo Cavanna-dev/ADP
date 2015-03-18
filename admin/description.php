@@ -10,6 +10,21 @@ include 'model/description.php';
 
 
 <div class="container">
+    
+    
+    <h1><?=$reqDescription['name']?></h1>
+    <div class="col-lg-3">
+        <i>Référence : <?=$reqDescription['reference']?></i>
+    </div>
+    <div class="col-lg-3">
+        <i>Marque : <?=$reqDescription['brand']?></i>
+    </div>
+    <div class="col-lg-3">
+        <i>Catégorie : <?=$reqDescription['category']?></i>
+    </div>
+    </br></br>
+    
+    
     <h1>Description</h1>
 
     <div class="jumbotron">
@@ -64,13 +79,22 @@ include 'model/description.php';
                 <input type="hidden" name="idDescription" value="<?=$reqDescription['id']?>"/>
                 <input type="hidden" name="idArticle" value="<?=$reqDescription['idArticle']?>"/>
                 <div class="form-group">
-                  <div class="col-lg-8 col-lg-offset-2">
+                  <div class="col-lg-6 col-lg-offset-3">
                     <button type="submit" class="btn btn-success col-lg-12">Lier avec le produit</button>
                   </div>          
                 </div>
             </form>
         </div>
     <?php endif; ?>
+    
+    <div class="jumbotron">
+        <div class="form-group">
+            <a href="listDescriptionArticle.php?key=<?=$reqDescription['idArticle']?>"
+               class="col-lg-2 col-lg-offset-0 btn btn-primary ">
+                Retour
+            </a>
+        </div>
+    </div> 
 </div>
 
 <?php include 'template/footer.php'; ?>

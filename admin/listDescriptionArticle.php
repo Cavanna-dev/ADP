@@ -4,7 +4,7 @@ include_once '../functions/connection_db.php';
 include 'template/header.php';
 include 'template/menu.php';
 include 'model/article.php';
-include 'model/listDescription.php';
+include 'model/listDescriptionArticle.php';
 ?>
 
 <div class="container">
@@ -23,7 +23,7 @@ include 'model/listDescription.php';
     
     
     <div class="jumbotron">
-        <form class="form-horizontal" method="GET" action="listDescription.php">
+        <form class="form-horizontal" method="GET" action="listDescriptionArticle.php">
             <div class="form-group">
                 <input type="hidden" name="key" value="<?=$key?>" />
                 <label for="selectIsActive" class="col-lg-1 control-label">Active</label>
@@ -75,20 +75,11 @@ include 'model/listDescription.php';
     <div class="jumbotron">
         <div class="form-group">
             <a href="article.php?key=<?=$reqArticle['id']?>"
-               class="col-lg-6 col-lg-offset-3 btn btn-primary ">
+               class="col-lg-2 col-lg-offset-0 btn btn-primary ">
                 Fiche article
             </a>
         </div>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    </div>  
 </div>
 
 <?php include 'template/footer.php'; ?>

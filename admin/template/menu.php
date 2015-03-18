@@ -24,9 +24,10 @@
                     <ul class="dropdown-menu">
                         <li><a href="listArticle.php">Gérer les articles</a></li>
                         <li><a href="category.php">Gérer les catégories</a></li>
+                        <li><a href="listDescription.php">Gérer les descriptions</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Gérer les Utilisateurs du site</a></li>
+                <li><a href="listUser.php">Gérer les Utilisateurs du site</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

@@ -102,7 +102,7 @@ include 'model/listCategory.php';
         </form>
         <?php  elseif($reqArticle['nbDescription']>0):  ?>
             <div class="form-group">
-                <a href="listDescription.php?key=<?=$reqArticle['id']?>&selectIsActive=1"
+                <a href="listDescriptionArticle.php?key=<?=$reqArticle['id']?>&selectIsActive=1"
                    class="col-lg-6 col-lg-offset-3 btn btn-success">
                     <i>Description disponible : </i>
                     <span class="badge">

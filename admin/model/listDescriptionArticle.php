@@ -26,7 +26,7 @@ if($reqArticle['idDescription'] != NULL){
 
 
 $where='';
-if(!empty($isActive) || $isActive=='0'){ $where .= "AND D1.isActive = ".$isActive." "; }
+if(isset($isActive) && ($isActive=='0' || $isActive=='1')){ $where .= "AND D1.isActive = ".$isActive." "; }
 
 $sql = "SELECT D1.id, CONCAT (valueA, ' ', valueB) AS description, CONCAT (firstName, ', ', name) AS user, "
     . "D1.isActive, D1.dateCreate "
