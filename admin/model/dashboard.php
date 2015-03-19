@@ -25,7 +25,12 @@ $sql = "SELECT "
     
     . "(SELECT COUNT(id) FROM tag) AS tagTotal, "
     . "(SELECT COUNT(id) FROM tag WHERE isActive = 1) AS tagActif, "
-    . "(SELECT COUNT(id) FROM tag WHERE isActive = 0) AS tagInactif ";
+    . "(SELECT COUNT(id) FROM tag WHERE isActive = 0) AS tagInactif, "
+    
+    . "(SELECT COUNT(id) FROM contact) AS contactTotal, "
+    . "(SELECT COUNT(id) FROM contact WHERE status = 2) AS contactClose, "
+    . "(SELECT COUNT(id) FROM contact WHERE status = 1) AS contactOpen, "
+    . "(SELECT COUNT(id) FROM contact WHERE status = 0) AS contact ";
 
 $resultat = $db->query($sql);
 $resultat->execute();
@@ -36,4 +41,10 @@ if($reqDashboard['articleActif']>0):
     $reqDashboard['adp'] = $reqDashboard['articleDescription']/$reqDashboard['articleActif']*100;
 else:
     $reqDashboard['adp'] = 0;
+endif;
+
+if($reqDashboard['contactClose']>0):
+    $reqDashboard['ct'] = $reqDashboard['contactClose']/$reqDashboard['contactTotal']*100;
+else:
+    $reqDashboard['ct'] = 0;
 endif;

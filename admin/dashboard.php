@@ -86,7 +86,35 @@
     <i>* Sur les articles actifs et en attentes</i>
 </div>
 
-<div class="jumbotron col-lg-4 col-lg-offset-1"> 
+<div class="jumbotron col-lg-4 col-lg-offset-1">        
+    <fieldset>
+        <legend>Contacts</legend>
+        <div class="form-group">
+            <div class="col-lg-4">
+                <small>Traité</small>
+                <p onclick="document.location='listContact.php?selectStatus=2'" style="cursor: pointer;">
+                    <?= number_format($reqDashboard['ct'], 0, '.', '') ?>
+                % </p>
+            </div>
+            <div class="col-lg-4">
+                <small>En Cours</small>
+                <p onclick="document.location='listContact.php?selectStatus=1'" style="cursor: pointer;">
+                    <?= $reqDashboard['contactOpen'] ?>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <small>A traiter</small>
+                <p onclick="document.location='listContact.php?selectStatus=0'" style="cursor: pointer;">
+                    <?= $reqDashboard['contact'] ?>
+                </p>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+
+
+<div class="jumbotron col-lg-4 col-lg-offset-8"> 
     <fieldset>
         <legend>Tags</legend>
         <div class="form-group">
