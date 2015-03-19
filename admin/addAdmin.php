@@ -2,7 +2,7 @@
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 
-<div class="container">    
+<div class="container">  
     <h1>Créer compte administrateur</h1> 
 
     <?php if (isset($_GET['erreur'])): ?>
@@ -12,7 +12,7 @@
         </div>
     <?php endif; ?>
 
-
+    
     <form class="form-horizontal" action="model/addAdmin.php" method="POST">
         <table class="table table-striped table-hover ">
             <thead>

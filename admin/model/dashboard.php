@@ -37,12 +37,6 @@ $resultat->execute();
 $reqDashboard = $resultat->fetch(PDO::FETCH_ASSOC);
 $resultat->closeCursor();
 
-if($reqDashboard['articleActif']>0):
-    $reqDashboard['adp'] = $reqDashboard['articleDescription']/$reqDashboard['articleActif']*100;
-else:
-    $reqDashboard['adp'] = 0;
-endif;
-
 if($reqDashboard['contactClose']>0):
     $reqDashboard['ct'] = $reqDashboard['contactClose']/$reqDashboard['contactTotal']*100;
 else:
