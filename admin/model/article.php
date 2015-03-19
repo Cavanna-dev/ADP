@@ -17,7 +17,7 @@ $sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.idCa
     . "(SELECT COUNT(id) FROM availability AS AV1 WHERE A1.id = idArticle AND AV1.isActive=1 AND Status = 0) AS nbSalesIn, "
     . "(SELECT COUNT(id) FROM availability AS AV1 WHERE A1.id = idArticle AND AV1.isActive=1 AND Status = 1) AS nbSalesOut, "
     . "(SELECT COUNT(id) FROM availability AS AV1 WHERE A1.id = idArticle AND AV1.isActive=1 AND Status = 2) AS nbCancel "
-    . "FROM articles AS A1 LEFT JOIN categories AS C1 ON C1.id = A1.idCategory "
+    . "FROM article AS A1 LEFT JOIN category AS C1 ON C1.id = A1.idCategory "
     . "WHERE A1.id = ".$key;
 
 $resultat = $db->query($sql);

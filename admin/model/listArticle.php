@@ -33,7 +33,7 @@ if(!empty($idDescription) && $idDescription=='r'){ $where .= "AND A1.idDescripti
 
 $sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.picture, A1.isActive, C1.name AS category, "
     . "(SELECT COUNT(id) FROM description AS D1 WHERE D1.idArticle = A1.Id AND D1.isActive=1) AS nbDescription "
-    . "FROM articles AS A1 LEFT JOIN categories AS C1 ON C1.id = A1.idCategory  "
+    . "FROM article AS A1 LEFT JOIN category AS C1 ON C1.id = A1.idCategory  "
     . "WHERE 1=1 "
     . $where
     . "ORDER BY A1.brand ASC, A1.name ASC ";

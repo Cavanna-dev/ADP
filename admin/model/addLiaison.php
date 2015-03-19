@@ -10,7 +10,7 @@ $key = $_POST['idArticle'];
 $idDescription = $_POST['idDescription'];
 
 try {
-    $sql = "UPDATE articles SET "
+    $sql = "UPDATE article SET "
         . "idDescription=:idDescription, dateChange=now() "
         . "WHERE id=:id ";
     $stmt = $db->prepare($sql);

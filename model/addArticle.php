@@ -14,7 +14,7 @@ if(empty($idCategory) || empty($idUser) || empty($reference) || empty($reference
 }
 
 try{
-    $sql = "INSERT INTO articles "
+    $sql = "INSERT INTO article "
         . "(idCategory, idUser, idDescription, reference, name, brand, picture) "
         . "VALUES "
         . "(:idCategory,:idUser,null,:reference,:name,:brand,:picture) ";

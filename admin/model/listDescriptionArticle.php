@@ -11,7 +11,7 @@ $key=$_GET['key'];
 
 
 $sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, C1.name AS category "
-    . "FROM articles AS A1 LEFT JOIN categories AS C1 ON C1.id = A1.idCategory "
+    . "FROM article AS A1 LEFT JOIN category AS C1 ON C1.id = A1.idCategory "
     . "WHERE A1.id = ".$key;
 
 $resultat = $db->query($sql);
@@ -30,7 +30,7 @@ if(isset($isActive) && ($isActive=='0' || $isActive=='1')){ $where .= "AND D1.is
 
 $sql = "SELECT D1.id, CONCAT (valueA, ' ', valueB) AS description, CONCAT (firstName, ', ', name) AS user, "
     . "D1.isActive, D1.dateCreate "
-    . "FROM description AS D1, customers AS C1 "
+    . "FROM description AS D1, customer AS C1 "
     . "WHERE idArticle = '".$key."' "
     . "AND C1.id = idUser "
     . $where

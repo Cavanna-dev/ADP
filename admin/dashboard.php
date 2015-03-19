@@ -67,7 +67,7 @@
             <div class="col-lg-3 col-lg-offset-0">
                 <small>Pourcentage d'article avec description</small>
                 <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=r'" style="cursor: pointer;">
-                    <?= number_format(($reqDashboard['articleDescription']/$reqDashboard['articleActif']*100), 0, '.', '') ?> %
+                    <?= number_format($reqDashboard['adp'], 0, '.', '') ?> %
                 </p>
             </div>
             <div class="col-lg-3 col-lg-offset-1">
@@ -94,19 +94,19 @@
             <div class="col-lg-4">
                 <small>Total</small>
                 <p onclick="document.location='listUser.php'" style="cursor: pointer;">
-                    <?= $reqDashboard['customerTotal'] ?>
+                    <?= $reqDashboard['tagTotal'] ?>
                 </p>
             </div>
             <div class="col-lg-4">
                 <small>Actif</small>
                 <p onclick="document.location='listUser.php?selectIsActive=1'" style="cursor: pointer;">
-                    <?= $reqDashboard['customerActif'] ?>
+                    <?= $reqDashboard['tagActif'] ?>
                 </p>
             </div>
             <div class="col-lg-4">
                 <small>Inactif</small>
                 <p onclick="document.location='listUser.php?selectIsActive=0'" style="cursor: pointer;">
-                    <?= $reqDashboard['customerInactif'] ?>
+                    <?= $reqDashboard['tagInactif'] ?>
                 </p>
             </div>
         </div>

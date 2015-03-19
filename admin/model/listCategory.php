@@ -82,8 +82,8 @@ function selectArrayForm($tb, $id, $tiret, $valueSelected)
 
 /* ---------------- REQUETE POUR SELECTIONNER LES CATEGORIES ---------------- */
 $sql = "SELECT C1.id, C1.name, C1.idParent, "
-    . "(SELECT C2.name FROM categories as C2 WHERE C2.id = C1.idParent AND C2.isActive=1) AS nameParent "
-    . "FROM categories as C1 "
+    . "(SELECT C2.name FROM category as C2 WHERE C2.id = C1.idParent AND C2.isActive=1) AS nameParent "
+    . "FROM category as C1 "
     . "WHERE C1.isActive=1 "
     . "ORDER BY nameParent ASC,C1.name ASC ";
 $resultat = $db->query($sql);

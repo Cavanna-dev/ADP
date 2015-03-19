@@ -12,7 +12,7 @@ $idAdminUser = htmlspecialchars($_POST['idAdminUser'], ENT_QUOTES);
 
 
 try {
-    $sql = "INSERT INTO categories"
+    $sql = "INSERT INTO category"
         . "(idParent, idAdminUser, name) "
         . "VALUES "
         . "(:idParent,:idAdminUser,:name)";

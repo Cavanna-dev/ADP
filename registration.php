@@ -14,7 +14,7 @@ $dob        = htmlspecialchars($_POST['inputDateBirth'], ENT_QUOTES);
 
 
 try {
-    $resultats = $db->exec("INSERT INTO `customers`"
+    $resultats = $db->exec("INSERT INTO `customer`"
             . "(`email`, `password`, `name`, `firstName`, "
             . "`address`, `town`, `post`, `dateBirth`) "
             . "VALUES ('".$email."', "

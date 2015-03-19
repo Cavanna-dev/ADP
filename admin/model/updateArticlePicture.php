@@ -17,7 +17,7 @@ if(empty($picture)){
 
 
 try {
-    $sql = "UPDATE articles SET picture=:picture, dateChange=now() "
+    $sql = "UPDATE article SET picture=:picture, dateChange=now() "
         . "WHERE id=:id ";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(":id", $key, PDO::PARAM_INT, 1);

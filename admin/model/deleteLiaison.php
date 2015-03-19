@@ -9,7 +9,7 @@ include_once '../../functions/connection_db.php';
 $key      =   htmlspecialchars($_GET['key'], ENT_QUOTES);
 
 try {
-    $sql = "UPDATE articles SET "
+    $sql = "UPDATE article SET "
         . "idDescription = NULL, dateChange=now() "
         . "WHERE id=:id ";
     $stmt = $db->prepare($sql);

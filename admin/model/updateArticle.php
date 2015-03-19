@@ -15,7 +15,7 @@ $isActive   =   $_POST['isActive'];
 
 
 try {
-    $sql = "UPDATE articles SET "
+    $sql = "UPDATE article SET "
         . "name=:name, reference=:reference, brand=:brand, "
         . "idCategory=:idCategory, isActive=:isActive, dateChange=now() "
         . "WHERE id=:id ";

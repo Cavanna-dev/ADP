@@ -10,7 +10,7 @@ $valueIsActive[0] = 'Non';
 
 
 $where='';
-if(!empty($id)){ $where .= "AND id = '.$id.' "; }
+if(!empty($id)){ $where .= "AND id = ".$id." "; }
 if(!empty($name)){ $where .= "AND ("
         . "name LIKE '%".$name."%' "
         . "OR firstName LIKE '%".$name."%'"
@@ -19,11 +19,11 @@ if(isset($isActive) && ($isActive=='0' || $isActive=='1')){ $where .= "AND isAct
 
 
 $sql = "SELECT id, name, firstName, email, town, dateCreate, dateBirth, isActive, "
-    . "(SELECT COUNT(id) FROM articles WHERE isActive<>0 AND idUser = customers.id) AS articleCreate, "
-    . "(SELECT COUNT(id) FROM description WHERE isActive=1 AND idUser = customers.id) AS descriptionCreate, "
-    . "(SELECT COUNT(id) FROM availability WHERE isActive=1 AND idUserSales = customers.id AND status=1) AS articleSales, "
-    . "(SELECT COUNT(id) FROM articles WHERE isActive<>0 AND idUser = customers.id) AS articleBuy " // A CHANGER
-    . "FROM customers "
+    . "(SELECT COUNT(id) FROM article WHERE isActive<>0 AND idUser = C1.id) AS articleCreate, "
+    . "(SELECT COUNT(id) FROM description WHERE isActive=1 AND idUser = C1.id) AS descriptionCreate, "
+    . "(SELECT COUNT(id) FROM availability WHERE isActive=1 AND idUserSales = C1.id AND status=1) AS articleSales, "
+    . "(SELECT COUNT(id) FROM command WHERE idUserBuy = C1.id) AS articleBuy " // A CHANGER
+    . "FROM customer AS C1 "
     . "WHERE 1=1 "
     . $where
     . "ORDER BY DateChange DESC ";

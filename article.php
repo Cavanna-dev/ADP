@@ -38,7 +38,7 @@ include 'model/article.php';
     </div>
     
     
-     <div class="form-group">
+    <div class="form-group">
         <div class="col-lg-6">
             <blockquote>
                 <p>Description</p>
@@ -86,11 +86,19 @@ include 'model/article.php';
          
          <div class="col-lg-6">
             <blockquote>
+                <p>Catégorie</p>
+                <h4><?=$reqArticle['category']?></h4>
+            </blockquote>
+        </div>
+    </div> 
+    <div class="form-group">
+       <div class="col-lg-6">
+            <blockquote>
                 <p>Tags associés</p>
                 <h4><i>liste des tags [a faire]</h4>
             </blockquote>
         </div>
-    </div>    
+    </div>       
 </div>
 
 <?php include 'template/footer.php'; ?>

@@ -27,13 +27,26 @@
                         <li><a href="listTags.php">Gérer les tags</a></li>
                     </ul>
                 </li>
-                <li><a href="listUser.php">Gérer les Utilisateurs du site</a></li>
+                <li class="dropdown <?php if(strpos($_SERVER['PHP_SELF'], 'listUser.php')) echo 'active'; ?>">
+                    <a href="listUser.php">Gérer les Utilisateurs du site</a>
+                </li>
+                <?php if($_SESSION['user_role']>0) : ?>
+                    <li class="dropdown 
+                        <?php                   
+                            if(strpos($_SERVER['PHP_SELF'], 'addAdmin.php') || strpos($_SERVER['PHP_SELF'], 'listAdmin.php')) echo 'active'; ?>">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer Administrateurs<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="addAdmin.php">Créer compte</a></li>
+                            <li><a href="listAdmin.php">Gérer les comptes</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['user_logged']; ?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['user_firstName'].', '.$_SESSION['user_name']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Mes Informations</a></li>
+                        <li><a href="info.php">Mes Informations</a></li>
                         <li><a href="index.php?error=logout">Déconnexion</a></li>
                     </ul>
                 </li>

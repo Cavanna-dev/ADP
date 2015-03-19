@@ -8,7 +8,7 @@ $password = hashagePass($_POST['inputPassword']); //Fonction functions/hashagePa
 
 try {
     $resultats = $db->query("SELECT id, email, password, name, firstName " .
-            "FROM customers " .
+            "FROM customer " .
             "WHERE email = '" . $email . "'"
             , PDO::FETCH_OBJ);
     while ($resultat = $resultats->fetch()) {

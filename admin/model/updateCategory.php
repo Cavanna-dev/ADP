@@ -5,7 +5,7 @@ if(empty($_POST['idCategory'])){
     header('Location:../category.php');die;
 }
 try {
-    $sql = "UPDATE categories SET isActive=:isActive, dateChange=now() "
+    $sql = "UPDATE category SET isActive=:isActive, dateChange=now() "
         . "WHERE id=:id ";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(":isActive", $_POST['valueIsActive'], PDO::PARAM_INT, 1);
