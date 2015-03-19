@@ -50,7 +50,7 @@
                 <?php endif; ?>
                     
                 <li class="dropdown <?php if($selectMenu == 6) echo 'active'; ?>">
-                    <a href="contact.php">Contact</a>
+                    <a href="listContact.php">Contact</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
