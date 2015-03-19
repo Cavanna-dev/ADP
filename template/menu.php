@@ -23,7 +23,7 @@
                             <li><a href="logout.php">Deconnexion</a></li>
                         </ul>
                     </li>
-                    <li><a href="article.php">Vendre</a></li>
+                    <li><a href="sales.php">Vendre</a></li>
                     <li><a href="basket.php">Mon Panier</a></li>
                 <?php } ?>
             </ul>

@@ -1,5 +1,5 @@
+<?php $selectMenu = 2; ?>
 <?php
-
 include_once '../functions/connection_db.php';
 include 'model/listCategory.php';
 include 'model/listCategoryInactive.php';

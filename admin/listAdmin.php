@@ -1,3 +1,4 @@
+<?php $selectMenu = 4; ?>
 <?php
 include_once '../functions/connection_db.php';
 

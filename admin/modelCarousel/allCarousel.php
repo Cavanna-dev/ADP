@@ -12,7 +12,7 @@ try{
 
     
 } catch (PDOException $e) {
-    header('Location:homePageCarousel.php');
+    header('Location:../homePageCarousel.php');
 }
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-include_once '../functions/connection_db.php';
+include_once '../../functions/connection_db.php';
 
 $content = htmlspecialchars($_POST['inputContent']);
 $img = htmlspecialchars($_FILES['inputImg']['name']);
@@ -17,13 +17,13 @@ try {
     $stmt->bindParam(":isHp", $isHp, PDO::PARAM_INT, 1);
     $stmt->execute();
 
-    $uploaddir = '../img/uploads_carousel/';
+    $uploaddir = '../../img/uploads_carousel/';
     $uploadfile = $uploaddir . basename($_FILES['inputImg']['name']);
 
     move_uploaded_file($_FILES['inputImg']['tmp_name'], $uploadfile);
 
-    header('Location:homePageCarousel.php');
+    header('Location:../homePageCarousel.php');
 } catch (PDOException $e) {
-    header('Location:homePageCarousel.php');
+    header('Location:../homePageCarousel.php');
 }
 ?>

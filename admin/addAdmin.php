@@ -1,3 +1,4 @@
+<?php $selectMenu = 4; ?>
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 
