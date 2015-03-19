@@ -51,7 +51,7 @@ $roleValue[1] = 'Super Admin';
           </thead>
           <tbody>
           <?php foreach($reqListAdmin as $value): ?>
-            <tr>                
+            <tr  onclick="document.location='info.php?key=<?=$value['id']?>'" style="cursor: pointer;">                
                 <td class="col-lg-4"><?=$value['name'].', '.$value['firstName']?></td>
                 <td class="col-lg-3"><?=$value['email']?></td>
                 <td class="col-lg-1"><?=$roleValue[$value['role']]?></td>
