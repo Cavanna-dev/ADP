@@ -1,7 +1,14 @@
 <?php
 
+include_once '../functions/config.php';
+
+function hashagePass($password) {
+    return md5(CONST_SALT_PRE . md5($password) . CONST_SALT_SUF);
+}
+
+
 $email    = htmlspecialchars($_POST['inputEmail']);
-$password = htmlspecialchars($_POST['inputPassword']);
+$password = hashagePass(htmlspecialchars($_POST['inputPassword']));
 
 include_once '../functions/connection_db.php';
 

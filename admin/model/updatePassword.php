@@ -18,8 +18,8 @@ try {
     $sql = "UPDATE user SET password=:password, dateChange=now() "
         . "WHERE id=:id ";
     $stmt = $db->prepare($sql);
-    $stmt->bindParam(":password", $password, PDO::PARAM_STR, 255);
-    $stmt->bindParam(":id", $key, PDO::PARAM_INT, 1);
+   $stmt->bindParam(":password", $password, PDO::PARAM_STR, 255);
+    $stmt->bindParam(":id", $_POST['key'], PDO::PARAM_INT, 1);
     $stmt->execute();
     
     header('Location:../info.php?success&key='.$_POST['key']);

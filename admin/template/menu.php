@@ -1,12 +1,14 @@
 <div class="navbar navbar-inverse">
-    <div class="container">
+    <!--<div class="container">-->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">ADP Project</a>
+            <a class="navbar-brand" href="">
+                ADP PROJECT
+            </a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             
@@ -18,7 +20,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Web <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="homePageCarousel.php">Gérer le diaporama de la page d'accueil</a></li>
-                        <li><a href="module_Menu.php">Gérer le menu du site</a></li>
+                        <li><a href="#">Gérer le menu du site</a></li>
                         <li><a href="../index.php">Voir le site</a></li>
                     </ul>
                 </li>
@@ -46,6 +48,10 @@
                         </ul>
                     </li>
                 <?php endif; ?>
+                    
+                <li class="dropdown <?php if($selectMenu == 6) echo 'active'; ?>">
+                    <a href="contact.php">Contact</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown 
@@ -58,5 +64,5 @@
                 </li>
             </ul>
         </div>
-    </div>
+    <!--</div>-->
 </div>
