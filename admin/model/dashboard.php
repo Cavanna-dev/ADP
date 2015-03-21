@@ -21,12 +21,7 @@ $sql = "SELECT "
     . "(SELECT COUNT(id) FROM customer) AS customerTotal, "
     . "(SELECT COUNT(id) FROM customer WHERE isActive = 1) AS customerActif, "
     . "(SELECT COUNT(id) FROM customer WHERE isActive = 0) AS customerInactif, "
-    
-    
-    . "(SELECT COUNT(id) FROM tag) AS tagTotal, "
-    . "(SELECT COUNT(id) FROM tag WHERE isActive = 1) AS tagActif, "
-    . "(SELECT COUNT(id) FROM tag WHERE isActive = 0) AS tagInactif, "
-    
+     
     . "(SELECT COUNT(id) FROM contact) AS contactTotal, "
     . "(SELECT COUNT(id) FROM contact WHERE status = 2) AS contactClose, "
     . "(SELECT COUNT(id) FROM contact WHERE status = 1) AS contactOpen, "
