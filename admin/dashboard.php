@@ -146,11 +146,11 @@
         </fieldset>    
         <div class="progress progress-striped active">
             <div class="progress-bar progress-bar-success" style="width: 
-                 <?= ($reqDashboard['articleDescription']/$reqDashboard['articleActif']*100) ?>%"></div>
+                 <?= ($reqDashboard['articleDescription']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100) ?>%"></div>
             <div class="progress-bar progress-bar-warning" style="width: 
-                 <?= ($reqDashboard['articleDescriptionDispo']/$reqDashboard['articleActif']*100) ?>%"></div>
+                 <?= ($reqDashboard['articleDescriptionDispo']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100) ?>%"></div>
             <div class="progress-bar progress-bar-danger" style="width: 
-                 <?= ($reqDashboard['articleDescriptionNoDispo']/$reqDashboard['articleActif']*100) ?>%"></div>
+                 <?= ($reqDashboard['articleDescriptionNoDispo']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100) ?>%"></div>
         </div>
 
         <i>* Sur les articles actifs et en attentes</i>

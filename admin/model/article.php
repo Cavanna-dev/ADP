@@ -9,7 +9,7 @@ if(empty($_GET['key'])){
 
 $key=$_GET['key'];
 
-$sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.idCategory, "
+$sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.idCategory, A1.tags, "
     . "A1.picture, A1.isActive, C1.name AS category, "
     . "(SELECT CONCAT (valueA, ' ', valueB) FROM description AS D1 WHERE D1.id = A1.idDescription) AS description, "
     . "(SELECT COUNT(id) FROM description AS D1 WHERE D1.idArticle = A1.Id AND D1.isActive=1) AS nbDescription, "

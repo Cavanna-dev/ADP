@@ -37,6 +37,21 @@ include 'model/article.php';
         </div>
     </div>
     
+    <div class="form-group">
+        <div class="col-lg-6">
+            <blockquote>
+                <p>Catégorie</p>
+                <h3><?=$reqArticle['category']?></h3>
+            </blockquote>
+        </div>    
+       <div class="col-lg-6">
+            <blockquote>
+                <p>Tags associés</p>
+                <h3><?=$reqArticle['tags']?></h3>
+            </blockquote>
+        </div>
+    </div>       
+
     
     <div class="form-group">
         <div class="col-lg-6">
@@ -83,22 +98,8 @@ include 'model/article.php';
                 </h4>
             </blockquote>
         </div>
-         
-         <div class="col-lg-6">
-            <blockquote>
-                <p>Catégorie</p>
-                <h4><?=$reqArticle['category']?></h4>
-            </blockquote>
-        </div>
-    </div> 
-    <div class="form-group">
-       <div class="col-lg-6">
-            <blockquote>
-                <p>Tags associés</p>
-                <h4><i>liste des tags [a faire]</h4>
-            </blockquote>
-        </div>
-    </div>       
-</div>
+    </div>
+</div>       
+
 
 <?php include 'template/footer.php'; ?>

@@ -12,6 +12,18 @@ include 'model/listCategory.php';
 
 <div class="container">
     <h1>Information article</h1>
+    <?php if (isset($_GET['error'])): ?>
+        <div class="alert alert-dismissable alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <H4>Erreur, vos modifications n'ont pas été prises en compte !</H4>
+        </div>
+    <?php endif; ?>
+    <?php if (isset($_GET['success'])): ?>
+        <div class="alert alert-dismissable alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <H4>Modification éffectuée aves succès !</H4>
+        </div>
+    <?php endif; ?>
     <div class="jumbotron">
         <form class="form-horizontal" method="POST" action="model/updateArticle.php">
             <input type="hidden" name="key" value="<?= $reqArticle['id']?>"/>
@@ -21,27 +33,18 @@ include 'model/listCategory.php';
                     <input type="text" class="form-control" id="name" name="name"
                            value="<?=$reqArticle['name']?>">
                 </div>
-                <label for="reference" class="col-lg-2 control-label">Référence</label>
+                <label for="reference" class="col-lg-1 control-label">Référence</label>
                 <div class="col-lg-2">
                     <input type="text" class="form-control" id="reference" name="reference"
                            value="<?=$reqArticle['reference']?>">
                 </div>
-                <label for="brand" class="col-lg-2 control-label">Marque</label>
+                <label for="brand" class="col-lg-1 control-label">Marque</label>
                 <div class="col-lg-2">
                     <input type="text" class="form-control" id="brand" name="brand"
                            value="<?=$reqArticle['brand']?>">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="idCategory" class="col-lg-2 control-label">Catégorie</label>
-                <div class="col-lg-3">
-                    <select class="form-control" id="idCategory" name="idCategory">
-                        <option></option>
-                        <?php selectArrayForm($list, $listId, '', $reqArticle['idCategory']); ?>
-                    </select>
-                </div>
-                <label for="isActive" class="col-lg-3 control-label">Active</label>
+                
+                <label for="isActive" class="col-lg-1 control-label">Active</label>
                 <div class="col-lg-2">
                     <select class="form-control
                             <?php if($reqArticle['isActive']=='1'):
@@ -60,6 +63,23 @@ include 'model/listCategory.php';
                         <?php endif; ?>
                     </select>
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="tags" class="col-lg-1 control-label">Tags</label>
+                <div class="col-lg-7">
+                    <textarea class="form-control" rows="2" id="tags" name="tags"><?=$reqArticle['tags']?></textarea>
+                  <span class="help-block">
+                      La liste de TAG ne peut exceder plus de 255 caractères. Renseigner les TAGS en minuscules.
+                  </span>
+                </div>
+
+                <label for="idCategory" class="col-lg-1 control-label">Catégorie</label>
+                <div class="col-lg-3">
+                    <select class="form-control" id="idCategory" name="idCategory">
+                        <option></option>
+                        <?php selectArrayForm($list, $listId, '', $reqArticle['idCategory']); ?>
+                    </select>
+                </div>                
             </div>
 
             <div class="form-group">
