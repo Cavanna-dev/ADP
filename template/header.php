@@ -10,6 +10,5 @@ include_once 'functions/config.php';
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/bootswatch.min.css">
         <link rel="stylesheet" href="./css/main.css">
-        <script src="./js/jquery-1.11.0.min.js"></script>
     </head>
     <body>
