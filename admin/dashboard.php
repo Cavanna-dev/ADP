@@ -110,37 +110,39 @@
             <legend>Descriptions *</legend>
             <div class="form-group">
                 <div class="col-lg-3 col-lg-offset-0">
-                    <small>Article avec description</small>
                     <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=r'" style="cursor: pointer;">
-                        <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                        <span style="font-size: 17pt;"
+                            onmouseover="this.style.fontSize='19pt';"
+                            onmouseout="this.style.fontSize='17pt';"                       
                             class="label label-success">
                                 <?= number_format($reqDashboard['articleDescription'], 0, '.', '') ?>
                         </span>
                     </p>
+                    <small>Article avec description</small>
+                    
                 </div>
-                <div class="col-lg-4 col-lg-offset-1">
-                    <small>Article sans description, description disponible</small>
+                <div class="col-lg-4 col-lg-offset-1">                    
                     <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nrX'" style="cursor: pointer;">
-                        <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                        <span style="font-size: 17pt;"
+                            onmouseover="this.style.fontSize='19pt';"
+                            onmouseout="this.style.fontSize='17pt';"                       
                             class="label label-warning">
                                 <?= $reqDashboard['articleDescriptionDispo'] ?>
                         </span>
                     </p>
+                    <small>Article sans description, description disponible</small>
                 </div>
                 <div class="col-lg-4 col-lg-offset-0" >
-                    <small>Article sans description disponible<br/></small>
+                   
                     <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nr0'" style="cursor: pointer;">
-                        <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                        <span style="font-size: 17pt;"
+                            onmouseover="this.style.fontSize='19pt';"
+                            onmouseout="this.style.fontSize='17pt';"                       
                             class="label label-danger">
                               <?= $reqDashboard['articleDescriptionNoDispo'] ?>  
                         </span>
                     </p>
+                     <small>Article sans description disponible</small>
                 </div>            
             </div>
         </fieldset>    
