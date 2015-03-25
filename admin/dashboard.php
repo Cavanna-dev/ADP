@@ -8,8 +8,8 @@
             <legend>Articles
                     <p onclick="document.location='listArticle.php'" style="cursor: pointer; display: inline-block">
                         <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='17pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                     
                             class="label label-default"><?= $reqDashboard['articleTotal'] ?></span>
                     </p>
             
@@ -19,8 +19,8 @@
                     <small>Actif</small>
                     <p onclick="document.location='listArticle.php?selectIsActive=1'" style="cursor: pointer;">
                         <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                       
                             class="label label-success"><?= $reqDashboard['articleActif'] ?></span>
                     </p>
                 </div>
@@ -28,8 +28,8 @@
                     <small>En Attente</small>
                     <p onclick="document.location='listArticle.php?selectIsActive=2'" style="cursor: pointer;">
                         <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                       
                             class="label label-danger"><?= $reqDashboard['articleEnAttente'] ?></span>        
                     </p>
                 </div>
@@ -37,8 +37,8 @@
                     <small>Inactif</small>
                     <p onclick="document.location='listArticle.php?selectIsActive=0'" style="cursor: pointer;">
                         <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                      
                             class="label label-warning"><?= $reqDashboard['articleInactif'] ?></span>
                     </p>
                 </div>
@@ -62,8 +62,8 @@
                     <small>Traité</small>
                     <p onclick="document.location='listContact.php?selectStatus=2'" style="cursor: pointer;">
                         <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                       
                             class="label label-success">
                                 <?= $reqDashboard['contactClose'] ?>  
                         </span>
@@ -73,8 +73,8 @@
                     <small>En Cours</small>
                     <p onclick="document.location='listContact.php?selectStatus=1'" style="cursor: pointer;">
                         <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                       
                             class="label label-warning">
                                <?= $reqDashboard['contactOpen'] ?> 
                         </span>
@@ -84,8 +84,8 @@
                     <small>A traiter</small>
                     <p onclick="document.location='listContact.php?selectStatus=0'" style="cursor: pointer;">
                         <span style="font-size: 16pt;"
-                            onmouseover="this.style.fontSize='18pt';"
-                            onmouseout="this.style.fontSize='16pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                      
                             class="label label-danger">
                                 <?= $reqDashboard['contact'] ?>
                         </span>
@@ -112,8 +112,8 @@
                 <div class="col-lg-3 col-lg-offset-0">
                     <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=r'" style="cursor: pointer;">
                         <span style="font-size: 17pt;"
-                            onmouseover="this.style.fontSize='19pt';"
-                            onmouseout="this.style.fontSize='17pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                      
                             class="label label-success">
                                 <?= number_format($reqDashboard['articleDescription'], 0, '.', '') ?>
                         </span>
@@ -124,8 +124,8 @@
                 <div class="col-lg-4 col-lg-offset-1">                    
                     <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nrX'" style="cursor: pointer;">
                         <span style="font-size: 17pt;"
-                            onmouseover="this.style.fontSize='19pt';"
-                            onmouseout="this.style.fontSize='17pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                       
                             class="label label-warning">
                                 <?= $reqDashboard['articleDescriptionDispo'] ?>
                         </span>
@@ -136,8 +136,8 @@
                    
                     <p onclick="document.location='listArticle.php?selectIsActive=3&selectIdDescription=nr0'" style="cursor: pointer;">
                         <span style="font-size: 17pt;"
-                            onmouseover="this.style.fontSize='19pt';"
-                            onmouseout="this.style.fontSize='17pt';"                       
+                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                      
                             class="label label-danger">
                               <?= $reqDashboard['articleDescriptionNoDispo'] ?>  
                         </span>
@@ -165,8 +165,8 @@
             <legend>Utilisateurs                
                 <p onclick="document.location='listUser.php'" style="cursor: pointer; display: inline-block">
                     <span style="font-size: 16pt;"
-                        onmouseover="this.style.fontSize='16pt';"
-                        onmouseout="this.style.fontSize='14pt';"                       
+                        onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                    
                         class="label label-default"><?= $reqDashboard['customerTotal'] ?></span>
                 </p>            
             </legend>
@@ -175,8 +175,8 @@
                     <small>Actif</small>
                     <p onclick="document.location='listUser.php?selectIsActive=1'" style="cursor: pointer;">
                         <span style="font-size: 16pt;"
-                                            onmouseover="this.style.fontSize='18pt';"
-                                            onmouseout="this.style.fontSize='16pt';"                       
+                                            onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                    
                             class="label label-success">
                             <?= $reqDashboard['customerActif'] ?>
                         </span>
@@ -186,8 +186,8 @@
                     <small>Inactif</small>
                     <p onclick="document.location='listUser.php?selectIsActive=0'" style="cursor: pointer;">
                         <span style="font-size: 16pt;"
-                                            onmouseover="this.style.fontSize='18pt';"
-                                            onmouseout="this.style.fontSize='16pt';"                       
+                                        onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
+                                        onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                       
                             class="label label-danger">
                             <?= $reqDashboard['customerInactif'] ?>
                         </span>
