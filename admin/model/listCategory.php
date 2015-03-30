@@ -40,15 +40,19 @@ function listageArray($tb, $id)
 }
 
 /* ---------------- FUNCTION POUR METTRE EN SELECT UN TABLEAU ---------------- */
-function selectArray($tb, $id, $tiret)
+function selectArray($tb, $id, $tiret, $lvl)
 {
-    $tiret = $tiret.'--';
+    if($lvl!=0)
+        $tiret = $tiret.'&nbsp;&nbsp;';
+    
     foreach($tb as $key => $value)
     {
         if(is_array($value))
         {
-            echo '<option value='.$id[$key].'>'.$tiret.$key.'</option>';
-            selectArray($value, $id, $tiret);
+            echo '<option '
+            . ' style="background-color:#EDEDED;" '
+            . 'value='.$id[$key].'>'.$tiret.$key.'</option>';
+            selectArray($value, $id, $tiret, 1);
         }
         else
         {
@@ -58,23 +62,30 @@ function selectArray($tb, $id, $tiret)
 }
 
 /* ---------------- FUNCTION POUR METTRE EN SELECT UN FORMULAIRE ---------------- */
-function selectArrayForm($tb, $id, $tiret, $valueSelected)
+function selectArrayForm($tb, $id, $tiret, $valueSelected, $lvl)
 {
-    $tiret = $tiret.'-';
+    if($lvl!=0)
+        $tiret = $tiret.'&nbsp;&nbsp;&nbsp;';
+    
     foreach($tb as $key => $value)
     {
         if(is_array($value))
         {
-            echo '<option ';
+            echo '<option '
+            . ' style="background-color:#EDEDED;" ';
             if($valueSelected == $id[$key]){ echo ' SELECTED '; }
-            echo 'value='.$id[$key].'>'.$tiret.$key.'</option>';
-            selectArrayForm($value, $id, $tiret, $valueSelected);
+            echo 'value='.$id[$key].'>'
+                    .   $tiret
+                    .   $key.'</option>';
+             
+            selectArrayForm($value, $id, $tiret, $valueSelected, 1);
         }
         else
         {
             echo '<option ';
             if($valueSelected == $id[$value]){ echo ' SELECTED '; }
-            echo ' value='.$id[$value].'>'.$tiret.$value.'</option>';
+            echo ' value='.$id[$value].'>'.$tiret
+                    .   $value.'</option>';
         }
     }
 }

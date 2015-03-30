@@ -35,7 +35,7 @@ include 'model/listCategory.php';
                     <div class="col-lg-3">
                         <select class="form-control" id="selectIdCategory" name="selectIdCategory">
                             <option></option>
-                            <?php selectArrayForm($list, $listId, '', $idCategory); ?>
+                            <?php selectArrayForm($list, $listId, '', $idCategory, 0); ?>
                         </select>
                     </div>
                     <label for="selectIsActive" class="col-lg-1 control-label">Active</label>

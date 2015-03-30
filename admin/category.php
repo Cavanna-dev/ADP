@@ -50,7 +50,7 @@ include 'template/menu.php';
                         <select class="form-control" name="idParent" id="idParent">
                             <option value="0"></option>
                             <?php
-                            selectArray($list, $listId, '');
+                            selectArray($list, $listId, '', 0);
                             ?>
                         </select>
                     </div>
@@ -76,7 +76,7 @@ include 'template/menu.php';
                         <select class="form-control" name="idCategory" id="idCategory">
                             <option value="0"></option>
                             <?php
-                            selectArray($list, $listId, '');
+                            selectArray($list, $listId, '', 0);
                             ?>
                         </select>
                     </div>
