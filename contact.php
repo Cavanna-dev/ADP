@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include 'template/header.php';
 include 'template/menu.php';
 ?>
@@ -14,9 +14,29 @@ include 'template/menu.php';
         </div>
     <?php endif; ?>
     <form class="form-horizontal" method="POST" action="./model/contact.php" name="fp">
-        <input type="hidden" name="inputId" value="<?= $_SESSION['customer']['idUser']?>">
         <fieldset>
           <legend></legend>
+           <?php if(!empty($_SESSION['customer']['name'])){ ?>
+                <input type="hidden" name="inputName" value="<?= $_SESSION['customer']['name']?>">
+                <input type="hidden" name="inputFirstName" value="<?= $_SESSION['customer']['firstName']?>">
+                <input type="hidden" name="inputEmail" value="<?= $_SESSION['customer']['email']?>">
+            <?php }else{ ?>
+                <div class="form-group">
+                  <label for="inputName" class="col-lg-2 control-label">Nom</label>
+                  <div class="col-lg-3">
+                    <input type="text" class="form-control" id="inputName" name="inputName" 
+                           placeholder="Nom">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="inputFirstName" class="col-lg-2 control-label">Prénom</label>
+                  <div class="col-lg-3">
+                    <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" 
+                           placeholder="Prénom">
+                  </div>
+                </div>
+            <?php } ?>
           <div class="form-group">
             <label for="inputSubject" class="col-lg-2 control-label">Sujet</label>
             <div class="col-lg-10">
@@ -27,7 +47,7 @@ include 'template/menu.php';
           <div class="form-group">
             <label for="textMessage" class="col-lg-2 control-label">Demande</label>
             <div class="col-lg-10">
-              <textarea class="form-control" rows="18" id="textMessage" name="textMessage"
+              <textarea class="form-control" rows="15" id="textMessage" name="textMessage"
                         placeholder="Votre demande"></textarea>
               <span class="help-block"></span>
             </div>
