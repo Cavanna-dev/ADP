@@ -1,15 +1,12 @@
-<div class="navbar navbar-default" id="menuCategorie">
-    <div class="container">
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Categorie 1</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorie 2 <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Sous categorie 1</a></li>
-                    </ul>
-                </li>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav col-lg-12">
+                <?php $r_categories = getAllMasterCategories($db); ?>
+                <?php while ($r_category = $r_categories->fetch(PDO::FETCH_OBJ)) { ?>
+                    <li><a href="page.php?cat=<?= $r_category->id; ?>"><?= $r_category->name; ?></a></li>
+                    <?php } ?>
             </ul>
         </div>
     </div>
-</div>
+</nav>

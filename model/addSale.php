@@ -1,5 +1,4 @@
 <?php
-
 include_once '../functions/connection_db.php';
 
 $array_post = array();
@@ -17,7 +16,7 @@ try {
     $stmt = $db->prepare($sql);
     $stmt->execute($array_post);
 
-    header('Location:../mysales.php?success');
+    header('Location:../mysales.php?success=1');
 } catch (PDOException $e) {
     die("Error : " . $e->getMessage());
 }

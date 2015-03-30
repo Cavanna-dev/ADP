@@ -62,5 +62,8 @@
     <div class="alert alert-dismissable alert-warning">
         <p data-dismiss="alert" >Notification : Chaque produit est soumis à la validation d'un administrateur.</p>
     </div>
+    <div class="alert alert-dismissable alert-warning">
+        <p data-dismiss="alert" >Votre produit n'est pas présent dans la liste? <a href="addArticle.php">Ajoutez le</a>!</p>
+    </div>
 </div>
 <?php include 'template/footer.php'; ?>

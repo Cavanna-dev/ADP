@@ -14,3 +14,18 @@ function getAllArticles($db)
 
     return $r;
 }
+
+function getAllSellableArticlesByParentCategory($db, $id)
+{
+    $sql = "SELECT av.price, art.id, art.picture, art.brand, art.name "
+            . "FROM availability av "
+            . "LEFT JOIN article art ON av.idArticle = art.id "
+            . "LEFT JOIN category cat ON art.idCategory = cat.id "
+            . "WHERE art.idCategory = ".$id;
+    $r = $db->prepare($sql);
+    $r->execute();
+
+    return $r;
+}
+
+?>
