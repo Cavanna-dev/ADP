@@ -22,7 +22,7 @@
 
 
   <form class="form-horizontal" action="model/addArticle.php" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="idUser" value="<?=$_SESSION['customer']['idUser']?>"/>
+    <input type="hidden" name="idUser" value="<?= $_SESSION['customer']['idUser']?>"/>
     <fieldset>
       <legend>Ajouter un produit</legend>
       <div class="form-group">

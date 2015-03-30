@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.php">Ttls Project</a>
+            <a class="navbar-brand" href="index.php">Ttls Project</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <form class="navbar-form navbar-left">
@@ -20,8 +20,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['customer']['firstName'].' '.$_SESSION['customer']['name']; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="contact.php">Votre compte</a></li>
-                            <li><a href="sales.php">Vos produits</a></li>
-                            <li><a href="#">Vos commandes</a></li>
+                            <li><a href="sales.php">Les produits du site</a></li>
+                            <li><a href="mysales.php">Vos commandes</a></li>
                             <li><a href="logout.php">Déconnection</a></li>
                         </ul>
                     </li>
