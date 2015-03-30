@@ -19,12 +19,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['customer']['firstName'].' '.$_SESSION['customer']['name']; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="contact.php">Contact</a></li>
-                            <li><a href="#">Mes Informations</a></li>
-                            <li><a href="logout.php">Deconnexion</a></li>
+                            <li><a href="contact.php">Votre compte</a></li>
+                            <li><a href="sales.php">Vos produits</a></li>
+                            <li><a href="#">Vos commandes</a></li>
+                            <li><a href="logout.php">Déconnection</a></li>
                         </ul>
                     </li>
-                    <li><a href="sales.php">Vendre</a></li>
                     <li><a href="basket.php">Mon Panier</a></li>
                 <?php } ?>
             </ul>
