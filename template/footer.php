@@ -3,8 +3,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 -->
 
-<script src="./js/jquery-1.11.0.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
+
 
 <div class="container"><a href="contact.php">Contact</a></div>
 </body>
