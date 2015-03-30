@@ -15,6 +15,7 @@
                 <th>Nom</th>
                 <th>Tags associés</th>
                 <th>Statut</th>
+                <th>Description</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -43,10 +44,17 @@
                         ?>
                     </td>
                     <td>
+                        <?php
+                        if ($r_product->idDescription != NULL)
+                            echo "Validée";
+                        else echo "En attente";
+                        ?>
+                    </td>
+                    <td>
                         <a href="addProduct.php?id=<?= $r_product->id; ?>" class="btn btn-info">Vendre cet article</a>
                     </td>
                 </tr>
-            <?php } ?>
+<?php } ?>
         </tbody>
     </table>
 

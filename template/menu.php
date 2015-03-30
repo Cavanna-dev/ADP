@@ -20,7 +20,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['customer']['firstName'].' '.$_SESSION['customer']['name']; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="contact.php">Votre compte</a></li>
-                            <li><a href="sales.php">Les produits du site</a></li>
+                            <li><a href="sales.php">vendre un article</a></li>
                             <li><a href="mysales.php">Vos commandes</a></li>
                             <li><a href="logout.php">Déconnection</a></li>
                         </ul>
