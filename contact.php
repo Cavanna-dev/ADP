@@ -13,7 +13,7 @@ include 'template/menu.php';
             <p>Merci pour votre contribution.</p>
         </div>
     <?php endif; ?>
-    <form class="form-horizontal" method="POST" action="./model/contact.php" name="fp" id="form">
+    <form class="form-horizontal" method="POST" action="./model/contact.php" id="form">
         <fieldset>
           <legend></legend>
            <?php if(!empty($_SESSION['customer']['name'])){ ?>
@@ -26,20 +26,20 @@ include 'template/menu.php';
                     <input type="hidden" name="inputId" value="NULL">
                     <label for="inputName" class="col-lg-2 control-label">Nom</label>
                     <div class="col-lg-3">
-                      <input type="text" class="form-control" id="inputName" name="inputName" 
+                      <input type="text" class="form-control verif" id="inputName" name="inputName"
                              placeholder="Nom">
                     </div>
 
                     <label for="inputFirstName" class="col-lg-1 control-label">Prénom</label>
                     <div class="col-lg-3">
-                      <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" 
+                      <input type="text" class="form-control verif" id="inputFirstName" name="inputFirstName" 
                              placeholder="Prénom">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-6">
-                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" 
+                        <input type="email" class="form-control verif" id="inputEmail" name="inputEmail"
                              placeholder="Email">
                     </div>
                 </div>
@@ -47,14 +47,14 @@ include 'template/menu.php';
           <div class="form-group">
             <label for="inputSubject" class="col-lg-2 control-label">Sujet</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" id="inputSubject" name="inputSubject" 
+              <input type="text" class="form-control verif" id="inputSubject" name="inputSubject"
                      placeholder="Sujet de la demande">
             </div>
           </div>
           <div class="form-group">
             <label for="textMessage" class="col-lg-2 control-label">Demande</label>
             <div class="col-lg-10">
-              <textarea class="form-control" rows="15" id="textMessage" name="textMessage"
+              <textarea class="form-control verif" rows="15" id="textMessage" name="textMessage"
                         placeholder="Votre demande"></textarea>
               <span class="help-block"></span>
             </div>
@@ -62,24 +62,19 @@ include 'template/menu.php';
           <?php if(empty($_SESSION['customer']['name'])){ ?>
             <div class="form-group">
                 <label for="inputNumber" class="col-lg-2 control-label">
-                    <?= $valueA = rand(1, 20); ?> + <?= $valueB = rand(1, 20); ?>            
-                    
+                    <?= $valueA = rand(1, 20); ?> + <?= $valueB = rand(1, 20); ?>          
                 </label>
                 <div class="col-lg-2">
-                    <input type="number" class="form-control" id="inputNumber" name="inputNumber" 
+                    <input type="number" class="form-control verif" id="inputNumber" name="inputNumber"
                         placeholder="Résultat">
                 </div>
-                <input type="hidden" name="inputNumberResult" value="<?= ($valueA+$valueB)?>" />
+                <input type="hidden" name="inputNumberResult" 
+                       id="inputNumberResult" value="<?= ($valueA+$valueB)?>" />
             </div>
           <?php } ?>
           <div class="form-group">
             <div class="col-lg-8 col-lg-offset-2">
-                <input type="submit" value="Envoyer" /> 
-<!--                <button type="button" class="btn btn-primary col-lg-6"               
-                    onclick="if(document.fp.inputSubject.value == ''){ alert('Veuiller renseigner un sujet !'); }
-                    else if(document.fp.textMessage.value == ''){ alert('Veuiller renseigner votre message.'); }
-                    else if(document.fp.inputNumber.value != document.fp.inputNumberResult.value ){ alert('Résultat incorect !'); }
-                    else{ document.fp.submit();  }" >Envoyer</button>-->
+                <input type="submit" class="btn btn-primary col-lg-6" value="Envoyer" /> 
             </div>
           </div>
         </fieldset>
@@ -89,7 +84,26 @@ include 'template/menu.php';
 <script>
     $(document).ready(function(){
         $('#form').on("submit", function(){
-            alert('alors');
+            var value_verif = true;
+            $(".verif").each(function(index){               
+               if($(this).val()===''){
+                   $(this).css("border-color", "#FF0000");
+                   $(this).css("background-color", "#FFCDCD");
+                   value_verif = false;
+               }else{
+                   $(this).css("border-color", "#10A41F");
+                   $(this).css("background-color", "#FFFFFF");
+               }
+            });
+                      
+            if($("#inputNumber").val() != $("#inputNumberResult").val() && value_verif == true){
+                alert("La somme n'est pas correct.")
+                value_verif = false;
+            }
+            
+            if(value_verif == false){
+                return false;
+            }        
         });
     });
 </script>
