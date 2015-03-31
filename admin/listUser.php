@@ -1,7 +1,5 @@
 <?php $selectMenu = 3; ?>
 <?php
-include_once '../functions/connection_db.php';
-
 include 'template/header.php';
 include 'template/menu.php';
 include 'model/listUser.php';

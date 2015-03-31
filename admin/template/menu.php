@@ -1,3 +1,13 @@
+<?php
+
+$sql = "SELECT * FROM config WHERE label = 'nameBo' ";
+$resultat = $db->query($sql);
+$resultat->execute();
+$reqInformation = $resultat->fetch(PDO::FETCH_ASSOC);
+$resultat->closeCursor();
+
+$reqInterface[$reqInformation['label']]=$reqInformation['value']; 
+?>
 <div class="navbar navbar-inverse">
     <!--<div class="container">-->
         <div class="navbar-header">
@@ -7,7 +17,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="">
-                ADP PROJECT
+                <?=$reqInterface['nameBo']?>
             </a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
@@ -20,7 +30,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Web <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="homePageCarousel.php">Gérer le diaporama de la page d'accueil</a></li>
-                        <li><a href="#">Gérer le menu du site</a></li>
+                        <li><a href="interface.php">Gérer l'interface</a></li>
                         <li><a href="../index.php">Voir le site</a></li>
                     </ul>
                 </li>
