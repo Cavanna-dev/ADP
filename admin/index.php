@@ -15,7 +15,7 @@ if(isset($_GET['error']) && $_GET['error']=='logout'):
 <?php else: ?>        
     <div class="container">
         <br/><br/><br/>
-        <div class="jumbotron col-lg-10">
+        <div class="jumbotron col-lg-12">
             <form class="form-horizontal" id="loginForm" action="login.php" method="POST">
                 <fieldset>
                     <legend>Connection</legend>

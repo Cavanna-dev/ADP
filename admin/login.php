@@ -7,8 +7,8 @@ function hashagePass($password) {
 }
 
 
-$email    = htmlspecialchars($_POST['inputEmail']);
-$password = hashagePass(htmlspecialchars($_POST['inputPassword']));
+$email    = htmlspecialchars($_POST['inputEmail'], ENT_QUOTES);
+$password = hashagePass(htmlspecialchars($_POST['inputPassword'], ENT_QUOTES));
 
 include_once '../functions/connection_db.php';
 
