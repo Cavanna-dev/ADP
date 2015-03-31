@@ -1,5 +1,3 @@
-<?php include 'model/dashboard.php'; ?>
-
 <h1>Dashboard</h1>
 
 <div class="form-group col-lg-5">

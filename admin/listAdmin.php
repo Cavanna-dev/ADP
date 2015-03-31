@@ -50,18 +50,23 @@ $roleValue[1] = 'Super Admin';
           <tbody>
           <?php foreach($reqListAdmin as $value): ?>
             <tr  onclick="document.location='info.php?key=<?=$value['id']?>'" style="cursor: pointer;">                
-                <td class="col-lg-4"><?=$value['name'].', '.$value['firstName']?></td>
+                <td class="col-lg-3"><?=$value['name'].', '.$value['firstName']?></td>
                 <td class="col-lg-3"><?=$value['email']?></td>
-                <td class="col-lg-1"><?=$roleValue[$value['role']]?></td>
+                <td class="col-lg-2"><?=$roleValue[$value['role']]?></td>
                 <td class="col-lg-2"><?=date('d/m/Y', strtotime($value['dateCreate']))?></td>
                 <form method="POST" action="model/updateAdmin.php" name="<?=$value['id']?>">                    
                     <input type="hidden" name="idUser" value="<?=$value['id']?>" />                    
                     <?php if($value['isActive']==1): ?>
                         <input type="hidden" name="isActive" value="0" />
-                        <td class="col-lg-2"><button type="submit" class="col-lg-12 btn btn-danger">Désactiver</button></td>
+                        <td class="col-lg-2" style="padding:0;">
+                            <button type="submit" class="col-lg-12 btn btn-danger"
+                                    style="border-radius:0;">Désactiver</button></td>
                     <?php else: ?>
                         <input type="hidden" name="isActive" value="1" />
-                        <td col-lg-2><button type="submit" class="col-lg-12 btn btn-success">Activer</button></td>
+                        <td class="col-lg-2" style="padding:0;">
+                            <button type="submit" class="col-lg-12 btn btn-success"
+                            style="border-radius:0;">Activer</button>
+                        </td>
                     <?php endif; ?>
                 </form>
             </tr>

@@ -35,8 +35,15 @@ try {
         $_SESSION['user_firstName']   = $bdFirstName;
 
         header('Location: home.php');
-    } else
-        header('Location: index.php?error=mdp');
+    }else{
+        if($email != $bdEmail):
+            $value = "emailError";
+        else:
+            $value = "email=".$email;
+        endif;        
+        
+        header('Location: index.php?mdpError&'.$value);
+    }
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }

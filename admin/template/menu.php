@@ -8,7 +8,7 @@ $resultat->closeCursor();
 
 $reqInterface[$reqInformation['label']]=$reqInformation['value']; 
 ?>
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse" style='border-radius:0px;'>
     <!--<div class="container">-->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
@@ -30,7 +30,6 @@ $reqInterface[$reqInformation['label']]=$reqInformation['value'];
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Web <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="homePageCarousel.php">Gérer le diaporama de la page d'accueil</a></li>
-                        <li><a href="interface.php">Gérer l'interface</a></li>
                         <li><a href="../index.php">Voir le site</a></li>
                     </ul>
                 </li>
@@ -68,6 +67,7 @@ $reqInterface[$reqInformation['label']]=$reqInformation['value'];
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['user_firstName'].', '.$_SESSION['user_name']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="info.php">Mes Informations</a></li>
+                        <li><a href="interface.php">Paramètres</a></li>
                         <li><a href="index.php?error=logout">Déconnexion</a></li>
                     </ul>
                 </li>

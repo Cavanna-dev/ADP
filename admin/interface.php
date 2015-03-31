@@ -1,4 +1,4 @@
-<?php $selectMenu = 1; ?>
+<?php $selectMenu = 5; ?>
 <?php
 include 'template/header.php';
 include 'template/menu.php';
@@ -7,7 +7,7 @@ include 'model/interface.php';
 
 
 <div class="container">
-    <h1>Information site web</h1>
+    <h1>Paramètres</h1>
     <?php if (isset($_GET['error'])): ?>
         <div class="alert alert-dismissable alert-danger">
             <button type="button" class="close" data-dismiss="alert">×</button>

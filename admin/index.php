@@ -1,70 +1,63 @@
 <?php
 include 'template/header.php';
-if (isset($_GET['error'])) {
-    switch ($_GET['error']) {
-        case 'logout':
-            session_destroy();
-            ?>           
-            <div class="container">
-                <div class="jumbotron">
-                    <h1>Deconnection</h1>
-                    <p>Merci de vore visite !</p>
-                    <p><a href="index.php" class="btn btn-primary btn-lg">Revenir à la page d'accueil</a></p>
-                </div>
-            </div>
-            <?php
-            break;
-        case 'mdp':
-            ?>        
-            <div class="container">
-                <div class="jumbotron">
-                    <h1>Mot de passe incorrecte</h1>
-                    <p>Merci de vore visite !</p>
-                    <p><a href="index.php" class="btn btn-primary btn-lg">Revenir à la page d'accueil</a></p>
-                </div>
-            </div>
-            <?php
-            break;
-        default:break;
-    }
-} else {
-    ?>
+
+if(isset($_GET['error']) && $_GET['error']=='logout'):
+    session_destroy();
+    ?>           
     <div class="container">
-        <form class="form-horizontal" id="loginForm" action="login.php" method="POST">
-            <fieldset>
-                <legend>Connection</legend>
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email :</label>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
+        <br/><br/><br/>
+        <div class="jumbotron">
+            <h1>Deconnection</h1>
+            <p>Merci de vore visite !</p>
+            <p><a href="index.php" class="btn btn-primary btn-lg">Revenir à la page d'accueil</a></p>
+        </div>
+    </div>
+<?php else: ?>        
+    <div class="container">
+        <br/><br/><br/>
+        <div class="jumbotron col-lg-10">
+            <form class="form-horizontal" id="loginForm" action="login.php" method="POST">
+                <fieldset>
+                    <legend>Connection</legend>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-3 control-label">Email :</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control" id="inputEmail" name="inputEmail" 
+                                   <?php if(isset($_GET['email'])){ echo 'value="'.$_GET['email'].'"'; } ?>
+                                   placeholder="Email">
+                        </div>
+                         <?php if(isset($_GET['emailError'])) : ?>
+                            <div class="col-lg-4">
+                                <h4 style="color:red; font-weight: bold;">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    Email incorrect ! </h4>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Mot de passe :</label>
-                    <div class="col-lg-8">
-                        <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Mot de passe">
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-lg-3 control-label">Mot de passe :</label>
+                        <div class="col-lg-5">
+                            <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Mot de passe">
+                        </div>
+                        
+                        <?php if(isset($_GET['mdpError'])) : ?>
+                            <div class="col-lg-4">
+                                <h4 style="color:red; font-weight: bold;">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    Mot de passe incorrect ! </h4>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="checkbox" class="col-lg-2 control-label"></label>
-                    <div class="col-lg-8">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Rester connecter
-                            </label>
+                    <div class="form-group">
+                        <div class="col-lg-offset-4">
+                            <button type="submit" class="btn btn-primary col-lg-5">Se Connecter</button>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button class="btn btn-default">Annuler</button>
-                        <button type="submit" class="btn btn-primary">Se Connecter</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+                </fieldset>
+            </form>
+        </div>
     </div>
-<?php } ?>
+<?php endif; ?>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
     $("#loginForm").submit(function (event) {

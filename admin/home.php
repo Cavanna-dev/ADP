@@ -2,6 +2,7 @@
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 
+<?php include 'model/dashboard.php'; ?>
 
 
 <div class="container col-lg-10 col-lg-offset-1">
