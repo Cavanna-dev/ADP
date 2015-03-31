@@ -14,9 +14,18 @@
 
 .carouselImg {
     width:1140px;
-    height:350px;
+    height:100%;
 }
+
 .adminCarouselImg {
     width:50px;
     height:40px;
+}
+
+.navbar, navbar-default {
+    margin: 0;
+}
+
+.item {
+    height:100%;
 }

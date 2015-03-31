@@ -6,7 +6,7 @@
         <?php $compteur = 0; ?>
         <?php while ($resultat = $resultats->fetch(PDO::FETCH_OBJ)) { ?>        
             <div class="item <?php if ($compteur % 2 == 0) echo "active"; ?>">
-                <img class="carouselImg" src="./img/uploads_carousel/<?php echo $resultat->source; ?>" alt="<?php echo $resultat->content; ?>">
+                <img class="carouselImg" src="./img/uploads_carousel/<?php echo $resultat->source; ?>" alt="<?php echo $resultat->content; ?>" style="height:100%;width:100%;">
                 <div class="carousel-caption">
                     <?php echo $resultat->content; ?>
                 </div>

@@ -3,8 +3,7 @@
 <?php include './functions/connection_db.php'; ?>
 <?php include 'model/bootstrap.php'; ?>
     <?php include 'template/categories.php'; ?>
-<br />
-<div class="container">
+<div class="container-fluid" style="margin: 0;padding: 0;">
     <?php include 'template/carousel.php'; ?>
 </div>
 <?php include 'template/footer.php'; ?>
