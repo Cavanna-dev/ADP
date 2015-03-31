@@ -275,10 +275,10 @@
     </div>
     <div class="jumbotron col-lg-6 col-lg-offset-1"> 
         <fieldset>
-            <legend>Ventes day-1</legend>
+            <legend>Ventes sur la semaine</legend>
             <p>
                 <span style="font-size: 30pt;"                      
-                    class="label label-primary"><?= $reqDashboard['customerTotal'] ?></span>
+                    class="label label-primary"><?= $reqDashboard['nbCommand'] ?></span>
             </p>
     </div>
 </div>

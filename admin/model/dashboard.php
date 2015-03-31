@@ -1,6 +1,10 @@
 <?php
 include_once '../functions/connection_db.php';
 
+
+
+$monday = date('Y-m-d', strtotime('monday this week', strtotime('last sunday'))).' 00:00:00';
+
 $sql = "SELECT "
     . "(SELECT COUNT(id) FROM article) AS articleTotal, "
     . "(SELECT COUNT(id) FROM article WHERE isActive = 1) AS articleActif, "
@@ -25,8 +29,12 @@ $sql = "SELECT "
     . "(SELECT COUNT(id) FROM contact) AS contactTotal, "
     . "(SELECT COUNT(id) FROM contact WHERE status = 2) AS contactClose, "
     . "(SELECT COUNT(id) FROM contact WHERE status = 1) AS contactOpen, "
-    . "(SELECT COUNT(id) FROM contact WHERE status = 0) AS contact ";
+    . "(SELECT COUNT(id) FROM contact WHERE status = 0) AS contact, "
 
+    . "(SELECT COUNT(id) FROM availability WHERE status = 1 "
+            . "AND DateChange > '".$monday."') AS nbCommand ";
+
+ 
 $resultat = $db->query($sql);
 $resultat->execute();
 $reqDashboard = $resultat->fetch(PDO::FETCH_ASSOC);
