@@ -46,11 +46,29 @@
         </fieldset>
         <div class="progress progress-striped active">
             <div class="progress-bar progress-bar-success" style="width: 
-                 <?= ($reqDashboard['articleActif']/$reqDashboard['articleTotal']*100) ?>%"></div>
+                 <?php 
+                 if($reqDashboard['articleTotal']>0){
+                     echo ($reqDashboard['articleActif']/$reqDashboard['articleTotal']*100);
+                 }else{
+                     echo 0;
+                 }                        
+                ?>%"></div>
             <div class="progress-bar progress-bar-danger" style="width: 
-                 <?= ($reqDashboard['articleEnAttente']/$reqDashboard['articleTotal']*100) ?>%"></div>
+                <?php 
+                if($reqDashboard['articleTotal']>0){
+                    echo ($reqDashboard['articleEnAttente']/$reqDashboard['articleTotal']*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%"></div>
             <div class="progress-bar progress-bar-warning" style="width: 
-                 <?= ($reqDashboard['articleInactif']/$reqDashboard['articleTotal']*100) ?>%"></div>
+                <?php 
+                if($reqDashboard['articleTotal']>0){
+                    echo ($reqDashboard['articleInactif']/$reqDashboard['articleTotal']*100) ;
+                }else{
+                    echo 0;
+                }                        
+                ?>%"></div>
         </div>
     </div>
     
@@ -95,11 +113,29 @@
         </fieldset>
         <div class="progress progress-striped active">
             <div class="progress-bar progress-bar-success" style="width: 
-                 <?= ($reqDashboard['contactClose']/$reqDashboard['contactTotal']*100) ?>%"></div>
+                 <?php 
+                if($reqDashboard['contactTotal']>0){
+                    echo ($reqDashboard['contactClose']/$reqDashboard['contactTotal']*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%"></div>
             <div class="progress-bar progress-bar-warning" style="width: 
-                 <?= ($reqDashboard['contactOpen']/$reqDashboard['contactTotal']*100) ?>%"></div>
+                <?php 
+                if($reqDashboard['contactTotal']>0){
+                    echo ($reqDashboard['contactOpen']/$reqDashboard['contactTotal']*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%"></div>
             <div class="progress-bar progress-bar-danger" style="width: 
-                 <?= ($reqDashboard['contact']/$reqDashboard['contactTotal']*100) ?>%"></div>
+                <?php 
+                if($reqDashboard['contactTotal']>0){
+                    echo ($reqDashboard['contact']/$reqDashboard['contactTotal']*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%"></div>
         </div>
     </div>    
 </div>
@@ -148,11 +184,32 @@
         </fieldset>    
         <div class="progress progress-striped active">
             <div class="progress-bar progress-bar-success" style="width: 
-                 <?= ($reqDashboard['articleDescription']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100) ?>%"></div>
+                <?php 
+                if(($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])>0){
+                    echo ($reqDashboard['articleDescription']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%">
+            </div>
             <div class="progress-bar progress-bar-warning" style="width: 
-                 <?= ($reqDashboard['articleDescriptionDispo']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100) ?>%"></div>
+                <?php 
+                if(($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])>0){
+                    echo ($reqDashboard['articleDescriptionDispo']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%">
+            </div>
             <div class="progress-bar progress-bar-danger" style="width: 
-                 <?= ($reqDashboard['articleDescriptionNoDispo']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100) ?>%"></div>
+                <?php 
+                if(($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])>0){
+                    echo ($reqDashboard['articleDescriptionNoDispo']/($reqDashboard['articleActif']+$reqDashboard['articleEnAttente'])*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%">
+            </div>
         </div>
 
         <i>* Sur les articles actifs et en attentes</i>
@@ -197,9 +254,23 @@
         </fieldset>
         <div class="progress progress-striped active">
             <div class="progress-bar progress-bar-success" style="width: 
-                 <?= ($reqDashboard['customerActif']/$reqDashboard['customerTotal']*100) ?>%"></div>
+                <?php 
+                if($reqDashboard['customerTotal']>0){
+                    echo ($reqDashboard['customerActif']/$reqDashboard['customerTotal']*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%">
+            </div>
             <div class="progress-bar progress-bar-danger" style="width: 
-                 <?= ($reqDashboard['customerInactif']/$reqDashboard['customerTotal']*100) ?>%"></div>
+                <?php 
+                if($reqDashboard['customerTotal']>0){
+                    echo ($reqDashboard['customerInactif']/$reqDashboard['customerTotal']*100);
+                }else{
+                    echo 0;
+                }                        
+                ?>%">
+            </div>
         </div>
     </div>
     <div class="jumbotron col-lg-6 col-lg-offset-1"> 
@@ -207,7 +278,7 @@
             <legend>Ventes day-1</legend>
             <p>
                 <span style="font-size: 30pt;"                      
-                    class="label label-primary">123 33<?= $reqDashboard['customerTotal'] ?></span>
+                    class="label label-primary"><?= $reqDashboard['customerTotal'] ?></span>
             </p>
     </div>
 </div>
