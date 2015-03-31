@@ -15,7 +15,7 @@ function getAllArticles($db)
     return $r;
 }
 
-function getAllSellableArticlesByParentCategory($db, $id)
+function getAllSellableArticlesByCategory($db, $id)
 {
     $sql = "SELECT av.price, art.id, art.picture, art.brand, art.name "
             . "FROM availability av "

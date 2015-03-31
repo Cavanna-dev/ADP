@@ -10,6 +10,7 @@
     <table class="table table-striped table-hover ">
         <thead>
             <tr>
+                <th>Catégorie</th>
                 <th>Référence</th>
                 <th>Image</th>
                 <th>Nom</th>
@@ -29,6 +30,7 @@
                     echo "warning";
                 }
                 ?>">
+                    <td><?= $r_product->category; ?></td>
                     <td><a href="article.php?key=<?= $r_product->id ?>"><?= $r_product->reference; ?></a></td>
                     <td><img src="img/articles/<?= $r_product->id . "/" . $r_product->picture; ?>" style="width:25px;height:25px;"/></td>
                     <td><?= $r_product->name; ?></td>
@@ -39,7 +41,7 @@
                             echo"Validé";
                         }
                         if ($r_product->isActive == 2) {
-                            echo"En attente de validation";
+                            echo"En attente ";
                         }
                         ?>
                     </td>
