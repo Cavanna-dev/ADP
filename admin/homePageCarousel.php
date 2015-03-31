@@ -2,9 +2,9 @@
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 <div class="container">
-    <div class="jumbotron">
-        Bienvenue sur la Gestion du Carousel
-    </div>
+    
+        <H1>Bienvenue sur la Gestion du Carousel</H1>
+    
 
     <?php if (isset($_GET['erreur'])) { //TODO:Pour gérer les erreurs. ?>
         <div class="alert alert-dismissable alert-warning">
@@ -13,7 +13,7 @@
             <p>Lorem Ipsum.</p>
         </div>
     <?php } ?>
-
+<div class="jumbotron">
     <?php include './modalCarousel.php'; //Renvoi de la pop-up pour enregistrer une image ?>
 
     <?php include 'modelCarousel/allCarousel.php'; //Traitement MySQL pour toute les images ?>
@@ -94,7 +94,8 @@
                 <?php $compteur++; ?>
 <?php } ?>
         </tbody>
-    </table> 
+    </table>
+</div>
     <div class="alert alert-dismissable alert-warning">
         <p data-dismiss="alert" >Notification : Préférez les images en format 1140x350 pour un rendu optimal sur votre page d'accueil.</p>
     </div>
