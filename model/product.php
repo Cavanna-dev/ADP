@@ -28,4 +28,19 @@ function getAllSellableArticlesByCategory($db, $id)
     return $r;
 }
 
+function getAllSellableArticlesByArticleId($db, $id)
+{
+    $sql = "SELECT av.price, av.description, art.id, art.picture, art.brand, art.name, art.reference, "
+            . "av.idUserSales, cust.name, cust.firstName, cust.email "
+            . "FROM availability av "
+            . "LEFT JOIN article art ON av.idArticle = art.id "
+            . "LEFT JOIN category cat ON art.idCategory = cat.id "
+            . "LEFT JOIN customer cust ON av.idUserSales = cust.id "
+            . "WHERE av.idArticle = '".$id."' AND av.status = 1 AND av.isActive = 1";
+    $r = $db->prepare($sql);
+    $r->execute();
+
+    return $r;
+}
+
 ?>

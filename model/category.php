@@ -1,5 +1,16 @@
 <?php
 
+function getAllCategories($db)
+{
+    $sql = "SELECT id, idParent, name "
+            . "FROM category "
+            . "WHERE idParent != 0 AND isActive = 1";
+    $r = $db->prepare($sql);
+    $r->execute();
+
+    return $r;
+}
+
 function getAllMasterCategories($db)
 {
     $sql = "SELECT id, name "

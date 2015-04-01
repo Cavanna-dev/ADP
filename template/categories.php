@@ -4,7 +4,7 @@
             <ul class="nav navbar-nav col-lg-12">
                 <?php $r_categories = getAllMasterCategories($db); ?>
                 <?php while ($r_category = $r_categories->fetch(PDO::FETCH_OBJ)) { ?>
-                    <li><a href="page.php?cat=<?= $r_category->id; ?>"><?= $r_category->name; ?></a></li>
+                    <li><a href="page.php?parentCat=<?= $r_category->id; ?>"><?= $r_category->name; ?></a></li>
                     <?php } ?>
             </ul>
         </div>
