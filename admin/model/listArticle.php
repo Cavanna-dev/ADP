@@ -31,8 +31,9 @@ if(!empty($idDescription) && $idDescription=='r'){ $where .= "AND A1.idDescripti
 
 
 
-$sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.picture, A1.isActive, C1.name AS category, "
-    . "(SELECT COUNT(id) FROM description AS D1 WHERE D1.idArticle = A1.Id AND D1.isActive=1) AS nbDescription "
+$sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.picture, A1.isActive, C1.name AS category, tags, "
+    . "(SELECT COUNT(id) FROM description AS D1 WHERE D1.idArticle = A1.Id AND D1.isActive=1) AS nbDescription, "
+    . "(SELECT CONCAT(valueA, ' ', valueB) FROM description AS D1 WHERE D1.idArticle = A1.Id AND D1.isActive=1) AS description "
     . "FROM article AS A1 LEFT JOIN category AS C1 ON C1.id = A1.idCategory  "
     . "WHERE 1=1 "
     . $where
@@ -41,4 +42,3 @@ $resultat = $db->query($sql);
 $resultat->execute();
 $reqListArticle = $resultat->fetchAll(PDO::FETCH_ASSOC);
 $resultat->closeCursor();
-

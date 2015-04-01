@@ -11,7 +11,7 @@ include 'model/listCategory.php';
     <h1>Liste des articles</h1>
 
     <div class="jumbotron">
-        <form class="form-horizontal" method="GET" action="listArticle.php">
+        <form class="form-horizontal" method="GET" id="form" action="listArticle.php">
             <fieldset>
                 <legend>Filtres</legend>
                 <div class="form-group">
@@ -57,13 +57,16 @@ include 'model/listCategory.php';
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-lg-9 col-lg-offset-3">
-                        <button type="submit" class="col-lg-8 btn btn-primary">Afficher</button>
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="col-lg-4 btn btn-primary">Afficher</button>
+                        <button type="button" onclick="f()" 
+                                class="col-lg-4 col-lg-offset-1 btn btn-primary">Exporter</button>                        
                     </div>
                 </div>
             </fieldset>
         </form>
     </div>
+    
 
     <div class="jumbotron">
         <table class="table table-striped table-hover table-responsive">
@@ -104,3 +107,20 @@ include 'model/listCategory.php';
 </div>
 
 <?php include 'template/footer.php'; ?>
+
+<script>
+    function f()
+    {        
+        var name    = document.getElementById('inputName').value;
+        var ref     = document.getElementById('inputRef').value;
+        var brand   = document.getElementById('inputBrand').value;
+        var idCat   = document.getElementById('selectIdCategory').value;
+        var isAct   = document.getElementById('selectIsActive').value;
+        var idDes   = document.getElementById('selectIdDescription').value;
+        
+        var get_a = 'inputName='+name+'&inputRef='+ref+'&inputBrand='+brand;
+        var get_b = '&selectIdCategory='+idCat+'&selectIsActive='+isAct+'&selectIdDescription='+idDes;
+        var page = 'exportArticle.php?'+get_a+get_b; 
+        window.open(page, 'Export', "menubar=no, status=no, scrollbars=no, width=600, height=200");    
+    }
+</script>
