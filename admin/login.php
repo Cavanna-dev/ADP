@@ -15,7 +15,7 @@ include_once '../functions/connection_db.php';
 try {
     $resultats = $db->query("SELECT id, email, password, role, name, firstName " .
                             "FROM user " .
-                            "WHERE email = '" . $email . "'"
+                            "WHERE email = '" . $email . "' AND isActive=1 "
                             , PDO::FETCH_OBJ);
     while ($resultat = $resultats->fetch()) {
         $bdId = $resultat->id;
