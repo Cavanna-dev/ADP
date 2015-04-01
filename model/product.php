@@ -17,7 +17,7 @@ function getAllArticles($db)
 
 function getAllSellableArticlesByCategory($db, $id)
 {
-    $sql = "SELECT av.price, art.id, art.picture, art.brand, art.name "
+    $sql = "SELECT av.price, art.id, art.picture, art.brand, art.name, art.reference "
             . "FROM availability av "
             . "LEFT JOIN article art ON av.idArticle = art.id "
             . "LEFT JOIN category cat ON art.idCategory = cat.id "

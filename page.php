@@ -22,25 +22,33 @@
             $r_category_test = getCategoriesTest($db);
             foreach ($r_category_test as $id => $value) {
                 $listParent[] = $value['idParent'];
-            }          
-            
+            }
+
             $r_test = makeArray($id_parent_category, $r_category_test, $listParent);
             $r_test = array_merge(array($id_parent_category), $r_test);
-            
+
             foreach ($r_test as $r_category) {
                 settype($r_category, 'integer');
                 ?>
-                <div class="col-md-4">
-                        <?php $r_articles = getAllSellableArticlesByCategory($db, $r_category); ?>
-                        <?php while ($r_article_final = $r_articles->fetch(PDO::FETCH_OBJ)) { ?>
-                            <img class="col-md-3" src="img/articles/<?= $r_article_final->id; ?>/<?= $r_article_final->picture; ?>"/>
-                            <small><?= $r_article_final->brand . " " . $r_article_final->name; ?></small>
-                            <br /><br />
-                            <small><?= $r_article_final->price; ?></small>
-                            <br /><br />
-                            <a href="#" class="btn btn-primary btn-xs btn-info">Ajouter au panier</a>
-                        <?php } ?>
-                </div>
+                <?php $r_articles = getAllSellableArticlesByCategory($db, $r_category); ?>
+                <?php while ($r_article_final = $r_articles->fetch(PDO::FETCH_OBJ)) { ?>
+                    <div class="col-md-4">
+                        <img class="col-md-12" src="img/articles/<?= $r_article_final->id; ?>/<?= $r_article_final->picture; ?>"/>
+                        <a href="#" class="col-md-7 col-md-offset-3">
+                            <p>
+                                <small>
+                        <?php if(strlen($r_article_final->brand . " " . $r_article_final->name . " " . $r_article_final->reference) < 20):
+                                  echo $r_article_final->brand . " " . $r_article_final->name . " " . $r_article_final->reference;
+                              else:
+                                  echo substr($r_article_final->brand . " " . $r_article_final->name . " " . $r_article_final->reference, 0, 20) . "...";
+                              endif;
+                              ?>
+                                </small>
+                            </p>
+                        </a>
+                        <p class="col-md-8 col-md-offset-4"><?= $r_article_final->price; ?> €</p>
+                    </div>
+                <?php } ?>
             <?php } ?>
         </div>
     </div>
