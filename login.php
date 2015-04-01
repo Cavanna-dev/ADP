@@ -7,7 +7,7 @@ $email = htmlspecialchars($_POST['inputEmail']);
 $password = hashagePass($_POST['inputPassword']); //Fonction functions/hashagePass.php
 
 try {
-    $resultats = $db->query("SELECT id, email, password, name, firstName " .
+    $resultats = $db->query("SELECT id, email, password, name, firstName, isActive " .
             "FROM customer " .
             "WHERE email = '" . $email . "'"
             , PDO::FETCH_OBJ);
@@ -16,10 +16,11 @@ try {
         $custEmail = $resultat->email;
         $custPassword = $resultat->password;
         $custName = $resultat->name;
+        $custIsActive = $resultat->isActive;
         $custFirstName = $resultat->firstName;
     }
 
-    if (!empty($custPassword) && $custPassword == $password) {
+    if (!empty($custPassword) && $custPassword == $password && $custIsActive==1) {
         session_start();
         $_SESSION['customer']['email'] = $custEmail;
         $_SESSION['customer']['idUser'] = $custId;
@@ -28,7 +29,7 @@ try {
 
         header('Location:index.php');
     } else
-        header('Location:error.php');
+        header('Location:form_login.php?errorConn');
 } catch (PDOException $e) {
     header('Location:error.php?error=' . $e->getCode());
 }
