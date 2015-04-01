@@ -36,11 +36,10 @@ function getCategoriesByParentId($db, $id)
 
 function getCategoriesTest($db)
 {
-$sql = "SELECT C1.id, C1.name, C1.idParent, "
-    . "(SELECT C2.name FROM category as C2 WHERE C2.id = C1.idParent AND C2.isActive=1) AS nameParent "
+$sql = "SELECT C1.id, C1.idParent "
     . "FROM category as C1 "
     . "WHERE C1.isActive=1 "
-    . "ORDER BY nameParent ASC,C1.name ASC ";
+    . "ORDER BY C1.id ASC ";
 $resultat = $db->query($sql);
 $resultat->execute();
 $req = $resultat->fetchAll(PDO::FETCH_ASSOC);
@@ -51,21 +50,23 @@ $resultat->closeCursor();
 
 function makeArray($parent, $array, $listParent)
 {
-    if (!is_array($array) OR empty($array)) return FALSE;
+    // if (!is_array($array) OR empty($array)) return FALSE;
 
-      $list=array();
-
+    $list = array();
+    // var_dump($list);
+    
     foreach($array as $value):
         if ($value['idParent'] == $parent):
 
-            if(!in_array($value['id'], $listParent)){
-                $list[] = $value['id'];
-            }else{
-                $list[$value['id']] = makeArray($value['id'], $array, $listParent);
-            }
+            $list[] = $value['id'];
+        
+           if(in_array($value['id'], $listParent)){       
+               $list = array_merge($list, makeArray($value['id'], $array, $listParent));                
+           }
 
         endif;
-    endforeach;
+    endforeach;   
+    
     return $list;
 }
 

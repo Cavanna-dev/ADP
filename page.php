@@ -20,16 +20,17 @@
         <div class="container-fluid">
             <?php
             $r_category_test = getCategoriesTest($db);
-            foreach ($r_category_test as $value) {
+            foreach ($r_category_test as $id => $value) {
                 $listParent[] = $value['idParent'];
-            }
-            ?>
-            <?php
+            }          
+            
             $r_test = makeArray($id_parent_category, $r_category_test, $listParent);
+            $r_test = array_merge(array($id_parent_category), $r_test);
+            
             foreach ($r_test as $r_category) {
+                settype($r_category, 'integer');
                 ?>
                 <div class="col-md-4">
-                    <div class="container">
                         <?php $r_articles = getAllSellableArticlesByCategory($db, $r_category); ?>
                         <?php while ($r_article_final = $r_articles->fetch(PDO::FETCH_OBJ)) { ?>
                             <img class="col-md-3" src="img/articles/<?= $r_article_final->id; ?>/<?= $r_article_final->picture; ?>"/>
@@ -39,7 +40,6 @@
                             <br /><br />
                             <a href="#" class="btn btn-primary btn-xs btn-info">Ajouter au panier</a>
                         <?php } ?>
-                    </div>
                 </div>
             <?php } ?>
         </div>

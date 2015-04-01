@@ -8,7 +8,7 @@ endforeach;
 
 try {
     $sql = "INSERT INTO availability "
-            . "(`id`, `idArticle`, `idUserSales`, `idOrder`, "
+            . "(`id`, `idArticle`, `idUserSales`, `idCommand`, "
             . "`price`, `currency`, `description`, `status`) "
             . "VALUES "
             . "('',:idArticle,:idUserSales,NULL,"
