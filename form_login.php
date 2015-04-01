@@ -2,8 +2,15 @@
 <?php include 'template/menu.php'; ?>
 
 <div class="container">
+   
     <form class="form-horizontal col-lg-5" action="login.php" method="POST">
         <fieldset>
+             <?php if (isset($_GET['success'])): ?>
+                <div class="alert alert-dismissable alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <h4>Mot de passe modifié.</h4>                    
+                </div>
+            <?php endif; ?>
             <legend>Connectez-vous</legend>
             <div class="form-group">
                 <label for="inputEmail" class="col-lg-3 control-label">Email</label>
@@ -29,7 +36,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-3 col-lg-offset-3">
+                <div class="col-lg-6 col-lg-offset-3">
                     <a href='forgotenPassword.php'>Mot de passe oublié</a>
                 </div>
             </div>
