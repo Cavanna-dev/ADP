@@ -26,7 +26,13 @@ if(isset($_GET['error']) && $_GET['error']=='logout'):
                                    <?php if(isset($_GET['email'])){ echo 'value="'.$_GET['email'].'"'; } ?>
                                    placeholder="Email">
                         </div>
-                         <?php if(isset($_GET['emailError'])) : ?>
+                        <?php if(isset($_GET['emailActif'])): ?>
+                            <div class="col-lg-4">
+                                <h4 style="color:red; font-weight: bold;">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    Votre compte est inactif ! </h4>
+                            </div>
+                        <?php elseif(isset($_GET['emailError'])): ?>
                             <div class="col-lg-4">
                                 <h4 style="color:red; font-weight: bold;">
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>

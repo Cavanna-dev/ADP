@@ -13,19 +13,23 @@ $password = hashagePass(htmlspecialchars($_POST['inputPassword'], ENT_QUOTES));
 include_once '../functions/connection_db.php';
 
 try {
-    $resultats = $db->query("SELECT id, email, password, role, name, firstName " .
+    $resultats = $db->query("SELECT id, email, password, role, name, firstName, isActive " .
                             "FROM user " .
-                            "WHERE email = '" . $email . "' AND isActive=1 "
+                            "WHERE email = '" . $email . "' "
                             , PDO::FETCH_OBJ);
     while ($resultat = $resultats->fetch()) {
         $bdId = $resultat->id;
         $bdEmail = $resultat->email;
         $bdPassword = $resultat->password;
+        $bdisActive = $resultat->isActive;
         $bdRole = $resultat->role;
         $bdName = $resultat->name;
         $bdFirstName = $resultat->firstName;
     }
 
+    if ($bdisActive == 0)
+        header('Location: index.php?emailActif&email='.$email);die;
+    
     if ($bdPassword == $password) {
         session_start();
         $_SESSION['user_logged'] = $bdEmail;

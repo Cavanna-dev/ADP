@@ -28,6 +28,11 @@
                     <button type="submit" class="btn btn-primary">Me Connecter</button>
                 </div>
             </div>
+            <div class="form-group">
+                <div class="col-lg-3 col-lg-offset-3">
+                    <a href='forgotenPassword.php'>Mot de passe oublié</a>
+                </div>
+            </div>
         </fieldset>
     </form>
     <form class="form-horizontal col-lg-7" name="fp" action="registration.php" method="POST">
