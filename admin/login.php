@@ -27,8 +27,11 @@ try {
         $bdFirstName = $resultat->firstName;
     }
 
-    if ($bdisActive == 0)
-        header('Location: index.php?emailActif&email='.$email);die;
+    if ($bdisActive == 0){
+        header('Location: index.php?emailActif&email='.$email);
+        die;
+    }
+        
     
     if ($bdPassword == $password) {
         session_start();
