@@ -20,6 +20,16 @@ try {
         $custFirstName = $resultat->firstName;
     }
 
+    if (isset($custIsActive) && $custIsActive == 0){
+          header('Location: form_login.php?emailActif&inputEmailLog='.$email);
+          die;
+    }
+    
+    if (empty($custEmail)){
+          header('Location:form_login.php?emailError&inputEmailLog='.$email);
+          die;
+    }
+    
     if (!empty($custPassword) && $custPassword == $password && $custIsActive==1) {
         session_start();
         $_SESSION['customer']['email'] = $custEmail;
@@ -29,7 +39,7 @@ try {
 
         header('Location:index.php');
     } else {
-        header('Location:form_login.php?errorConn');  
+        header('Location:form_login.php?mdpError&inputEmailLog='.$email);  
     }
         
 } catch (PDOException $e) {

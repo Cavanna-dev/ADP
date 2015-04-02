@@ -6,6 +6,23 @@ include 'model/listArticle.php';
 $nb_line = count($reqListArticle);
 
 $data=array();
+
+if(!empty($name)){          $data[] = array('Nom : '.$name);}
+if(!empty($ref)){           $data[] = array('Référence : '.$ref);}
+if(!empty($brand)){         $data[] = array('Marque : '.$brand);}
+if(!empty($idCategory)){    $data[] = array('Catégorie : '.$idCategory);}
+if(!empty($isActive)){      $data[] = array('Actif : '.$valueIsActive[$isActive]);}
+if(!empty($idDescription)):
+    if($idDescription=='nr0'): 
+        $data[] = array('Description : Sans description [0]');
+    elseif(!empty($idDescription) && $idDescription=='nrX'):
+        $data[] = array('Description : Sans description [x]'); 
+    elseif(!empty($idDescription) && $idDescription=='r'):
+        $data[] = array('Description : Liée');
+    endif;    
+endif;
+var_dump($data);
+die;
 $data[] = array('Nom','Référence','Marque','Catégorie','Actif', 'Description', 'Tags');     
  
 foreach($reqListArticle as $value):

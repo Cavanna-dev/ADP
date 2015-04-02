@@ -18,23 +18,39 @@
     <form class="form-horizontal col-lg-5" action="login.php" method="POST">
         <fieldset>
             <legend>Connectez-vous</legend>
+            
             <div class="form-group">
                 <label for="inputEmail" class="col-lg-3 control-label">Email</label>
                 <div class="col-lg-9">
                     <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email"
                            value="<?php if(!empty($_GET['inputEmailLog'])){ echo $_GET['inputEmailLog']; }?>">
                 </div>
+                <?php if(isset($_GET['emailActif'])): ?>
+                    <div class="col-lg-offset-3 col-lg-9">
+                        <h4 style="color:red; font-weight: bold;">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            Votre compte est inactif ! </h4>
+                    </div>
+                <?php elseif(isset($_GET['emailError'])): ?>
+                    <div class="col-lg-offset-3 col-lg-9">
+                        <h4 style="color:red; font-weight: bold;">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            Email incorrect ! </h4>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="col-lg-3 control-label">Mot de passe</label>
                 <div class="col-lg-9">
                     <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Mot de passe">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Rester Connecter
-                        </label>
-                    </div>
                 </div>
+                <?php if(isset($_GET['mdpError'])) : ?>
+                    <div class="col-lg-offset-3 col-lg-9">
+                        <h4 style="color:red; font-weight: bold;">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            Mot de passe incorrect ! </h4>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="form-group">
                 <div class="col-lg-3 col-lg-offset-3">
