@@ -23,9 +23,9 @@ $resultat->closeCursor();
 
 $keyBdd = md5(md5($reqPass['name']).md5($reqPass['email']).md5($reqPass['name']));
 
-if (!empty($reqArticle['passChange']) || $key!=$keyBdd)
-    header('Location:index.php');
-
+if (empty($reqPass['passChange']) || $key!=$keyBdd){
+    header('Location:index.php'); die;
+}
 ?>
 
 <div class="container">
