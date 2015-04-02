@@ -6,7 +6,7 @@ $resultat->execute();
 $reqInformation = $resultat->fetch(PDO::FETCH_ASSOC);
 $resultat->closeCursor();
 
-$reqInterface[$reqInformation['label']]=$reqInformation['value']; 
+$reqInterface[$reqInformation['label']] = $reqInformation['value'];
 ?>
 <div id="menuPrincipal" class="navbar navbar-inverse">
     <div class="container">
@@ -16,7 +16,7 @@ $reqInterface[$reqInformation['label']]=$reqInformation['value'];
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><?=$reqInterface['nameFo']?></a>
+            <a class="navbar-brand" href="index.php"><?= $reqInterface['nameFo'] ?></a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -32,7 +32,12 @@ $reqInterface[$reqInformation['label']]=$reqInformation['value'];
                             <li><a href="logout.php">Déconnection</a></li>
                         </ul>
                     </li>
-                    <li><a href="basket.php">Mon Panier</a></li>
+                    <li>
+                        <a href="basket.php">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 
+                            Mon Panier : <?php if(isset($_SESSION['panier']['total'])) echo $_SESSION['panier']['total']; else echo "0"; ?>
+                        </a>
+                    </li>
                 <?php } ?>
             </ul>
         </div>

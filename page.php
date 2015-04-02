@@ -7,9 +7,6 @@
 <?php $id_parent_category = $_GET['parentCat']; ?>
 <?php $r_categories = getCategoriesByParentId($db, $id_parent_category); ?>
 
-<?php
-$r_paginate_pages = getPagesByCategoryId($db, $id_parent_category);
-?>
 
 <div class="container">
     <div class="col-lg-2" id="children_categories">
@@ -37,8 +34,6 @@ $r_paginate_pages = getPagesByCategoryId($db, $id_parent_category);
                     $r_test = array_merge(array($id_parent_category), $r_test);
                             
                     foreach ($r_test as $r_category) {
-                        $r_paginate_pages += getPagesByCategoryId($db, $r_category);
-                        var_dump($r_paginate_pages);
                         $r_articles = getAllSellableArticlesByCategory($db, $r_category);
                         while ($r_article_final = $r_articles->fetch(PDO::FETCH_OBJ)) {
                             ?>
