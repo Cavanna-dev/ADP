@@ -63,10 +63,16 @@ include 'model/listUser.php';
                     <input type="hidden" name="idUser" value="<?=$value['id']?>" />                    
                     <?php if($value['isActive']==1): ?>
                         <input type="hidden" name="isActive" value="0" />
-                        <td><button type="submit" class="col-lg-12 btn btn-danger">Désactiver</button></td>
+                        <td style="padding:0;">
+                            <button type="submit" class="col-lg-12 btn btn-danger"
+                                style="border-radius:0;">Désactiver</button>
+                        </td>
                     <?php else: ?>
                         <input type="hidden" name="isActive" value="1" />
-                        <td><button type="submit" class="col-lg-12 btn btn-success">Activer</button></td>
+                        <td style="padding:0;">
+                            <button type="submit" class="col-lg-12 btn btn-success"
+                                style="border-radius:0;">Activer</button>
+                        </td>
                     <?php endif; ?>
                 </form>
             </tr>
