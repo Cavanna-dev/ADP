@@ -43,12 +43,11 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-6 col-lg-offset-3">
-                    <a href='forgotenPassword.php'>Mot de passe oublié</a>
+                    <a href='forgetPassword.php'>Mot de passe oublié</a>
                 </div>
             </div>
         </fieldset>
-    </form>
-    
+    </form>  
     
     
     <form class="form-horizontal col-lg-7" id="form" action="registration.php" method="POST">

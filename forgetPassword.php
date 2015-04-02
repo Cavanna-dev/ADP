@@ -1,63 +1,53 @@
 <?php
-
-include 'template/header.php';
-include 'template/menu.php';
-
-
-if (empty($_GET['mail']) || empty($_GET['key']))
-    header('Location:index.php');
-    
-$email  = $_GET['mail'];
-$key    = $_GET['key'];
-
-
-$sql = "SELECT passChange, name, email, id "
-        . "FROM customer "
-        . "WHERE isActive = 1 "
-        . "AND email = '".$email."'";
-
-$resultat = $db->query($sql);
-$resultat->execute();
-$reqPass = $resultat->fetch(PDO::FETCH_ASSOC);
-$resultat->closeCursor();
-
-$keyBdd = md5(md5($reqPass['name']).md5($reqPass['email']).md5($reqPass['name']));
-
-if (!empty($reqArticle['passChange']) || $key!=$keyBdd)
-    header('Location:index.php');
-
+    include 'template/header.php';
+    include 'template/menu.php';
 ?>
 
 <div class="container">
     <br/><br/>
-    <form class="form-horizontal col-lg-5" action="./model/updatePassword.php" name='fp' method="POST">
-        <input type="hidden" name="id" value="<?= $reqPass['id'] ?>" >
-        <input type="hidden" name="email" value="<?= $reqPass['email'] ?>" >
+    <?php if (isset($_GET['error'])): ?>
+        <div class="col-lg-12">
+            <div class="alert alert-dismissable alert-warning col-lg-5">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4>Erreur ! </h4>
+                <p>Aucune correspondance n'a été trouvée.</p>
+            </div>
+        </div>
+    <?php endif; ?>
+     <?php if (isset($_GET['success'])): ?>
+        <div class="col-lg-12">
+            <div class="alert alert-dismissable alert-success col-lg-5">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4>Un mail vous a été envoyé ! </h4>
+                <p>Merci de clicker sur le lien dans le mail.</p>
+            </div>
+        </div>
+    <?php endif; ?>
+    <form class="form-horizontal col-lg-5" action="./model/check_email.php" id='fp' method="POST">
         <fieldset>
-            <legend>Renseigner votre nouveau mot de passe</legend>
+            <legend>Mot de passe oublié</legend>
             <div class="form-group">
-                <label for="inputP1" class="col-lg-4 control-label">Mot de passe</label>
+                <label for="inputEmail" class="col-lg-4 control-label">Email</label>
                 <div class="col-lg-8">
-                    <input type="password" class="form-control" id="inputP1" name="inputP1" placeholder="Mot de passe">
+                    <input type="email" class="form-control" id="inputEmail" 
+                           name="inputEmail" placeholder="Email">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputP2" class="col-lg-4 control-label">Confirmation</label>
+                <label for="inputName" class="col-lg-4 control-label">Nom</label>
                 <div class="col-lg-8">
-                    <input type="password" class="form-control" id="inputP2" name="inputP2" placeholder="Confirmation">
+                    <input type="text" class="form-control" id="inputName" 
+                           name="inputName" placeholder="Nom">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-9 col-lg-offset-3">
-                    <button type="button" class="btn btn-primary"
-                            onclick="if(document.fp.inputP1.value == ''){ alert('Veuiller renseigner un mot de passe !'); }
-				else if(document.fp.inputP2.value != document.fp.inputP1.value){ alert('Les mots de passe ne sont pas identiques.'); }
-				else{ document.fp.submit();  }"                   
-                            >Confirmer</button>
+                    <button type="submit" id='form' class="btn btn-primary">Confirmer</button>
                 </div>
             </div>
         </fieldset>
     </form>
 </div>
+
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <?php include 'template/footer.php'; ?>
