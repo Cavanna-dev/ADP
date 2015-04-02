@@ -5,13 +5,10 @@
 <?php include 'template/categories.php'; ?>
 <br />
 <?php $id_parent_category = $_GET['parentCat']; ?>
-<?php $r_parent = getOneCategoryById($db, $id_parent_category); ?>
 <?php $r_categories = getCategoriesByParentId($db, $id_parent_category); ?>
 
 <?php
-$retour_total = mysql_query('SELECT COUNT(*) AS total FROM livredor'); //Nous récupérons le contenu de la requête dans $retour_total
-$donnees_total = mysql_fetch_assoc($retour_total); //On range retour sous la forme d'un tableau.
-$total = $donnees_total['total'];
+$r_paginate_pages = getPagesByCategoryId($db, $id_parent_category);
 ?>
 
 <div class="container">
@@ -38,8 +35,10 @@ $total = $donnees_total['total'];
 
                     $r_test = makeArray($id_parent_category, $r_category_test, $listParent);
                     $r_test = array_merge(array($id_parent_category), $r_test);
-
+                            
                     foreach ($r_test as $r_category) {
+                        $r_paginate_pages += getPagesByCategoryId($db, $r_category);
+                        var_dump($r_paginate_pages);
                         $r_articles = getAllSellableArticlesByCategory($db, $r_category);
                         while ($r_article_final = $r_articles->fetch(PDO::FETCH_OBJ)) {
                             ?>
