@@ -7,6 +7,13 @@
 <?php $id_parent_category = $_GET['parentCat']; ?>
 <?php $r_parent = getOneCategoryById($db, $id_parent_category); ?>
 <?php $r_categories = getCategoriesByParentId($db, $id_parent_category); ?>
+
+<?php
+$retour_total = mysql_query('SELECT COUNT(*) AS total FROM livredor'); //Nous récupérons le contenu de la requête dans $retour_total
+$donnees_total = mysql_fetch_assoc($retour_total); //On range retour sous la forme d'un tableau.
+$total = $donnees_total['total'];
+?>
+
 <div class="container">
     <div class="col-lg-2" id="children_categories">
         <ul class="nav nav-pills nav-stacked">
@@ -47,6 +54,11 @@
                     <?php } ?>
                 </tbody>
             </table>
+            <ul class="pagination" style="margin-left: 35%;">
+                <li class="disabled"><a href="#">«</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+            </ul>
         </div>
     </div>
 </div>
