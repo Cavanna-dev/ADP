@@ -22,7 +22,7 @@ try {
     $stmt->bindParam(":id", $_POST['id'], PDO::PARAM_INT, 1);
     $stmt->execute();
 
-    header('Location:../form_login.php?success&inputEmailLog='.$_POST['email']);
+    header('Location:../form_login.php?passChange&inputEmailLog='.$_POST['email']);
     
 } catch (PDOException $e) {
     

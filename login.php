@@ -28,9 +28,11 @@ try {
         $_SESSION['customer']['firstName'] = $custFirstName;
 
         header('Location:index.php');
-    } else
-        header('Location:form_login.php?errorConn');
+    } else {
+        header('Location:form_login.php?errorConn');  
+    }
+        
 } catch (PDOException $e) {
-    header('Location:error.php?error=' . $e->getCode());
+    header('Location:form_login.php?error=' . $e->getCode());
 }
 

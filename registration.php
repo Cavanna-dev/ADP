@@ -4,7 +4,7 @@ include_once './functions/hashagePass.php';
 include_once './functions/connection_db.php';
 
 $email      = htmlspecialchars($_POST['inputEmail'], ENT_QUOTES);
-$password   = $_POST['inputPassword'];
+$password   = $_POST['inputPasswordReg'];
 $name       = htmlspecialchars($_POST['inputName'], ENT_QUOTES);
 $firstName  = htmlspecialchars($_POST['inputFirstName'], ENT_QUOTES);
 $address    = htmlspecialchars($_POST['inputAddress'], ENT_QUOTES);
@@ -24,7 +24,7 @@ try {
             . "'".$post."', '".$dob."'"
             . ")");
     
-    header('Location:form_login.php?succes'
+    header('Location:form_login.php?userCreate'
             . '&inputEmailLog='.$email);
 } catch (PDOException $e) {
     header('Location:form_login.php?error'
