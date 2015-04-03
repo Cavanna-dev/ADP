@@ -27,7 +27,7 @@ $reqInterface[$reqInformation['label']] = $reqInformation['value'];
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['customer']['firstName'] . ' ' . $_SESSION['customer']['name']; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="contact.php">Votre compte</a></li>
-                            <li><a href="sales.php">Vendre un article</a></li>
+                            <li><a href="sales.php">Gérer les articles</a></li>
                             <li><a href="mysales.php">Vos commandes</a></li>
                             <li><a href="logout.php">Déconnexion</a></li>
                         </ul>

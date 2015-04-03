@@ -8,6 +8,7 @@ function getSalesByUser($db, $id)
             . "WHERE av.idUserSales = ".$id." "
             . "ORDER BY av.dateChange";
     $r = $db->prepare($sql);
+    $r->execute();
 
     return $r;
 }

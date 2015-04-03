@@ -71,7 +71,7 @@ include 'template/categories.php';
     <br />
 
     <?php $r_articles = getAllSellableArticlesByArticleId($db, $reqArticle['id']); ?>
-    <h2>Les vendeurs de cet article</h2>
+    <h2>Les vendeurs disponibles</h2>
     <table class="table table-striped table-hover ">
         <thead>
             <tr>

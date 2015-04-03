@@ -21,7 +21,8 @@ function getAllSellableArticlesByCategory($db, $id)
             . "FROM availability av "
             . "LEFT JOIN article art ON av.idArticle = art.id "
             . "LEFT JOIN category cat ON art.idCategory = cat.id "
-            . "WHERE art.idCategory = '".$id."'";
+            . "WHERE art.idCategory = '" . $id . "' "
+            . "GROUP BY idArticle";
     $r = $db->prepare($sql);
     $r->execute();
 
@@ -36,7 +37,22 @@ function getAllSellableArticlesByArticleId($db, $id)
             . "LEFT JOIN article art ON av.idArticle = art.id "
             . "LEFT JOIN category cat ON art.idCategory = cat.id "
             . "LEFT JOIN customer cust ON av.idUserSales = cust.id "
-            . "WHERE av.idArticle = '".$id."' AND av.status = 1 AND av.isActive = 1";
+            . "WHERE av.idArticle = '" . $id . "' AND av.status = 1 AND av.isActive = 1";
+    $r = $db->prepare($sql);
+    $r->execute();
+
+    return $r;
+}
+
+function getAllArticlesByAvailableId($db, $id)
+{
+    $sql = "SELECT av.id as avId, av.price, av.currency, av.description, art.id, art.picture, art.brand, art.name as 'artName', art.reference, "
+            . "av.idUserSales, cust.name 'custName', cust.firstName as 'custFirstName', cust.email "
+            . "FROM availability av "
+            . "LEFT JOIN article art ON av.idArticle = art.id "
+            . "LEFT JOIN category cat ON art.idCategory = cat.id "
+            . "LEFT JOIN customer cust ON av.idUserSales = cust.id "
+            . "WHERE av.id = '" . $id . "' AND av.status = 1 AND av.isActive = 1";
     $r = $db->prepare($sql);
     $r->execute();
 

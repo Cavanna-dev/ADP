@@ -48,11 +48,6 @@
                     <?php } ?>
                 </tbody>
             </table>
-            <ul class="pagination" style="margin-left: 35%;">
-                <li class="disabled"><a href="#">«</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-            </ul>
         </div>
     </div>
 </div>
