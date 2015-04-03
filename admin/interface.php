@@ -44,97 +44,142 @@ include 'model/interface.php';
   <li class="<?=$classAdministration?>"><a href="#administration" data-toggle="tab" aria-expanded="false">Administration</a></li>
   <li class="<?=$classContact?>"><a href="#contact" data-toggle="tab" aria-expanded="false">Contact</a></li>
 </ul>
+
+    
     
 <div id="myTabContent" class="tab-content">
-    <div class="jumbotron tab-pane fade <?=$classSite?>" id="site">
-        <form class="form-horizontal" method="POST" action="model/updateInterface.php">
-            <div class="form-group">
-                <label for="nameFo" class="col-lg-3 control-label">Nom menu</label>
+    <div class="tab-pane fade <?=$classSite?>" id="site">
+    <div class="jumbotron col-lg-6">
+        
+        <!-- ************************ NAME FO ************************ -->
+        
+        <div class="form-group">
+            <form class="form-horizontal" method="POST" action="model/updateInterface.php">
                 <input type='hidden' name='label' value='nameFo' />
                 <input type='hidden' name='page' value='site' />
-                <div class="col-lg-6">
-                    <input type="text" class="form-control" id="nameFo" name="nameFo"
+                
+                <label class="control-label">Nom menu</label>
+                <div class="input-group">
+                    <input type="text" class="form-control"
+                           id="nameFo" name="nameFo"
                            value="<?=$reqInterface['nameFo']?>">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </span>
                 </div>
-                <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+
+        <!-- ************************ TITLE FO ************************ -->
         
-        <form class="form-horizontal" method="POST" action="model/updateInterface.php">
-            <div class="form-group">
-                <label for="titleFo" class="col-lg-3 control-label">Titre onglet</label>
+        <div class="form-group">
+            <form class="form-horizontal" method="POST" action="model/updateInterface.php">
                 <input type='hidden' name='label' value='titleFo' />
                 <input type='hidden' name='page' value='site' />
-                <div class="col-lg-6">
-                    <input type="text" class="form-control" id="titleFo" name="titleFo"
+                
+                <label class="control-label">Titre onglet</label>
+                <div class="input-group">
+                    <input type="text" class="form-control"
+                           id="titleFo" name="titleFo"
                            value="<?=$reqInterface['titleFo']?>">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </span>
                 </div>
-                <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+
+        <!-- ************************ IMG LOGO FO ************************ -->
         
-        <form class="form-horizontal" method="POST" action="model/updateInterface.php">
-            <div class="form-group">
-                <label for="templateFo" class="col-lg-3 control-label">Template</label>
-                <input type='hidden' name='label' value='templateFo' />
-                <input type='hidden' name='page' value='site' />
-                <div class="col-lg-6">
-                    <select class="form-control" id="select" id="templateFo" name="templateFo">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
-            </div>
-        </form>
-        
-        <div class="form-group col-lg-offset-3 col-lg-9">
-            <img style="max-width:100px; max-height:100px;" 
-                 src='../img/imgFo/<?= paramConfig('imgFo', $db); ?>'/>
-        </div> 
-        <form class="form-horizontal" method="POST" action="model/updateInterface.php"
-              enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="imgFo" class="col-lg-3 control-label">Logo</label>
+        <div class="form-group">
+            <form class="form-horizontal" method="POST" action="model/updateInterface.php"
+                  enctype="multipart/form-data">
                 <input type='hidden' name='label' value='imgFo' />
                 <input type='hidden' name='page' value='site' />
-                <div class="col-lg-6">
-                    <input type="file" class="form-control" id="imgFo" name="imgFo">
+                               
+                <label class="control-label">Logo</label>
+                <div class="input-group">
+                    <input type="file" class="form-control"
+                           id="imgFo" name="imgFo">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Charger</button>
+                    </span>
                 </div>
-                <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
-            </div>
-        </form>
-        <div class="form-group col-lg-offset-3 col-lg-9">
-            <img style="max-width:25px; max-height:25px;" 
-                 src='../img/imgFavFo/<?= paramConfig('imgFavFo', $db); ?>'/>
-        </div> 
-        <form class="form-horizontal" method="POST" action="model/updateInterface.php" 
-              enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="imgFavFo" class="col-lg-3 control-label">Favicon</label>
+            </form>            
+        </div>
+
+                
+        <!-- ************************ FAVICON FO ************************ -->
+               
+        <div class="form-group">
+            <form class="form-horizontal" method="POST" action="model/updateInterface.php"
+                  enctype="multipart/form-data">
                 <input type='hidden' name='label' value='imgFavFo' />
                 <input type='hidden' name='page' value='site' />
-                <div class="col-lg-6">
-                    <input type="file" class="form-control" id="imgFavFo" name="imgFavFo">
+                
+                <label class="control-label">Favicon</label>
+                <div class="input-group">
+                    <input type="file" class="form-control"
+                           id="imgFavFo" name="imgFavFo">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Charger</button>
+                    </span>
                 </div>
-                <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
-            </div>
-        </form>     
+            </form> 
+        </div>
+        <script type="text/javascript">
+            function displayImage(img)
+            {
+                var image = document.getElementById('templateImg');
+//                var newImage = image.option[image.selectIndex].value;                
+                image.src = '../img/css/'+img.value+'.png';
+            }
+        </script>
         
+        <!-- ************************ CSS FO ************************ -->
+        
+        <div class="form-group">
+            <form class="form-horizontal" method="POST" action="model/updateCss.php">
+                <input type='hidden' name='label' value='templateFo' />
+                <input type='hidden' name='page' value='site' />
+                
+                <label class="control-label">Template</label>
+                <div class="input-group">
+                    <select class="form-control" id="templateFo" name="templateFo"
+                            onchange="displayImage(this);">                        
+                        <?php $table = paramConfigCssSelect('templateFo', $db);
+                        foreach ($table as $value):                        
+                            echo '<option value="'.$value['value'].'"';
+                            if($css == $value['value'])
+                                echo 'SELECTED';
+                            echo '>'.$value['value'].'</option>';                        
+                        endforeach; ?>
+                    </select>
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </span>
+                </div>
+            </form>        
+        </div>
     </div>
+    <div class="jumbotron col-lg-offset-1 col-lg-5">
+        <!-- **** IMG FO **** -->
+        <H4>Logo</H4>
+        <img 
+            style="max-width:105px; max-height:105px;" 
+            src='../img/imgFo/<?= paramConfig('imgFo', $db); ?>'/>
+        <!-- **** IMG FAV FO **** -->
+        <H4>Favicon</H4>
+        <img
+            style="max-width:50px; max-height:50px;" 
+            src='../img/imgFavFo/<?= paramConfig('imgFavFo', $db); ?>'/>
+        <!-- **** IMG CSS FO **** -->
+        <H4>Template</H4>
+        <img id="templateImg"
+            style="max-width:300px; max-height:300px;" 
+            src='../img/css/<?=$css?>.png'/>
+    </div>
+</div>
     
 
     <div class="jumbotron tab-pane fade <?=$classAdministration?>" id="administration">

@@ -4,15 +4,17 @@ if(!isset($_SESSION['user_logged']) && strpos($_SERVER['PHP_SELF'], 'index.php')
 
 include_once '../functions/connection_db.php';
 include_once('../functions/func.php');
+$css = paramConfigCss('templateFo', $db);
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title><?= paramConfig('titleBo', $db)?></title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">        
-        <link rel="stylesheet" href="css/bootswatch.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="icon" type="image/png" href="../img/imgFavBo/<?= paramConfig('imgFavBo', $db)?>" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css">        
+        <link rel="stylesheet" href="../css/<?=$css?>.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="icon" type="image/png" href="../img/imgFavBo/<?=$css?>" />
     </head>
     <body>
