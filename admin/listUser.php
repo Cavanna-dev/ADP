@@ -6,7 +6,7 @@ include 'model/listUser.php';
 ?>
 
 
-<div class="container">
+<div class="container" >
     <h1>Liste des utilisateurs du site</h1>
 
     <div class="jumbotron">
@@ -33,7 +33,7 @@ include 'model/listUser.php';
         </form>
     </div>
 
-    <div class="jumbotron">
+    <div>
         <table class="table table-striped table-hover table-responsive">
           <thead>
             <tr>

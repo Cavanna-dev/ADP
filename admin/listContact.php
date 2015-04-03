@@ -42,7 +42,7 @@ $valueStatus[2] = 'Terminé';
         </form>
     </div>
 
-    <div class="jumbotron">
+    <div>
         <table class="table table-striped table-hover table-responsive">
           <thead>
             <tr>

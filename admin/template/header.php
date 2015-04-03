@@ -10,7 +10,8 @@ include_once '../functions/connection_db.php';
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">        
+        <link rel="stylesheet" href="css/bootswatch.min.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>

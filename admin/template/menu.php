@@ -1,13 +1,4 @@
-<?php
-
-$sql = "SELECT * FROM config WHERE label = 'nameBo' ";
-$resultat = $db->query($sql);
-$resultat->execute();
-$reqInformation = $resultat->fetch(PDO::FETCH_ASSOC);
-$resultat->closeCursor();
-
-$reqInterface[$reqInformation['label']]=$reqInformation['value']; 
-?>
+<?php include('../functions/func.php'); ?>
 <div class="navbar navbar-inverse" style='border-radius:0px;'>
     <!--<div class="container">-->
         <div class="navbar-header">
@@ -17,7 +8,7 @@ $reqInterface[$reqInformation['label']]=$reqInformation['value'];
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="">
-                <?=$reqInterface['nameBo']?>
+                <?php echo paramConfig('nameBo', $db)?>
             </a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">

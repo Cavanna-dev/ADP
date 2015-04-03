@@ -1,5 +1,6 @@
-<?php
-include 'template/header.php';
+<?php   include 'template/header.php';
+
+
 
 if(isset($_GET['error']) && $_GET['error']=='logout'):
     session_destroy();
@@ -50,7 +51,8 @@ if(isset($_GET['error']) && $_GET['error']=='logout'):
                             <div class="col-lg-4">
                                 <h4 style="color:red; font-weight: bold;">
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                    Mot de passe incorrect ! </h4>
+                                    Mot de passe incorrect ! 
+                                </h4C>
                             </div>
                         <?php endif; ?>
                     </div>

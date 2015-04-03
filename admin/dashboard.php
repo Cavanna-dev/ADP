@@ -8,7 +8,7 @@
                         <span style="font-size: 16pt;"
                             onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
                             onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                     
-                            class="label label-default"><?= $reqDashboard['articleTotal'] ?></span>
+                            class="label label-primary"><?= $reqDashboard['articleTotal'] ?></span>
                     </p>
             
             </legend>
@@ -213,16 +213,14 @@
         <i>* Sur les articles actifs et en attentes</i>
     </div>
 
-
-
-    <div class="jumbotron col-lg-5 col-lg-offset-0"> 
+    <div class="jumbotron col-lg-6 col-lg-offset-0"> 
         <fieldset>
             <legend>Utilisateurs                
                 <p onclick="document.location='listUser.php'" style="cursor: pointer; display: inline-block">
                     <span style="font-size: 16pt;"
                         onmouseover="this.style.fontSize='18pt';this.style.borderRadius='1em';"
-                            onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                    
-                        class="label label-default"><?= $reqDashboard['customerTotal'] ?></span>
+                        onmouseout="this.style.fontSize='16pt';this.style.borderRadius='0.2em';"                    
+                        class="label label-primary"><?= $reqDashboard['customerTotal'] ?></span>
                 </p>            
             </legend>
             <div class="form-group">
@@ -271,11 +269,12 @@
             </div>
         </div>
     </div>
-    <div class="jumbotron col-lg-6 col-lg-offset-1"> 
+    <div class="jumbotron col-lg-5 col-lg-offset-1"> 
         <fieldset>
             <legend>Ventes sur la semaine</legend>
+            <br/>
             <p>
-                <span style="font-size: 30pt;"                      
+                <span style="font-size: 20pt;"                      
                     class="label label-primary"><?= $reqDashboard['nbCommand'] ?></span>
             </p>
     </div>
