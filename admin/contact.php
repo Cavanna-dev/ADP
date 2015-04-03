@@ -1,8 +1,7 @@
-<?php $selectMenu = 6; ?>
-<?php 
-    include 'template/header.php';
-    include 'template/menu.php';
-    include 'model/contact.php';
+<?php $selectMenu = 6; 
+include 'template/header.php';
+include 'template/menu.php';
+include 'model/contact.php';
 ?>
 
 

@@ -1,5 +1,4 @@
-<?php $selectMenu = 3; ?>
-<?php
+<?php $selectMenu = 3; 
 include 'template/header.php';
 include 'template/menu.php';
 include 'model/listUser.php';

@@ -1,6 +1,7 @@
-<?php $selectMenu = 4; ?>
-<?php include 'template/header.php'; ?>
-<?php include 'template/menu.php'; ?>
+<?php $selectMenu = 4;
+include 'template/header.php';
+include 'template/menu.php'; 
+?>
 
 <div class="container">  
     <h1>Créer compte administrateur</h1> 

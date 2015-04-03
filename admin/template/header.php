@@ -4,7 +4,9 @@ if(!isset($_SESSION['user_logged']) && strpos($_SERVER['PHP_SELF'], 'index.php')
 
 include_once '../functions/connection_db.php';
 include_once('../functions/func.php');
-$css = paramConfigCss('templateFo', $db);
+
+$css = paramConfigCss('templateBo', $db);
+$favicon = paramConfig('imgFavBo', $db);
 
 ?>
 <!DOCTYPE html>
@@ -15,6 +17,6 @@ $css = paramConfigCss('templateFo', $db);
         <link rel="stylesheet" href="../css/bootstrap.min.css">        
         <link rel="stylesheet" href="../css/<?=$css?>.min.css">
         <link rel="stylesheet" href="../css/main.css">
-        <link rel="icon" type="image/png" href="../img/imgFavBo/<?=$css?>" />
+        <link rel="icon" type="image/png" href="../img/imgFavBo/<?=$favicon?>" />
     </head>
     <body>
