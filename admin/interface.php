@@ -76,34 +76,7 @@ include 'model/interface.php';
                 </div>
             </div>
         </form>
-        <form class="form-horizontal" method="POST" action="model/updateInterface.php"
-              enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="imgFo" class="col-lg-3 control-label">Logo</label>
-                <input type='hidden' name='label' value='imgFo' />
-                <input type='hidden' name='page' value='site' />
-                <div class="col-lg-6">
-                    <input type="file" class="form-control" id="imgFo" name="imgFo">
-                </div>
-                <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
-            </div>
-        </form>
-        <form class="form-horizontal" method="POST" action="model/updateInterface.php" 
-              enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="imgFavFo" class="col-lg-3 control-label">Favicon</label>
-                <input type='hidden' name='label' value='imgFavFo' />
-                <input type='hidden' name='page' value='site' />
-                <div class="col-lg-6">
-                    <input type="file" class="form-control" id="imgFavFo" name="imgFavFo">
-                </div>
-                <div class="col-lg-2">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
-            </div>
-        </form>
+        
         <form class="form-horizontal" method="POST" action="model/updateInterface.php">
             <div class="form-group">
                 <label for="templateFo" class="col-lg-3 control-label">Template</label>
@@ -122,7 +95,45 @@ include 'model/interface.php';
                     <button type="submit" class="btn btn-primary">Mise à jour</button>
                 </div>
             </div>
-        </form>       
+        </form>
+        
+        <div class="form-group col-lg-offset-3 col-lg-9">
+            <img style="max-width:100px; max-height:100px;" 
+                 src='../img/imgFo/<?= paramConfig('imgFo', $db); ?>'/>
+        </div> 
+        <form class="form-horizontal" method="POST" action="model/updateInterface.php"
+              enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="imgFo" class="col-lg-3 control-label">Logo</label>
+                <input type='hidden' name='label' value='imgFo' />
+                <input type='hidden' name='page' value='site' />
+                <div class="col-lg-6">
+                    <input type="file" class="form-control" id="imgFo" name="imgFo">
+                </div>
+                <div class="col-lg-2">
+                    <button type="submit" class="btn btn-primary">Mise à jour</button>
+                </div>
+            </div>
+        </form>
+        <div class="form-group col-lg-offset-3 col-lg-9">
+            <img style="max-width:25px; max-height:25px;" 
+                 src='../img/imgFavFo/<?= paramConfig('imgFavFo', $db); ?>'/>
+        </div> 
+        <form class="form-horizontal" method="POST" action="model/updateInterface.php" 
+              enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="imgFavFo" class="col-lg-3 control-label">Favicon</label>
+                <input type='hidden' name='label' value='imgFavFo' />
+                <input type='hidden' name='page' value='site' />
+                <div class="col-lg-6">
+                    <input type="file" class="form-control" id="imgFavFo" name="imgFavFo">
+                </div>
+                <div class="col-lg-2">
+                    <button type="submit" class="btn btn-primary">Mise à jour</button>
+                </div>
+            </div>
+        </form>     
+        
     </div>
     
 
@@ -156,6 +167,10 @@ include 'model/interface.php';
                 </div>
             </div>
         </form>
+        <div class="form-group col-lg-offset-3 col-lg-9">
+            <img style="max-width:100px; max-height:100px;" 
+                 src='../img/imgBo/<?= paramConfig('imgBo', $db); ?>'/>
+        </div> 
         <form class="form-horizontal" method="POST" action="model/updateInterface.php" 
               enctype="multipart/form-data">
             <div class="form-group">
@@ -170,6 +185,10 @@ include 'model/interface.php';
                 </div>
             </div>
         </form>
+        <div class="form-group col-lg-offset-3 col-lg-9">
+            <img style="max-width:25px; max-height:25px;" 
+                 src='../img/imgFavBo/<?= paramConfig('imgFavBo', $db); ?>'/>
+        </div> 
         <form class="form-horizontal" method="POST" action="model/updateInterface.php" 
               enctype="multipart/form-data">
             <div class="form-group">
