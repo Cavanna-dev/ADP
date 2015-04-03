@@ -1,7 +1,6 @@
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 <?php include './functions/connection_db.php'; ?>
-<?php include 'model/bootstrap.php'; ?>
 
 <script>
     $(document).ready(function () {
@@ -30,8 +29,8 @@
             <tr>
                 <th>Référence</th>
                 <th>Nom</th>
-                <th>Prix</th>
                 <th>Description</th>
+                <th>Prix</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -43,8 +42,8 @@
                     ?>">
                     <td><a href="article.php?key=<?= $r_sale->idArticle ?>"><?= $r_sale->reference ?></a></td>
                     <td><?= $r_sale->name ?></td>
-                    <td><?= $r_sale->price ?></td>
                     <td><?= $r_sale->description ?></td>
+                    <td><?= $r_sale->price ?> €</td>
                     <td>
                         <a href="model/delSale.php?id=<?= $r_sale->id ?>" onclick="return confirm('La suppression de cette vente entrainera la disparition définitive des données liées à cette vente.')">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>

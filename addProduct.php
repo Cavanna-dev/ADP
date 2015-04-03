@@ -1,5 +1,5 @@
 <?php include 'functions/connection_db.php'; ?>
-<?php include 'admin/model/listCategory.php'; ?>
+<?php //include 'admin/model/listCategory.php'; ?>
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 

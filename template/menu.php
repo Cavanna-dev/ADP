@@ -29,7 +29,7 @@ $reqInterface[$reqInformation['label']] = $reqInformation['value'];
                         <ul class="dropdown-menu">
                             <li><a href="contact.php">Votre compte</a></li>
                             <li><a href="sales.php">Gérer les articles</a></li>
-                            <li><a href="mysales.php">Vos commandes</a></li>
+                            <li><a href="mysales.php">Gérer les commandes</a></li>
                             <li><a href="logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
