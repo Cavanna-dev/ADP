@@ -1,7 +1,6 @@
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 <?php include './functions/connection_db.php'; ?>
-<?php include 'model/bootstrap.php'; ?>
 <?php include 'template/categories.php'; ?>
 <br />
 <?php $id_parent_category = $_GET['parentCat']; ?>

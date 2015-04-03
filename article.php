@@ -2,7 +2,6 @@
 include_once 'functions/connection_db.php';
 
 include 'model/article.php';
-include 'model/bootstrap.php';
 include 'template/header.php';
 include 'template/menu.php';
 include 'template/categories.php';

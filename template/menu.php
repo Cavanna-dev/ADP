@@ -1,5 +1,6 @@
 <?php
 include_once 'functions/connection_db.php';
+include 'model/bootstrap.php';
 $sql = "SELECT * FROM config WHERE label = 'nameFo' ";
 $resultat = $db->query($sql);
 $resultat->execute();
@@ -32,11 +33,35 @@ $reqInterface[$reqInformation['label']] = $reqInformation['value'];
                             <li><a href="logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
-                    <li class="active">
-                        <a href="basket.php">
+                    <li class="dropdown">
+                        <a href="basket.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
                             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 
-                            <span class="badge"><?php if(isset($_SESSION['panier']['total'])) echo $_SESSION['panier']['total']; else echo "0"; ?></span>
-                        </a>
+                            <span class="badge"><?php
+                                if (isset($_SESSION['panier']['total']))
+                                    echo $_SESSION['panier']['total'];
+                                else
+                                    echo "0";
+                                ?></span></a>
+                        <ul class="dropdown-menu" role="">
+                            <?php if (isset($_SESSION['panier']['article'])): ?>
+                                <?php foreach ($_SESSION['panier']['article'] as $id_basket_product): ?>
+                                    <?php $r_basket_products = getAllArticlesByAvailableId($db, $id_basket_product); ?>
+                                    <?php while ($r_basket_product = $r_basket_products->fetch(PDO::FETCH_OBJ)) { ?>
+                                        <li><a href="#"><?= $r_basket_product->artName; ?> - <?= $r_basket_product->price; ?> €</a></li>
+                                    <?php } ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <li class="divider"></li>
+                            <li><a href="basket.php">
+                                    Voir le panier (<?php
+                                    if (!isset($_SESSION['panier']['total']))
+                                        echo "0 article";
+                                    else if ($_SESSION['panier']['total'] == 1)
+                                        echo "1 article";
+                                    else if ($_SESSION['panier']['total'] > 1)
+                                        echo $_SESSION['panier']['total'] . " articles";
+                                    ?>)</a></li>
+                        </ul>
                     </li>
                 <?php } ?>
             </ul>
