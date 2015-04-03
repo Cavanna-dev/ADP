@@ -92,7 +92,7 @@
             <br/>
             <div class="form-group">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <button type="submit" class="btn col-lg-12 btn-primary">Submit</button>
+                    <button type="submit" class="btn col-lg-12 btn-primary">Ajouter référence</button>
                 </div>
             </div>
         </fieldset>

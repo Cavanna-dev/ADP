@@ -32,10 +32,10 @@ $reqInterface[$reqInformation['label']] = $reqInformation['value'];
                             <li><a href="logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="basket.php">
                             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 
-                            Mon Panier : <?php if(isset($_SESSION['panier']['total'])) echo $_SESSION['panier']['total']; else echo "0"; ?>
+                            <span class="badge"><?php if(isset($_SESSION['panier']['total'])) echo $_SESSION['panier']['total']; else echo "0"; ?></span>
                         </a>
                     </li>
                 <?php } ?>

@@ -83,11 +83,11 @@ include 'template/categories.php';
         </thead>
         <tbody>
             <?php while ($r_article = $r_articles->fetch(PDO::FETCH_OBJ)) { ?>
-                <tr>
+            <tr>
                     <td><h2>€ <?= $r_article->price ?></h2></td>
                     <td><small><?= $r_article->description ?></small></td>
                     <td><?= $r_article->name . " " . $r_article->firstName ?> - <a href="mailto:<?= $r_article->email ?>"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></td>
-                    <td><a href="addPanier.php?id=<?= $r_article->id ?>" class="btn btn-info" id="addBasket">Ajoutez au panier</a></td>
+                    <td><a href="addPanier.php?id=<?= $r_article->avId ?>" class="btn btn-info" id="addBasket">Ajoutez au panier</a></td>
                 </tr>
 <?php } ?>
         </tbody>
