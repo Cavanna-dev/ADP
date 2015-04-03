@@ -127,14 +127,6 @@ include 'model/interface.php';
                     </div>
                 </form> 
             </div>
-            <script type="text/javascript">
-                function displayImage(img)
-                {
-                    var image = document.getElementById('templateImg');
-    //                var newImage = image.option[image.selectIndex].value;                
-                    image.src = '../img/css/'+img.value+'.png';
-                }
-            </script>
 
             <!-- ************************ CSS FO ************************ -->
 
@@ -146,11 +138,11 @@ include 'model/interface.php';
                     <label class="control-label">Template</label>
                     <div class="input-group">
                         <select class="form-control" id="templateFo" name="templateFo"
-                                onchange="displayImage(this);">                        
+                                onchange="displayImage(this, 'templateImgFo');">                        
                             <?php $table = paramConfigCssSelect('templateFo', $db);
                             foreach ($table as $value):                        
                                 echo '<option value="'.$value['value'].'"';
-                                if($css == $value['value'])
+                                if(paramConfigCss('templateFo', $db) == $value['value'])
                                     echo 'SELECTED';
                                 echo '>'.$value['value'].'</option>';                        
                             endforeach; ?>
@@ -175,7 +167,7 @@ include 'model/interface.php';
                 src='../img/imgFavFo/<?= paramConfig('imgFavFo', $db); ?>'/>
             <!-- **** IMG CSS FO **** -->
             <H4>Template</H4>
-            <img id="templateImg"
+            <img id="templateImgFo"
                 style="max-width:300px; max-height:300px;" 
                 src='../img/css/<?= paramConfigCss('templateFo', $db); ?>.png'/>
         </div>
@@ -265,14 +257,14 @@ include 'model/interface.php';
             <!-- ************************ CSS BO ************************ -->
 
             <div class="form-group">
-                <form class="form-horizontal" method="POST" action="model/updateCss.php">
+                <form class="form-horizontal" name="bo" method="POST" action="model/updateCss.php">
                     <input type='hidden' name='label' value='templateBo' />
                     <input type='hidden' name='page' value='administration' />
 
                     <label class="control-label">Template</label>
                     <div class="input-group">
                         <select class="form-control" id="templateBo" name="templateBo"
-                                onchange="displayImage(this);">                        
+                                onchange="displayImage(this, 'templateImgBo');">                        
                             <?php $table = paramConfigCssSelect('templateBo', $db);
                             foreach ($table as $value):                        
                                 echo '<option value="'.$value['value'].'"';
@@ -301,7 +293,7 @@ include 'model/interface.php';
                 src='../img/imgFavBo/<?= paramConfig('imgFavBo', $db); ?>'/>
             <!-- **** IMG CSS FO **** -->
             <H4>Template</H4>
-            <img id="templateImg"
+            <img id="templateImgBo"
                 style="max-width:300px; max-height:300px;" 
                 src='../img/css/<?=$css?>.png'/>
         </div>
@@ -322,7 +314,27 @@ include 'model/interface.php';
                 </div>
             </div>
         </form>
+        <form class="form-horizontal" method="POST" action="model/updateInterface.php">
+            <div class="form-group">
+                <label for="emailSend" class="col-lg-3 control-label">Adresse mail d'envoie</label>
+                <input type='hidden' name='label' value='emailSend' />
+                <input type='hidden' name='page' value='contact' />
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="emailSend" name="emailSend"
+                           value="<?= paramConfig('emailSend', $db)?>">
+                </div>
+                <div class="">
+                    <button type="submit" class="btn btn-primary">Mise à jour</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-
+<script type="text/javascript">
+    function displayImage(img, div)
+    {
+        var image = document.getElementById(div);            
+        image.src = '../img/css/'+img.value+'.png';
+    }
+</script>
 <?php include 'template/footer.php'; ?>
