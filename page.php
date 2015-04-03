@@ -5,11 +5,16 @@
 <br />
 <?php $id_parent_category = $_GET['parentCat']; ?>
 <?php $r_categories = getCategoriesByParentId($db, $id_parent_category); ?>
-
+<?php $r_category_parent = getOneCategoryById($db, $id_parent_category); ?>
 
 <div class="container">
     <div class="col-lg-2" id="children_categories">
         <ul class="nav nav-pills nav-stacked">
+            <li class="active disabled">
+                <a href="page.php?parentCat=<?= $id_parent_category ?>">
+                    <?= $r_category_parent->name; ?>
+                </a>
+            </li>
             <?php while ($r_category = $r_categories->fetch(PDO::FETCH_OBJ)) { ?>
                 <li <?php if ($id_parent_category == $r_category->id) echo 'class="active disabled"'; ?>>
                     <a href="page.php?parentCat=<?= $r_category->id; ?>">
@@ -31,7 +36,7 @@
 
                     $r_test = makeArray($id_parent_category, $r_category_test, $listParent);
                     $r_test = array_merge(array($id_parent_category), $r_test);
-                            
+
                     foreach ($r_test as $r_category) {
                         $r_articles = getAllSellableArticlesByCategory($db, $r_category);
                         while ($r_article_final = $r_articles->fetch(PDO::FETCH_OBJ)) {
