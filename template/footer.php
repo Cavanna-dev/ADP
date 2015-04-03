@@ -12,8 +12,8 @@
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
                 <p>Made by <a href="#" rel="nofollow">
-                        Cavanna 'GodLike' Christophe
-                    </a>. Contact him at <a href="mailto:cavannachristophe@gmail.com">cavannachristophe@gmail.com
+                        LEGER 'GodLike' Aurélien
+                    </a>. Contact his assistant at <a href="mailto:cavannachristophe@gmail.com">cavannachristophe@gmail.com
                     </a>.</p>
                 <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p><p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
             </div>
