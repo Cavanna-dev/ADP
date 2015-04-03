@@ -11,7 +11,9 @@ if(empty($_POST['label'])){
 
 if($_POST['label'] == 'imgBo' || $_POST['label'] == 'imgFo'
             || $_POST['label'] == 'imgFavBo' || $_POST['label'] == 'imgFavFo'){
-    $value    =   htmlspecialchars($_FILES[$_POST['label']]['name']);
+    $value      =   htmlspecialchars($_FILES[$_POST['label']]['name']);
+    $picture    =   htmlspecialchars($_FILES[$_POST['label']]['tmp_name']);
+    $last       =   paramConfig($_POST['label'], $db);
 }else{
     $value    =   $_POST[$_POST['label']];
 }
@@ -30,14 +32,13 @@ try {
             || $_POST['label'] == 'imgFavBo' || $_POST['label'] == 'imgFavFo'):
 
     
-        @unlink('../../img/'.$_POST['label'].'/'.paramConfig($_POST['label'], $db));    
+        unlink('../../img/'.$_POST['label'].'/'.$last);    
   
         @mkdir('../../img/'.$_POST['label'].'/');
         $uploaddir = '../../img/'.$_POST['label'].'/';
         $uploadfile = $uploaddir . basename($value);
 
-        move_uploaded_file($value, $uploadfile);
-
+        move_uploaded_file($picture, $uploadfile);
     endif;
 
     header('Location:../interface.php?page='.$_POST['page'].'&success');

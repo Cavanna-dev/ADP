@@ -13,6 +13,6 @@ include_once('../functions/func.php');
         <link rel="stylesheet" href="css/bootstrap.min.css">        
         <link rel="stylesheet" href="css/bootswatch.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="icon" type="image/png" href="../../img/<?= paramConfig('titleBo', $db)?>" />
+        <link rel="icon" type="image/png" href="../img/imgFavBo/<?= paramConfig('imgFavBo', $db)?>" />
     </head>
     <body>
