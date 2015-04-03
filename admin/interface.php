@@ -2,7 +2,6 @@
 <?php
 include 'template/header.php';
 include 'template/menu.php';
-include 'model/interface.php';
 ?>
 
 <?php 
@@ -62,7 +61,7 @@ include 'model/interface.php';
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="nameFo" name="nameFo"
-                               value="<?=$reqInterface['nameFo']?>">
+                               value="<?= paramConfig('nameFo', $db)?>">
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </span>
@@ -81,7 +80,7 @@ include 'model/interface.php';
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="titleFo" name="titleFo"
-                               value="<?=$reqInterface['titleFo']?>">
+                               value="<?= paramConfig('titleFo', $db)?>">
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </span>
@@ -188,7 +187,7 @@ include 'model/interface.php';
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="nameBo" name="nameBo"
-                               value="<?=$reqInterface['nameBo']?>">
+                               value="<?= paramConfig('nameBo', $db)?>">
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </span>
@@ -207,7 +206,7 @@ include 'model/interface.php';
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="titleBo" name="titleBo"
-                               value="<?=$reqInterface['titleBo']?>">
+                               value="<?= paramConfig('titleBo', $db)?>">
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </span>
@@ -299,35 +298,41 @@ include 'model/interface.php';
         </div>
     </div>
     
-    <div class="jumbotron tab-pane fade <?=$classContact?>" id="contact">
-       <form class="form-horizontal" method="POST" action="model/updateInterface.php">
+    <div class="tab-pane fade <?=$classContact?>" id="contact">
+        <div class="jumbotron">
             <div class="form-group">
-                <label for="emailContact" class="col-lg-3 control-label">Adresse mail contact</label>
-                <input type='hidden' name='label' value='emailContact' />
-                <input type='hidden' name='page' value='contact' />
-                <div class="col-lg-4">
-                    <input type="text" class="form-control" id="emailContact" name="emailContact"
-                           value="<?= paramConfig('emailContact', $db)?>">
-                </div>
-                <div class="">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
+                <form class="form-horizontal" method="POST" action="model/updateInterface.php">
+                    <input type='hidden' name='label' value='emailContact' />
+                    <input type='hidden' name='page' value='contact' />
+
+                    <label class="control-label">Adresse mail contact</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control"
+                               id="emailContact" name="emailContact"
+                               value="<?= paramConfig('emailContact', $db)?>">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </span>
+                    </div>
+                </form>
             </div>
-        </form>
-        <form class="form-horizontal" method="POST" action="model/updateInterface.php">
             <div class="form-group">
-                <label for="emailSend" class="col-lg-3 control-label">Adresse mail d'envoie</label>
-                <input type='hidden' name='label' value='emailSend' />
-                <input type='hidden' name='page' value='contact' />
-                <div class="col-lg-4">
-                    <input type="text" class="form-control" id="emailSend" name="emailSend"
-                           value="<?= paramConfig('emailSend', $db)?>">
-                </div>
-                <div class="">
-                    <button type="submit" class="btn btn-primary">Mise à jour</button>
-                </div>
+                <form class="form-horizontal" method="POST" action="model/updateInterface.php">
+                    <input type='hidden' name='label' value='emailSend' />
+                    <input type='hidden' name='page' value='contact' />
+
+                    <label class="control-label">Adresse mail d'envoie</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control"
+                               id="emailSend" name="emailSend"
+                               value="<?= paramConfig('emailSend', $db)?>">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </span>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <script type="text/javascript">
