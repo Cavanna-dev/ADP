@@ -29,7 +29,7 @@ $reqInterface[$reqInformation['label']] = $reqInformation['value'];
                             <li><a href="contact.php">Votre compte</a></li>
                             <li><a href="sales.php">Vendre un article</a></li>
                             <li><a href="mysales.php">Vos commandes</a></li>
-                            <li><a href="logout.php">Déconnection</a></li>
+                            <li><a href="logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
                     <li>

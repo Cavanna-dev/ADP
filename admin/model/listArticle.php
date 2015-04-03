@@ -1,5 +1,7 @@
 <?php
 
+
+
 $valueIsActive[2] = 'En attente';
 $valueIsActive[1] = 'Oui';
 $valueIsActive[0] = 'Non';
@@ -16,7 +18,7 @@ $where='';
 if(!empty($name)){ $where .= "AND A1.name LIKE '%".$name."%' "; }
 if(!empty($ref)){ $where .= "AND A1.reference LIKE '%".$ref."%' "; }
 if(!empty($brand)){ $where .= "AND A1.brand LIKE '%".$brand."%' "; }
-if(!empty($idCategory)){ $where .= "AND A1.idCategory = '".$idCategory."' "; }
+
 if(isset($isActive) && ($isActive=='0' || $isActive=='1' || $isActive=='2')){ $where .= "AND A1.isActive = '".$isActive."' "; }
 if(isset($isActive) && $isActive=='3'){ $where .= "AND A1.isActive <> 0 "; }
 if(!empty($idDescription) && $idDescription=='nr0'){ 
@@ -29,6 +31,27 @@ if(!empty($idDescription) && $idDescription=='nrX'){
 }
 if(!empty($idDescription) && $idDescription=='r'){ $where .= "AND A1.idDescription IS NOT NULL "; }
 
+
+
+if(!empty($idCategory)){ 
+    $r_category_test = getCategoriesTest($db);
+    foreach ($r_category_test as $id => $value) {
+        $listParent[] = $value['idParent'];
+    }
+
+    $r_test = makeArrayCategory($idCategory, $r_category_test, $listParent);
+    $r_test = array_merge(array($idCategory), $r_test);
+
+    $where .= "AND (";
+        
+    for($a=0;isset($r_test[$a]);$a++):
+        if($a>0)
+            $where .= " OR ";
+        
+        $where .= " A1.idCategory = '".$r_test[$a]."' ";
+    endfor; 
+    $where .= ") ";
+}
 
 
 $sql = "SELECT A1.id, A1.idDescription, A1.reference, A1.name, A1.brand, A1.picture, A1.isActive, C1.name AS category, tags, "

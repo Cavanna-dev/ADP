@@ -27,11 +27,17 @@ try {
         $bdFirstName = $resultat->firstName;
     }
 
-    if ($bdisActive == 0){
-        header('Location: index.php?emailActif&email='.$email);
-        die;
+    
+    if (isset($bdisActive) && $bdisActive == 0){
+          header('Location: index.php?emailActif&email='.$email);
+          die;
     }
-        
+    
+    if (empty($bdEmail)){
+          header('Location:index.php?emailError&email='.$email);
+          die;
+    }
+       
     
     if ($bdPassword == $password) {
         session_start();
@@ -43,12 +49,7 @@ try {
 
         header('Location: home.php');
     }else{
-        if($email != $bdEmail):
-            $value = "emailError";
-        else:
-            $value = "email=".$email;
-        endif;        
-        
+        $value = "email=".$email;      
         header('Location: index.php?mdpError&'.$value);
     }
 } catch (PDOException $e) {

@@ -7,8 +7,8 @@ if(isset($_GET['error']) && $_GET['error']=='logout'):
     <div class="container">
         <br/><br/><br/>
         <div class="jumbotron">
-            <h1>Deconnection</h1>
-            <p>Merci de vore visite !</p>
+            <h1>Deconnexion</h1>
+            <p>Merci de votre visite !</p>
             <p><a href="index.php" class="btn btn-primary btn-lg">Revenir à la page d'accueil</a></p>
         </div>
     </div>

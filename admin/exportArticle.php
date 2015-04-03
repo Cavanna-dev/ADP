@@ -21,8 +21,8 @@ if(!empty($idDescription)):
         $data[] = array('Description : Liée');
     endif;    
 endif;
-var_dump($data);
-die;
+//var_dump($data);
+//die;
 $data[] = array('Nom','Référence','Marque','Catégorie','Actif', 'Description', 'Tags');     
  
 foreach($reqListArticle as $value):

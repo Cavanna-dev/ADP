@@ -21,6 +21,43 @@ function makeArray($parent, $array, $listParent)
     return $list;
 }
 
+function getCategoriesTest($db)
+{
+$sql = "SELECT C1.id, C1.idParent "
+    . "FROM category as C1 "
+    . "WHERE C1.isActive=1 "
+    . "ORDER BY C1.id ASC ";
+$resultat = $db->query($sql);
+$resultat->execute();
+$req = $resultat->fetchAll(PDO::FETCH_ASSOC);
+$resultat->closeCursor();
+
+    return $req;
+}
+
+
+function makeArrayCategory($parent, $array, $listParent)
+{
+    // if (!is_array($array) OR empty($array)) return FALSE;
+
+    $list = array();
+    // var_dump($list);
+    
+    foreach($array as $value):
+        if ($value['idParent'] == $parent):
+
+            $list[] = $value['id'];
+        
+           if(in_array($value['id'], $listParent)){       
+               $list = array_merge($list, makeArrayCategory($value['id'], $array, $listParent));                
+           }
+
+        endif;
+    endforeach;   
+    
+    return $list;
+}
+
 /* ---------------- FUNCTION POUR METTRE EN LIST UN TABLEAU ---------------- */
 function listageArray($tb, $id)
 {
