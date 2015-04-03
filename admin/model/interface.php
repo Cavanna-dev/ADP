@@ -10,4 +10,3 @@ $resultat->closeCursor();
 foreach($reqInformation as $value):
     $reqInterface[$value['label']]=$value['value'];    
 endforeach;
-

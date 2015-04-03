@@ -1,4 +1,4 @@
-<?php include('../functions/func.php'); ?>
+
 <div class="navbar navbar-inverse" style='border-radius:0px;'>
     <!--<div class="container">-->
         <div class="navbar-header">
@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="">
-                <?php echo paramConfig('nameBo', $db)?>
+                <?= paramConfig('nameBo', $db)?>
             </a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">

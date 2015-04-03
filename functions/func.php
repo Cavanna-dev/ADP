@@ -7,6 +7,6 @@ function paramConfig($label, $db){
     $resultat->execute();
     $req = $resultat->fetch(PDO::FETCH_ASSOC);
     $resultat->closeCursor();
-    
+ 
     return $req['value'];    
 }
