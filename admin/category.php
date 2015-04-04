@@ -60,7 +60,7 @@ include 'model/listCategoryInactive.php';
                 </div>
             </form>
         </div>
-        <br/><br/><br/>
+        <br/>
     </div>
 
     <div class="col-lg-6">

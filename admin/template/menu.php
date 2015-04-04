@@ -59,6 +59,9 @@
                     <ul class="dropdown-menu">
                         <li><a href="info.php">Mes Informations</a></li>
                         <li><a href="interface.php">Paramètres</a></li>
+                        <?php if($_SESSION['user_role']>0) : ?>
+                            <li><a href="saveBdd.php">Sauvegarde</a></li>
+                        <?php endif; ?>
                         <li><a href="index.php?error=logout">Déconnexion</a></li>
                     </ul>
                 </li>

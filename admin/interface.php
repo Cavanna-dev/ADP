@@ -154,16 +154,25 @@ include 'template/menu.php';
             </div>
         </div>
         <div class="jumbotron col-lg-offset-1 col-lg-5">
-            <!-- **** IMG FO **** -->
-            <H4>Logo</H4>
-            <img 
-                style="max-width:105px; max-height:105px;" 
-                src='../img/imgFo/<?= paramConfig('imgFo', $db); ?>'/>
-            <!-- **** IMG FAV FO **** -->
-            <H4>Favicon</H4>
-            <img
-                style="max-width:50px; max-height:50px;" 
-                src='../img/imgFavFo/<?= paramConfig('imgFavFo', $db); ?>'/>
+            <table>
+                <tr>
+                    <td class="col-lg-6">
+                        <!-- **** IMG FO **** -->
+                        <H4>Logo</H4>
+                        <img 
+                            style="max-width:105px; max-height:105px;" 
+                            src='../img/imgFo/<?= paramConfig('imgFo', $db); ?>'/>
+                    </td>
+                    <td class="col-lg-6" style='vertical-align: top;'>
+                        <!-- **** IMG FAV FO **** -->
+                        <H4>Favicon</H4>
+                        <img
+                            style="max-width:50px; max-height:50px;" 
+                            src='../img/imgFavFo/<?= paramConfig('imgFavFo', $db); ?>'/>
+                    </td>
+                </tr>
+            </table>            
+            <hr/>
             <!-- **** IMG CSS FO **** -->
             <H4>Template</H4>
             <img id="templateImgFo"
@@ -280,16 +289,25 @@ include 'template/menu.php';
             </div>
         </div>
         <div class="jumbotron col-lg-offset-1 col-lg-5">
-            <!-- **** IMG FO **** -->
-            <H4>Logo</H4>
-            <img 
-                style="max-width:105px; max-height:105px;" 
-                src='../img/imgBo/<?= paramConfig('imgBo', $db); ?>'/>
-            <!-- **** IMG FAV FO **** -->
-            <H4>Favicon</H4>
-            <img
-                style="max-width:50px; max-height:50px;" 
-                src='../img/imgFavBo/<?= paramConfig('imgFavBo', $db); ?>'/>
+            <table>
+                <tr>
+                    <td class="col-lg-6">
+                        <!-- **** IMG FO **** -->
+                        <H4>Logo</H4>
+                        <img 
+                            style="max-width:105px; max-height:105px;" 
+                            src='../img/imgBo/<?= paramConfig('imgBo', $db); ?>'/>
+                    </td>
+                    <td class="col-lg-6" style='vertical-align: top;'>
+                        <!-- **** IMG FAV FO **** -->
+                        <H4>Favicon</H4>
+                        <img
+                            style="max-width:50px; max-height:50px;" 
+                            src='../img/imgFavBo/<?= paramConfig('imgFavBo', $db); ?>'/>
+                    </td>
+                </tr>
+            </table>            
+            <hr/>
             <!-- **** IMG CSS FO **** -->
             <H4>Template</H4>
             <img id="templateImgBo"

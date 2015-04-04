@@ -38,7 +38,10 @@ include 'template/menu.php';
                     <td style="vertical-align:middle;">
                         <input type="text" name="firstName" id="firstName" value="<?php if (isset($_GET['firstName'])){echo $_GET['firstName'];}?>"/>
                     </td>
-                    <td><button type="submit" class="btn btn-primary">Sauvegarder</button></td>
+                    <td style='padding:0;'>
+                        <button type="submit" style="border-radius:0;"
+                            class="col-lg-12 btn btn-primary">Sauvegarder</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

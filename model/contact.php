@@ -1,6 +1,7 @@
 <?php
 
 include_once '../functions/connection_db.php';
+include '../model/bootstrap.php';
 
 $idUser     =   $_POST['inputId'];
 $subject    =   substr(htmlspecialchars($_POST['inputSubject'], ENT_QUOTES),0,95);
@@ -26,6 +27,24 @@ try{
     $stmt->bindParam(":firstName", $firstName, PDO::PARAM_STR, 100);
     $stmt->bindParam(":email", $email, PDO::PARAM_STR, 150);
     $stmt->execute();
+    
+    
+    $sql = "SELECT (SELECT value FROM config WHERE label = 'emailSend') emailSend, ";
+    $sql .= "(SELECT value FROM config WHERE label = 'nameFo') nameFo ";
+    $resultat = $db->query($sql);
+    $resultat->execute();
+    $reqConfig = $resultat->fetch(PDO::FETCH_ASSOC);
+    $resultat->closeCursor();
+    
+    
+    $body = $firstName.' '.$name.'<br/>';
+    $body .= $email.'<br/><br/><br/>';
+    $body .= $message;
+    
+    sendMailTo(($firstName.' '.$name), $email, 
+            $reqConfig['nameFo'], $reqConfig['emailSend'], $subject, $body);  
+
+    
     header('Location:../contact.php?success');
   
 } catch (PDOException $e) {

@@ -27,7 +27,7 @@ if(!empty($req)){
     $stmt->execute();
     
     
-    $sql = "SELECT (SELECT value FROM config WHERE label = 'emailContact') emailContact, ";
+    $sql = "SELECT (SELECT value FROM config WHERE label = 'emailSend') emailSend, ";
     $sql .= "(SELECT value FROM config WHERE label = 'nameFo') nameFo ";
     $resultat = $db->query($sql);
     $resultat->execute();
@@ -44,9 +44,10 @@ if(!empty($req)){
     $body .= 'Vous trouvez ci-dessous un lien pour initialiser celui-ci.<br/><br/>';    
     $body .= $serverName[0].'newPassword.php?mail='.$req['email'].'&key='.$keyBdd;
     
-    sendMailTo($reqConfig['nameFo'], $reqConfig['emailContact'], 
-            $req['firstName'].$req['name'], $req['email'], $subject, $body);
+    sendMailTo($reqConfig['nameFo'], $reqConfig['emailSend'], 
+            ($req['firstName'].' '.$req['name']), $req['email'], $subject, $body);
     
+
     header('Location:../forgetPassword.php?success');
     
 }else{
