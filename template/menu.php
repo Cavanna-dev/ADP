@@ -52,7 +52,7 @@ $reqInterface[$reqInformation['label']] = $reqInformation['value'];
                                 <?php foreach ($_SESSION['panier']['article'] as $id_basket_product): ?>
                                     <?php $r_basket_products = getAllArticlesByAvailableId($db, $id_basket_product); ?>
                                     <?php while ($r_basket_product = $r_basket_products->fetch(PDO::FETCH_OBJ)) { ?>
-                                        <li><a href="#"><?= $r_basket_product->artName; ?> - <?= $r_basket_product->price; ?> €</a></li>
+                                        <li><a href="article.php?key=<?= $r_basket_product->id; ?>"><?= $r_basket_product->artName; ?> - <?= $r_basket_product->price; ?> €</a></li>
                                     <?php } ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
