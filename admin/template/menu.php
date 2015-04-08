@@ -20,30 +20,30 @@
                 <li class="dropdown <?php if($selectMenu == 1) echo 'active'; ?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Web <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="homePageCarousel.php">Gérer le diaporama de la page d'accueil</a></li>
+                        <li><a href="homePageCarousel.php">Gestion du diaporama de la page d'accueil</a></li>
                         <li><a href="../index.php">Voir le site</a></li>
                     </ul>
                 </li>
                 
                 <li class="dropdown <?php if($selectMenu == 2) echo 'active'; ?>">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer le e-Commerce<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestion e-Commerce<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="listArticle.php">Gérer les articles</a></li>
-                        <li><a href="category.php">Gérer les catégories</a></li>
+                        <li><a href="listArticle.php">Gestion des articles</a></li>
+                        <li><a href="category.php">Gestion des catégories</a></li>
                     </ul>
                 </li>
                 
                 <li class="dropdown <?php if($selectMenu == 3) echo 'active'; ?>">
-                    <a href="listUser.php">Gérer les Utilisateurs du site</a>
+                    <a href="listUser.php">Gestion des Utilisateurs</a>
                 </li>
                 
                 <?php if($_SESSION['user_role']>0) : ?>
                     <li class="dropdown 
                         <?php  if($selectMenu == 4) echo 'active'; ?>">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer Administrateurs<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestion des Administrateurs<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="addAdmin.php">Créer compte</a></li>
-                            <li><a href="listAdmin.php">Gérer les comptes</a></li>
+                            <li><a href="addAdmin.php">Création de compte</a></li>
+                            <li><a href="listAdmin.php">Gestion des comptes</a></li>
                         </ul>
                     </li>
                 <?php endif; ?>

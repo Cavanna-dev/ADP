@@ -3,7 +3,7 @@
 <?php include 'template/menu.php'; ?>
 <div class="container">
     
-        <H1>Bienvenue sur la Gestion du Carousel</H1>
+        <H1>Gestion du Carousel</H1>
     
 
     <?php if (isset($_GET['erreur'])) { //TODO:Pour gérer les erreurs. ?>

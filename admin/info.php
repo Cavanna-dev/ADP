@@ -35,13 +35,13 @@
         <div class="col-lg-12">
             <div class="col-lg-4">
                 <blockquote>
-                    <p>Role</p>
+                    <p>Rôle</p>
                     <h3><?=$roleValue[$reqUser['role']]?></h3>               
                 </blockquote>
             </div>
             <div class="col-lg-4">
                 <blockquote>
-                    <p>Date création</p>
+                    <p>Date de création</p>
                     <h3><?= date('d/m/Y H:i', strtotime($reqUser['dateCreate'])) ?></h3>
                 </blockquote>
             </div>

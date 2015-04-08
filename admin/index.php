@@ -8,7 +8,7 @@ if(isset($_GET['error']) && $_GET['error']=='logout'):
     <div class="container">
         <br/><br/><br/>
         <div class="jumbotron">
-            <h1>Deconnexion</h1>
+            <h1>Déconnexion</h1>
             <p>Merci de votre visite !</p>
             <p><a href="index.php" class="btn btn-primary btn-lg">Revenir à la page d'accueil</a></p>
         </div>
@@ -19,7 +19,7 @@ if(isset($_GET['error']) && $_GET['error']=='logout'):
         <div class="jumbotron col-lg-12">
             <form class="form-horizontal" id="loginForm" action="login.php" method="POST">
                 <fieldset>
-                    <legend>Connection</legend>
+                    <legend>Connexion</legend>
                     <div class="form-group">
                         <label for="inputEmail" class="col-lg-3 control-label">Email :</label>
                         <div class="col-lg-5">

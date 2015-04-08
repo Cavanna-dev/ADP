@@ -9,11 +9,11 @@ include 'model/contact.php';
     <h1>Information</h1>    
     <div class="jumbotron col-lg-12">
         <div class='col-lg-3'>
-            <small>Nom, Prénom</small>
+            <small>Nom & Prénom</small>
             <h3><?=$reqContact['nameCustomer'].', '.$reqContact['firstNameCustomer']?></h3>
         </div>
         <div class='col-lg-3'>
-            <small>Date demande</small>
+            <small>Date de demande</small>
             <h3><?= date('d/m/Y H:i', strtotime($reqContact['dateCreate'])) ?></h3>
         </div>
         <div class='col-lg-4'>
@@ -35,7 +35,7 @@ include 'model/contact.php';
                 <h2><?=$reqContact['nameUser']?></h2>
             </div>
             <div class="col-lg-6">
-                <p>Date traitement</p>
+                <p>Date de traitement</p>
                 <h2><?= date('d/m/Y H:i', strtotime($reqContact['dateChange'])) ?></h2>
             </div>     
         </div>

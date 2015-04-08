@@ -16,7 +16,7 @@ include 'model/listUser.php';
                     <div class="col-lg-2">
                         <input type="text" class="form-control" id="inputName" name="inputName" value="<?=$name?>">
                     </div>
-                    <label for="selectIsActive" class="col-lg-1 control-label">Active</label>
+                    <label for="selectIsActive" class="col-lg-1 control-label">Actif</label>
                     <div class="col-lg-2">
                         <select class="form-control" id="selectIsActive" name="selectIsActive">
                             <option value=""></option>
@@ -36,12 +36,12 @@ include 'model/listUser.php';
         <table class="table table-striped table-hover table-responsive">
           <thead>
             <tr>
-              <th>Nom, Prénom</th>
+              <th>Nom & Prénom</th>
               <th>Email</th>
               <th>Inscription</th>
               <th>Ville</th>
-              <th>Articles créés</th>
-              <th>Descriptions créées</th>
+              <th>Nombre Articles</th>
+              <th>Nombre Descriptions</th>
               <th>Articles vendus</th>
               <th>Articles achetés</th>
               <th>Actif</th>
@@ -50,7 +50,7 @@ include 'model/listUser.php';
           <tbody>
           <?php foreach($reqListCustomer as $value): ?>
             <tr>                
-                <td class="col-lg-2"><?=$value['name'].', '.$value['firstName']?></td>
+                <td class="col-lg-2"><?=$value['name'].' '.$value['firstName']?></td>
                 <td><?=$value['email']?></td>
                 <td><?=date('d/m/Y', strtotime($value['dateCreate']))?></td>
                 <td><?=$value['town']?></td>

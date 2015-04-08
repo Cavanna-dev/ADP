@@ -57,7 +57,7 @@ include 'template/menu.php';
                     <input type='hidden' name='label' value='nameFo' />
                     <input type='hidden' name='page' value='site' />
 
-                    <label class="control-label">Nom menu</label>
+                    <label class="control-label">Nom du menu</label>
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="nameFo" name="nameFo"
@@ -76,7 +76,7 @@ include 'template/menu.php';
                     <input type='hidden' name='label' value='titleFo' />
                     <input type='hidden' name='page' value='site' />
 
-                    <label class="control-label">Titre onglet</label>
+                    <label class="control-label">Titre de l'onglet</label>
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="titleFo" name="titleFo"
@@ -192,7 +192,7 @@ include 'template/menu.php';
                     <input type='hidden' name='label' value='nameBo' />
                     <input type='hidden' name='page' value='administration' />
 
-                    <label class="control-label">Nom menu</label>
+                    <label class="control-label">Nom du menu</label>
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="nameBo" name="nameBo"
@@ -211,7 +211,7 @@ include 'template/menu.php';
                     <input type='hidden' name='label' value='titleBo' />
                     <input type='hidden' name='page' value='administration' />
 
-                    <label class="control-label">Titre onglet</label>
+                    <label class="control-label">Titre de l'onglet</label>
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="titleBo" name="titleBo"
@@ -323,7 +323,7 @@ include 'template/menu.php';
                     <input type='hidden' name='label' value='emailContact' />
                     <input type='hidden' name='page' value='contact' />
 
-                    <label class="control-label">Adresse mail contact</label>
+                    <label class="control-label">Adresse email contact</label>
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="emailContact" name="emailContact"
@@ -339,7 +339,7 @@ include 'template/menu.php';
                     <input type='hidden' name='label' value='emailSend' />
                     <input type='hidden' name='page' value='contact' />
 
-                    <label class="control-label">Adresse mail d'envoie</label>
+                    <label class="control-label">Adresse email d'envoi</label>
                     <div class="input-group">
                         <input type="text" class="form-control"
                                id="emailSend" name="emailSend"

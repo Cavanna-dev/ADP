@@ -20,7 +20,7 @@ $roleValue[1] = 'Super Admin';
                     <div class="col-lg-2">
                         <input type="text" class="form-control" id="inputName" name="inputName" value="<?=$name?>">
                     </div>
-                    <label for="selectIsActive" class="col-lg-1 control-label">Active</label>
+                    <label for="selectIsActive" class="col-lg-1 control-label">Actif</label>
                     <div class="col-lg-2">
                         <select class="form-control" id="selectIsActive" name="selectIsActive">
                             <option value=""></option>
@@ -40,9 +40,9 @@ $roleValue[1] = 'Super Admin';
         <table class="table table-striped table-hover table-responsive">
           <thead>
             <tr>
-              <th>Nom, Prénom</th>
+              <th>Nom & Prénom</th>
               <th>Email</th>
-              <th>Role</th>
+              <th>Rôle</th>
               <th>Création</th>
               <th>Actif</th>
             </tr>
@@ -50,7 +50,7 @@ $roleValue[1] = 'Super Admin';
           <tbody>
           <?php foreach($reqListAdmin as $value): ?>
             <tr  onclick="document.location='info.php?key=<?=$value['id']?>'" style="cursor: pointer;">                
-                <td class="col-lg-3"><?=$value['name'].', '.$value['firstName']?></td>
+                <td class="col-lg-3"><?=$value['name'].' '.$value['firstName']?></td>
                 <td class="col-lg-3"><?=$value['email']?></td>
                 <td class="col-lg-2"><?=$roleValue[$value['role']]?></td>
                 <td class="col-lg-2"><?=date('d/m/Y', strtotime($value['dateCreate']))?></td>

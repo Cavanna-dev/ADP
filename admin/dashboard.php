@@ -210,7 +210,7 @@
             </div>
         </div>
 
-        <i>* Sur les articles actifs et en attentes</i>
+        <i>* Articles actifs et en attentes</i>
     </div>
 
     <div class="jumbotron col-lg-6 col-lg-offset-0"> 

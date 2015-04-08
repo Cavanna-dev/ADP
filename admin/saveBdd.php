@@ -19,7 +19,7 @@ system($export);
 <div class='container'>
     <H3>Administration</H3>
     <div class="jumbotron">
-      <h1>Sauvegarde base de données</h1>
+      <h1>Sauvegarde de la base de données</h1>
       <p>Nom du fichier : <?='database_'.date('d_m_Y-H_i', time()).'.sql'?></p>
       <p><a href='<?='../docs/database_'.date('d_m_Y-H_i', time()).'.sql'?>'
             class="btn btn-primary btn-lg">Télécharger</a></p>

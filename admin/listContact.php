@@ -46,18 +46,18 @@ $valueStatus[2] = 'Terminé';
         <table class="table table-striped table-hover table-responsive">
           <thead>
             <tr>
-              <th>Nom, Prénom</th>
+              <th>Nom & Prénom</th>
               <th>Sujet</th>
-              <th>Date demande</th>
+              <th>Date de demande</th>
               <th>Statut</th>
-              <th>Date traitement</th>
+              <th>Date de traitement</th>
               <th>Traité par</th>
             </tr>
           </thead>
           <tbody>
           <?php foreach($reqListContact as $value): ?>
             <tr onclick="document.location='contact.php?key=<?=$value['id']?>'" style="cursor: pointer;">                
-                <td class="col-lg-2"><?=$value['nameCustomer'].', '.$value['firstNameCustomer']?></td>
+                <td class="col-lg-2"><?=$value['nameCustomer'].' '.$value['firstNameCustomer']?></td>
                 <td class="col-lg-3"><?=$value['subject']?></td>
                 <td class="col-lg-2"><?=date('d/m/Y', strtotime($value['dateCreate']))?></td>                
                 <td class="col-lg-1"><?=$valueStatus[$value['status']]?></td>         
