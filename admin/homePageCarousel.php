@@ -13,7 +13,7 @@
         </div>
     <?php } ?>
 <div class="jumbotron">
-    <?php include './modalCarousel.php'; //Renvoi de la pop-up pour enregistrer une image ?>
+    <a href="addImgCarousel.php" class="btn btn-primary">Ajouter une photo</a>
 
     <?php include 'modelCarousel/allCarousel.php'; //Traitement MySQL pour toute les images ?>
     <table class="table table-striped table-hover ">

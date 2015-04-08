@@ -102,11 +102,10 @@ include 'template/menu.php';
                                id="imgFo" name="imgFo">
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-primary">Charger</button>
-                        </span>
+                        </span>                        
                     </div>
-                </form>            
+                </form>       
             </div>
-
 
             <!-- ************************ FAVICON FO ************************ -->
 
@@ -159,18 +158,37 @@ include 'template/menu.php';
                     <td class="col-lg-6">
                         <!-- **** IMG FO **** -->
                         <H4>Logo</H4>
-                        <img 
-                            style="max-width:105px; max-height:105px;" 
-                            src='../img/imgFo/<?= paramConfig('imgFo', $db); ?>'/>
+                        <?php if(!empty(paramConfig('imgFo', $db))): ?>
+                            <img 
+                                style="max-width:105px; max-height:105px;" 
+                                src='../img/imgFo/<?= paramConfig('imgFo', $db); ?>'/>
+                        <?php endif; ?>
                     </td>
                     <td class="col-lg-6" style='vertical-align: top;'>
                         <!-- **** IMG FAV FO **** -->
-                        <H4>Favicon</H4>
-                        <img
-                            style="max-width:50px; max-height:50px;" 
-                            src='../img/imgFavFo/<?= paramConfig('imgFavFo', $db); ?>'/>
+                        <H4>Favicon</H4> 
+                        <?php if(!empty(paramConfig('imgFavFo', $db))): ?>
+                            <img
+                                style="max-width:50px; max-height:50px;" 
+                                src='../img/imgFavFo/<?= paramConfig('imgFavFo', $db); ?>'/>
+                        <?php endif; ?>
                     </td>
                 </tr>
+                <?php if(!empty(paramConfig('imgFo', $db))): ?>
+                <tr>
+                    <td style="height:10px;"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <form class="form-horizontal" method="POST" action="model/delInterface.php"
+                              enctype="multipart/form-data">
+                            <input type='hidden' name='label' value='imgFo' />
+                            <input type='hidden' name='page' value='site' />
+                            <button type="submit" class="btn btn-primary">Supprimer logo</button>                      
+                        </form>       
+                    </td>                        
+                </tr>
+                <?php endif; ?>
             </table>            
             <hr/>
             <!-- **** IMG CSS FO **** -->
@@ -292,20 +310,39 @@ include 'template/menu.php';
             <table>
                 <tr>
                     <td class="col-lg-6">
-                        <!-- **** IMG FO **** -->
+                        <!-- **** IMG BO **** -->
                         <H4>Logo</H4>
-                        <img 
-                            style="max-width:105px; max-height:105px;" 
-                            src='../img/imgBo/<?= paramConfig('imgBo', $db); ?>'/>
+                        <?php if(!empty(paramConfig('imgBo', $db))): ?>
+                            <img 
+                                style="max-width:105px; max-height:105px;" 
+                                src='../img/imgBo/<?= paramConfig('imgBo', $db); ?>'/>
+                        <?php endif; ?>
                     </td>
                     <td class="col-lg-6" style='vertical-align: top;'>
-                        <!-- **** IMG FAV FO **** -->
-                        <H4>Favicon</H4>
-                        <img
-                            style="max-width:50px; max-height:50px;" 
-                            src='../img/imgFavBo/<?= paramConfig('imgFavBo', $db); ?>'/>
+                        <!-- **** IMG FAV BO **** -->
+                        <H4>Favicon</H4> 
+                        <?php if(!empty(paramConfig('imgFavBo', $db))): ?>
+                            <img
+                                style="max-width:50px; max-height:50px;" 
+                                src='../img/imgFavBo/<?= paramConfig('imgFavBo', $db); ?>'/>
+                        <?php endif; ?>
                     </td>
                 </tr>
+                <?php if(!empty(paramConfig('imgBo', $db))): ?>
+                <tr>
+                    <td style="height:10px;"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <form class="form-horizontal" method="POST" action="model/delInterface.php"
+                              enctype="multipart/form-data">
+                            <input type='hidden' name='label' value='imgBo' />
+                            <input type='hidden' name='page' value='administration' />
+                            <button type="submit" class="btn btn-primary">Supprimer logo</button>                      
+                        </form>       
+                    </td>                        
+                </tr>
+                <?php endif; ?>
             </table>            
             <hr/>
             <!-- **** IMG CSS FO **** -->
