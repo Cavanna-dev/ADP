@@ -3,7 +3,7 @@
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 
-<div class="container">    
+<div class="container" style="min-height: 700px;">    
     <?php if (isset($_GET['erreur'])): ?>
         <br/><div class="alert alert-dismissable alert-danger">
             <button type="button" class="close" data-dismiss="alert">×</button>

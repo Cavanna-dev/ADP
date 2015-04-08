@@ -29,6 +29,20 @@ function getAllSellableArticlesByCategory($db, $id)
     return $r;
 }
 
+function getAllSellableArticlesByNameTag($db, $string)
+{
+    $sql = "SELECT av.price, art.id, art.picture, art.brand, art.name, art.reference, art.tags "
+            . "FROM availability av "
+            . "LEFT JOIN article art ON av.idArticle = art.id "
+            . "LEFT JOIN category cat ON art.idCategory = cat.id "
+            . "WHERE art.name LIKE '%" . $string . "%' OR art.tags LIKE '%" . $string . "%' OR art.reference LIKE '%" . $string . "%'"
+            . "GROUP BY idArticle";
+    $r = $db->prepare($sql);
+    $r->execute();
+
+    return $r;
+}
+
 function getAllSellableArticlesByArticleId($db, $id)
 {
     $sql = "SELECT av.id as avId, av.price, av.description, art.id, art.picture, art.brand, art.name, art.reference, "

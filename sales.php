@@ -3,7 +3,7 @@
 <?php include 'template/menu.php'; ?>
 <?php include './functions/connection_db.php'; ?>
 
-<div class="container">    
+<div class="container" style="min-height: 700px;">    
     <h1>Liste des articles</h1> 
     <a href="addArticle.php" class="btn btn-primary">Créer une référence</a>
     <br /><br /><?php $r_products = getAllArticles($db); ?>

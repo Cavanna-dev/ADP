@@ -9,7 +9,7 @@
     });
 </script>
 
-<div class="container">    
+<div class="container" style="min-height: 700px;">    
     <?php if (isset($_GET['success'])) { ?>
         <div class="alert alert-dismissible alert-success" id="show-up" style="display:none;">
             <button type="button" class="close" data-dismiss="alert">×</button>
