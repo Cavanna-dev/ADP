@@ -1,6 +1,6 @@
 <?php
 include 'template/header.php';
-
+include 'model/listCategory.php';
 include 'model/listArticle.php';
 
 $nb_line = count($reqListArticle);
@@ -10,7 +10,7 @@ $data=array();
 if(!empty($name)){          $data[] = array('Nom', $name); }
 if(!empty($ref)){           $data[] = array('Référence', $ref); }
 if(!empty($brand)){         $data[] = array('Marque', $brand);}
-if(!empty($idCategory)){    $data[] = array('Catégorie', $idCategory);}
+if(!empty($idCategory)){    $data[] = array('Catégorie', getCategorieName($db, $idCategory));}
 if(!empty($isActive)){      $data[] = array('Actif', $valueIsActive[$isActive]);}
 if(!empty($idDescription)):
     if($idDescription=='nr0'): 

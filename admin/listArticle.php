@@ -2,8 +2,9 @@
 <?php
 include 'template/header.php';
 include 'template/menu.php';
-include 'model/listArticle.php';
 include 'model/listCategory.php';
+include 'model/listArticle.php';
+
 ?>
 
 

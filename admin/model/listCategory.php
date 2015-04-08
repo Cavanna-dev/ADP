@@ -21,6 +21,19 @@ function makeArray($parent, $array, $listParent)
     return $list;
 }
 
+function getCategorieName($db, $id)
+{
+$sql = "SELECT C1.name "
+    . "FROM category as C1 "
+    . "WHERE C1.id = '".$id."'";
+$resultat = $db->query($sql);
+$resultat->execute();
+$req = $resultat->fetch(PDO::FETCH_ASSOC);
+$resultat->closeCursor();
+    return $req['name'];
+}
+
+
 function getCategoriesTest($db)
 {
 $sql = "SELECT C1.id, C1.idParent "
