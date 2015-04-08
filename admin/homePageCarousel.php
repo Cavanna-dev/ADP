@@ -4,7 +4,6 @@
 <div class="container">
     
         <H1>Gestion du Carousel</H1>
-    
 
     <?php if (isset($_GET['erreur'])) { //TODO:Pour gérer les erreurs. ?>
         <div class="alert alert-dismissable alert-warning">
