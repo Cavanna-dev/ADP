@@ -8,7 +8,7 @@ include 'template/menu.php';
 include 'template/categories.php';
 ?>
 
-<div class="container">
+<div class="container" style="min-height: 700px;">
     <br />
     <div class="row">
         <div class="col-lg-6">

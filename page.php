@@ -8,7 +8,7 @@
 <?php $r_categories = getCategoriesByParentId($db, $id_parent_category); ?>
 <?php $r_category_parent = getOneCategoryById($db, $id_parent_category); ?>
 
-<div class="container">
+<div class="container" style="min-height: 700px;">
     <div class="col-lg-2" id="children_categories">
         <ul class="nav nav-pills nav-stacked">
             <li class="active disabled">
