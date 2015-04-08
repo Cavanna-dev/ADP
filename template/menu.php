@@ -1,6 +1,5 @@
 <?php
 include_once 'functions/connection_db.php';
-include 'model/bootstrap.php';
 $sql = "SELECT * FROM config WHERE label = 'nameFo' ";
 $resultat = $db->query($sql);
 $resultat->execute();

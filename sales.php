@@ -1,6 +1,7 @@
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
 <?php include './functions/connection_db.php'; ?>
+<?php include 'model/bootstrap.php'; ?>
 
 <div class="container">    
     <h1>Liste des articles</h1> 

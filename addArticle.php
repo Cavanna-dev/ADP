@@ -1,5 +1,5 @@
 <?php include 'functions/connection_db.php'; ?>
-<?php //include 'admin/model/listCategory.php'; ?>
+<?php include 'admin/model/listCategory.php';  ?>
 
 <?php include 'template/header.php'; ?>
 <?php include 'template/menu.php'; ?>
@@ -30,55 +30,65 @@
                 <label for="inputBrand" class="col-lg-2 control-label">Marque</label>
                 <div class="col-lg-8">
                     <input type="text" class="form-control" id="inputBrand" name="inputBrand" placeholder="Marque"
-                           value="<?php if (isset($_GET['brand'])) {
-        echo $_GET['brand'];
-    } ?>" >
+                           value="<?php
+                           if (isset($_GET['brand'])) {
+                               echo $_GET['brand'];
+                           }
+                           ?>" >
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputReference" class="col-lg-2 control-label">Référence</label>
                 <div class="col-lg-8">
                     <input type="text" class="form-control" id="inputReference" name="inputReference" placeholder="Référence"
-                           value="<?php if (isset($_GET['reference'])) {
-        echo $_GET['reference'];
-    } ?>">
+                           value="<?php
+                           if (isset($_GET['reference'])) {
+                               echo $_GET['reference'];
+                           }
+                           ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputName" class="col-lg-2 control-label">Nom</label>
                 <div class="col-lg-8">
                     <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Nom"
-                           value="<?php if (isset($_GET['name'])) {
-        echo $_GET['name'];
-    } ?>">
+                           value="<?php
+                           if (isset($_GET['name'])) {
+                               echo $_GET['name'];
+                           }
+                           ?>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputTags" class="col-lg-2 control-label">Tags</label>
                 <div class="col-lg-8">
-<?php if (isset($_GET['tags'])) {
+<?php
+if (isset($_GET['tags'])) {
     $tags = $_GET['tags'];
 } else {
     $tags = '';
-} ?>
+}
+?>
                     <textarea class="form-control" rows="3" id="inputTags" name="inputTags"><?= $tags ?></textarea>
                     <span class="help-block">
-                        La liste de TAG ne peut exceder plus de 255 caractères. Renseigner les TAGS en minuscules.
+                        La liste de TAG ne peut excéder plus de 255 caractères. Renseigner les TAGS en minuscules.
                     </span>
                 </div>
             </div>      
-
+            <?php //var_dump($category);die; ?>
             <div class="form-group">
                 <label for="idCategory" class="col-lg-2 control-label">Catégorie</label>
                 <div class="col-lg-8">
                     <select class="form-control" name="idCategory" id="idCategory">
                         <option value=""></option>
-<?php if (isset($_GET['category'])) {
+<?php
+if (isset($_GET['category'])) {
     $category = $_GET['category'];
 } else {
     $category = 0;
-} ?>
-<?php selectArrayForm($list, $listId, '', $category); ?>
+}
+
+selectArrayForm($list, $listId, '', $category, 0); ?>
                     </select>
                 </div>
             </div>
