@@ -1,7 +1,7 @@
 <?php include 'template/header.php'; ?>
+<?php include 'model/bootstrap.php'; ?>
 <?php include 'template/menu.php'; ?>
 <?php include './functions/connection_db.php'; ?>
-<?php include 'model/bootstrap.php'; ?>
 
 <script>
     $(document).ready(function () {

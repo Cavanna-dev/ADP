@@ -127,6 +127,20 @@ function selectArrayForm($tb, $id, $tiret, $valueSelected, $lvl)
     }
 }
 
+function getAllArticlesByAvailableId($db, $id)
+{
+    $sql = "SELECT av.id as avId, av.price, av.currency, av.description, art.id, art.picture, art.brand, art.name as 'artName', art.reference, "
+            . "av.idUserSales, cust.name 'custName', cust.firstName as 'custFirstName', cust.email "
+            . "FROM availability av "
+            . "LEFT JOIN article art ON av.idArticle = art.id "
+            . "LEFT JOIN category cat ON art.idCategory = cat.id "
+            . "LEFT JOIN customer cust ON av.idUserSales = cust.id "
+            . "WHERE av.id = '" . $id . "' AND av.status = 1 AND av.isActive = 1";
+    $r = $db->prepare($sql);
+    $r->execute();
+
+    return $r;
+}
 
 /* ---------------- REQUETE POUR SELECTIONNER LES CATEGORIES ---------------- */
 $sql = "SELECT C1.id, C1.name, C1.idParent, "

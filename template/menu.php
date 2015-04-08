@@ -17,6 +17,12 @@ $reqInterface[$reqInformation['label']] = $reqInformation['value'];
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.php"><?= $reqInterface['nameFo'] ?></a>
+            <form class="navbar-form navbar-left" role="search" action="search.php">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Rechercher un article">
+                </div>
+                <button type="submit" class="btn btn-default">Rechercher</button>
+            </form>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav navbar-right">

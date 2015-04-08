@@ -71,7 +71,8 @@ if (isset($_GET['tags'])) {
 ?>
                     <textarea class="form-control" rows="3" id="inputTags" name="inputTags"><?= $tags ?></textarea>
                     <span class="help-block">
-                        La liste de TAG ne peut excéder plus de 255 caractères. Renseigner les TAGS en minuscules.
+                        La liste de TAG ne peut excéder plus de 255 caractères. Renseigner les TAGS en minuscules et
+                        séparés d'une virgule (ex: occassion, pc portable, informatique, etc...).
                     </span>
                 </div>
             </div>      

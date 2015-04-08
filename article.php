@@ -3,8 +3,8 @@ include_once 'functions/connection_db.php';
 
 include 'model/article.php';
 include 'template/header.php';
-include 'template/menu.php';
 include 'model/bootstrap.php';
+include 'template/menu.php';
 include 'template/categories.php';
 ?>
 
@@ -18,7 +18,7 @@ include 'template/categories.php';
         <div class="col-lg-6">
             <h3><strong><?= $reqArticle['brand'] . " - " . $reqArticle['reference'] . " - " . $reqArticle['name'] ?></strong></h3>
             <h3>De : <a href="page.php?parentCat=<?= $reqArticle['idCat'] ?>"><?= $reqArticle['category'] ?></a></h3>
-            <h3>Tags associés : <?= $reqArticle['tags'] ?></h3>
+            <h3>Tags associés :</h3> <?= $reqArticle['tags'] ?>
             <div class="">
                 <h3>Description</h3>
                 <h4>
