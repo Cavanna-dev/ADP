@@ -57,7 +57,13 @@ include 'model/listUser.php';
                 <td align="right"><?=$value['articleCreate']?></td>
                 <td align="right"><?=$value['descriptionCreate']?></td>
                 <td align="right"><?=$value['articleSales']?></td>
-                <td align="right"><?=$value['articleBuy']?></td>
+                <td align="right"><?php
+                if(empty($value['articleBuy'])):
+                    echo '0';
+                else:
+                    echo $value['articleBuy'];
+                endif;
+                ?></td>
                 <form method="POST" action="model/updateCustomer.php" name="<?=$value['id']?>">                    
                     <input type="hidden" name="idUser" value="<?=$value['id']?>" />                    
                     <?php if($value['isActive']==1): ?>
