@@ -5,7 +5,17 @@
 <br />
 <footer>
     <div class="container">
-        <div class="row">
+        <?php if(!empty(paramConfig('imgFo', $db))): ?>
+            <div class="row col-lg-4">
+                <blockquote class="pull-right">
+                    <img style="max-height: 200px; max-width:350px;" src="img/imgFo/<?=paramConfig('imgFo', $db)?>">
+                </blockquote>
+                <br/><br/>
+                </div>
+            <div class="row col-lg-8">
+        <?php else: ?>
+            <div class="row">
+        <?php endif; ?>
             <div class="col-lg-12">
                 <ul class="list-unstyled">
                     <li class="pull-right"><a href="#top">Back to top</a></li>
