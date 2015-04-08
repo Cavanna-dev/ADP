@@ -12,7 +12,7 @@ $valueStatus[2] = 'Terminé';
 
 
 <div class="container">
-    <h1>Adminsitration Contact</h1>
+    <h1>Administration Contact</h1>
 
     <div class="jumbotron">
         <form class="form-horizontal" method="GET" action="listContact.php">
