@@ -3,7 +3,6 @@ include 'template/header.php';
 include 'template/menu.php';
 ?>
 
-
 <div class="container">
     <h1>Formulaire de contact</h1>
      <?php if (isset($_GET['success'])): ?>

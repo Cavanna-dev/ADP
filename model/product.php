@@ -73,4 +73,14 @@ function getAllArticlesByAvailableId($db, $id)
     return $r;
 }
 
+function setAvailableOnNull($db, $id, $id_command)
+{
+    $sql = "UPDATE `availability` SET `idCommand`=".$id_command." `status`=2 WHERE 1 "
+            . "WHERE id = '" . $id . "'";
+    $r = $db->prepare($sql);
+    $r->execute();
+
+    return $r;
+}
+
 ?>
