@@ -54,7 +54,7 @@
                 </tbody>
             </table>
             <a href="delBasket.php" class="btn btn-primary">Vider le panier</a>
-            <a href="delBasket.php" class="btn btn-primary pull-right">Valider la commande</a>
+            <a href="valBasket.php" class="btn btn-primary pull-right">Valider la commande</a>
         <?php else: ?>
             <div class="alert alert-dismissible alert-warning">
                 <button type="button" class="close" data-dismiss="alert">×</button>
