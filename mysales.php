@@ -28,18 +28,20 @@
     <table class="table table-striped table-hover ">
         <thead>
             <tr>
-                <th>Référence</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Action</th>
+                <th class='col-lg-2'>Référence</th>
+                <th class='col-lg-4'>Nom</th>
+                <th class='col-lg-3'>Description</th>
+                <th class='col-lg-1'>Prix</th>
+                <th class='col-lg-1'>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php while ($r_sale = $r_sales->fetch(PDO::FETCH_OBJ)) { ?>
                 <tr class="<?php
-                if ($r_sale)
-                    
+                if ($r_sale->status == 1)
+                    echo "warning";
+                else if($r_sale->status == 2)
+                    echo "info";
                     ?>">
                     <td><a href="article.php?key=<?= $r_sale->idArticle ?>"><?= $r_sale->reference ?></a></td>
                     <td><?= $r_sale->name ?></td>

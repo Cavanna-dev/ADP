@@ -1,6 +1,5 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
     <?php include_once './allCarousel.php'; ?>
-    <?php if($resultats->fetch(PDO::FETCH_OBJ)):?>
     <!-- Les slides du carousel -->
     <div class="carousel-inner" role="listbox" style="height:350px;">
         <?php $compteur = 0; ?>
@@ -31,6 +30,5 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-    <?php endif; ?>
 </div>
 
