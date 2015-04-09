@@ -12,7 +12,7 @@ $favicon = paramConfig('imgFavFo', $db);
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title><?= paramConfig('titleFo', $db)?></title>
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/<?=$css?>.min.css">
         <link rel="stylesheet" href="./css/main.css">
