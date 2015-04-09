@@ -72,6 +72,7 @@ include 'template/categories.php';
 
     <h2>Les vendeurs disponibles</h2>
     <table class="table table-striped table-hover ">
+        <a href="addProduct.php?id=<?= $reqArticle['id']; ?>" class="btn btn-info">Vendre cet article</a>
         <thead>
             <tr>
                 <th class="col-lg-2">Prix + frais livraison</th>

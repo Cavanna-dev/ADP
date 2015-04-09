@@ -32,8 +32,8 @@ endif;
         <?php $subject_buy = "Vente de votre article : " . $r_basket_product->artName . " - €" . $r_basket_product->price; ?>
         <?php $body_buy = "Bonjour, <br /><br />"; ?>
         <?php $body_buy .= "Un acheteur a été trouvé pour votre article : <br />"; ?>
-        <?php $body_buy .= "Acheteur : " . $_SESSION['customer']['name'] . " " . $_SESSION['customer']['firstName'] . " - " . $_SESSION['customer']['email'] . "<br />"; ?>
-        <?php $body_buy .= $r_basket_product->artName . " - €" . $r_basket_product->price . "<br />"; ?>
+        <?php $body_buy .= "<br /> - Acheteur : " . $_SESSION['customer']['name'] . " " . $_SESSION['customer']['firstName'] . " - " . $_SESSION['customer']['email'] . "<br />"; ?>
+        <?php $body_buy .= $r_basket_product->artName . " - €" . $r_basket_product->price . "<br /><br />"; ?>
         <?php $body_buy .= "<br />Cordialement, "; ?>
         <?php $body_buy .= "<br /><br />L'équipe " . $name_from . "."; ?>
         <?php sendMailTo($name_from, $email_from, $name_to_buy, $email_to_buy, $subject_buy, $body_buy); ?>
@@ -58,4 +58,4 @@ endif;
 <?php $body_sell .= "<br /><br />L'équipe " . $name_from . "."; ?>
 <?php sendMailTo($name_from, $email_from, $name_to_sell, $email_to_sell, $subject_sell, $body_sell); ?>
 
-<?php header('Location:backetOk.php');?>
+<?php header('Location:basketOk.php');?>

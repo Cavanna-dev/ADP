@@ -4,7 +4,7 @@
 <?php include './functions/connection_db.php'; ?>
 <?php include 'template/categories.php'; ?>
 <br />
-<div class="container" style="min-height: 700px;">
+<div class="container" style="min-height: 600px;">
     <h1>Votre Panier</h1>
     <div class="jumbotron">
         <?php if (isset($_SESSION['panier']) && !empty($_SESSION['panier'])): ?>
