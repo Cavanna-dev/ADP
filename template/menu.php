@@ -19,7 +19,13 @@ $reqInterface[$reqInformation['label']] = $reqInformation['value'];
             <a class="navbar-brand" href="index.php"><?= $reqInterface['nameFo'] ?></a>
             <form class="navbar-form navbar-left" role="search" action="searchPage.php">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="search" id="search" placeholder="Rechercher un article">
+                    <input type="text" class="form-control" 
+                           name="search" id="search" 
+                           placeholder="Rechercher un article"
+                           <?php 
+                           if(isset($_GET['search']))
+                               echo 'value="'.$_GET['search'].'"';
+                           ?>>
                 </div>
                 <button type="submit" class="btn btn-default">Rechercher</button>
             </form>
