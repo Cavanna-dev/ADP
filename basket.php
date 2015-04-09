@@ -36,21 +36,22 @@
                             </tr>
                             <?php $total_basket += $r_basket_product->price; ?>
                         <?php } ?>
-                    <?php endforeach; ?>    
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>Total</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td>€ <?= number_format($total_basket, 2, '.', ','); ?></td>
-                    <td></td>
-                </tr>
+                    <?php endforeach; ?> 
+                    <?php $_SESSION['panier']['price_total'] = $total_basket; ?>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td>€ <?= number_format($total_basket, 2, '.', ','); ?></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
             <a href="delBasket.php" class="btn btn-primary">Vider le panier</a>
