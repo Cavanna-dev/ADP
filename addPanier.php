@@ -9,7 +9,8 @@ if (!isset($_SESSION['panier']))
     $_SESSION['panier'] = Array();
 
 if (in_array($new_product_basket, $_SESSION['panier']['article'])):
-    die('Vous avez déjà selectionner cet article');
+    header('Location:article.php?key='.$new_product_basket.'&erreur=1');
+die;
 endif;
 
 if (!isset($_SESSION['panier']['total'])) {
