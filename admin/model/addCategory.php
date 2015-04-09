@@ -22,8 +22,8 @@ try {
     $stmt->bindParam(":name", $name, PDO::PARAM_STR, 50);
     $stmt->execute();
 
-    header('Location:../category.php?category');
+    header('Location:../category.php?category&page='.$_POST['page']);
 } catch (PDOException $e) {
-    header('Location:../category.php?erreur');
+    header('Location:../category.php?erreur&page='.$_POST['page']);
 }
 ?>
