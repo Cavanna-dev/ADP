@@ -96,7 +96,7 @@
     </table>
 </div>
     <div class="alert alert-dismissable alert-warning">
-        <p data-dismiss="alert" >Notification : Préférez les images en format 1140x350 pour un rendu optimal sur votre page d'accueil.</p>
+        <p data-dismiss="alert" >Notification : Préférez les images en format 1680x350 pour un rendu optimal sur votre page d'accueil.</p>
     </div>
 </div>
 <?php include 'template/footer.php'; ?>

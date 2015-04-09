@@ -27,9 +27,8 @@ try{
     $stmt->bindParam(":firstName", $firstName, PDO::PARAM_STR, 100);
     $stmt->bindParam(":email", $email, PDO::PARAM_STR, 150);
     $stmt->execute();
-    
-    
-    $sql = "SELECT (SELECT value FROM config WHERE label = 'emailSend') emailSend, ";
+
+    $sql = "SELECT (SELECT value FROM config WHERE label = 'emailContact') emailContact, ";
     $sql .= "(SELECT value FROM config WHERE label = 'nameFo') nameFo ";
     $resultat = $db->query($sql);
     $resultat->execute();
@@ -41,9 +40,7 @@ try{
     $body .= $email.'<br/><br/><br/>';
     $body .= $message;
     
-    sendMailTo(($firstName.' '.$name), $email, 
-            $reqConfig['nameFo'], $reqConfig['emailSend'], $subject, $body);  
-
+    sendMailTo($firstName.' '.$name, $email, $reqConfig['nameFo'], $reqConfig['emailContact'], $subject, $body);  
     
     header('Location:../contact.php?success');
   

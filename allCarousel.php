@@ -2,7 +2,11 @@
 
 include_once './functions/connection_db.php';
 
-
+/**
+ * Try/Catch
+ * On récupère les images Carousel de la base de donnée
+ * qui ont la propriété 'Page Accueil' activée
+ */
 try{
     $sql = "SELECT id, source, content, isHp "
          . "FROM carousel "

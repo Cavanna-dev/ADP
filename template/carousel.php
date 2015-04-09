@@ -1,7 +1,7 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
     <?php include_once './allCarousel.php'; ?>
-    
-    <!-- Wrapper for slides -->
+    <?php if($resultats->fetch(PDO::FETCH_OBJ)):?>
+    <!-- Les slides du carousel -->
     <div class="carousel-inner" role="listbox" style="height:350px;">
         <?php $compteur = 0; ?>
         <?php while ($resultat = $resultats->fetch(PDO::FETCH_OBJ)) { ?>        
@@ -15,14 +15,14 @@
         <?php } ?>
     </div>
 
-    <!-- Indicators -->
+    <!-- Texte descriptif pour les images -->
     <ol class="carousel-indicators">
         <?php for ($i = 0; $i < $compteur; $i++): ?>
             <li data-target="#carousel-example-generic" data-slide-to="<?php echo $i; ?>" <?php if ($i == 0) echo 'class="active"'; ?>></li>
         <?php endfor; ?>
     </ol>
 
-    <!-- Controls -->
+    <!-- Contrôles du carousel -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -31,5 +31,6 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+    <?php endif; ?>
 </div>
 
