@@ -31,7 +31,7 @@ $sql = "SELECT "
     . "(SELECT COUNT(id) FROM contact WHERE status = 1) AS contactOpen, "
     . "(SELECT COUNT(id) FROM contact WHERE status = 0) AS contact, "
 
-    . "(SELECT COUNT(id) FROM availability WHERE status = 1 "
+    . "(SELECT COUNT(id) FROM availability WHERE status = 2 "
             . "AND DateChange > '".$monday."') AS nbCommand ";
 
  
