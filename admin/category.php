@@ -33,7 +33,7 @@ include 'model/listCategoryInactive.php';
     
 <?php 
     if(!isset($_GET['page']) || (isset($_GET['page']) && $_GET['page'] == 'add')){
-        $cslassAdd='active in';
+        $classAdd='active in';
         $classActif='';
         $classInActif='';
     }elseif(!empty($_GET['page']) && $_GET['page'] == 'actif'){    
