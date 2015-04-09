@@ -1,9 +1,5 @@
-<?php include_once './allCarousel.php'; ?>
-<?php $test = $resultats->fetch(PDO::FETCH_OBJ); ?>
-<?php if($test):?>
-<?php var_dump($test);die; ?>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
-
+    <?php include_once './allCarousel.php'; ?>
     <!-- Les slides du carousel -->
     <div class="carousel-inner" role="listbox" style="height:350px;">
         <?php $compteur = 0; ?>
@@ -35,5 +31,4 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<?php endif; ?>
 
